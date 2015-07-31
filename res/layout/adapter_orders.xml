@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" >
+    <ImageView android:id="@+id/icon_orden" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:src="@drawable/icon_orden_abierta" android:layout_alignParentTop="true" android:contentDescription="@string/image" />
+    <CheckBox android:id="@+id/checkbox_orden" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/icon_orden" style="@style/OrdenesListTimer" android:clickable="false" android:focusableInTouchMode="false" />
+    <TextView android:id="@+id/txttitulo_orden" 
+        android:gravity="center_vertical" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_marginRight="10.0dip" 
+        android:layout_toRightOf="@id/icon_orden" 
+        android:layout_alignParentTop="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignWithParentIfMissing="true"      
+        style="@style/OrdenesListText" />
+    <TextView android:id="@+id/txttotalhoras_orden" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/checkbox_orden" android:layout_marginTop="10.0dip" android:layout_below="@id/txttitulo_orden" android:hint="@string/defaulttotalvalue" style="@style/OrdenesListTimer" />
+
+    <TextView
+        android:id="@+id/txtplanta_orden"
+        style="@style/OrdenesListDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txttitulo_orden"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginTop="10.0dip"
+        android:layout_toRightOf="@id/txttotalhoras_orden"
+        android:ellipsize="marquee"
+        android:lines="0"
+        android:text="Planta1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/txtresponsable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtplanta_orden"
+        android:layout_below="@+id/txtplanta_orden"
+        android:ellipsize="marquee"       
+        android:singleLine="true"
+        android:text="pepe el calvo"
+        android:textAppearance="?android:attr/textAppearanceSmall" />    
+ 
+</RelativeLayout>

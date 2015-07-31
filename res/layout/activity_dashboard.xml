@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- Include Fragmented dashboard -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:layout_above="@+id/footerbar">
+        <include layout="@layout/fragment_dashboard" />
+    </LinearLayout>
+    
+    <!-- Include Footer -->
+    <!-- <include android:id="@+id/footerbar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" layout="@layout/footer_layout"  /> -->
+
+    <fragment
+        android:id="@+id/footerbar"
+        android:name="com.comyted.activities.FooterFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        tools:layout="@layout/fragment_footer" />
+
+</RelativeLayout>

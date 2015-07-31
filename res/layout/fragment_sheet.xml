@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+         android:orientation="horizontal" android:clipChildren="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="30.0dip" android:fillViewport="true">       
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableBottom="@color/gray"
+                android:shadowDy="2.0"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <RelativeLayout
+                android:id="@+id/estado_orden"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_weight="0.60"
+                android:gravity="left">
+
+                <TextView
+                    android:id="@+id/lblestado_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/lblestado_orden"
+                    android:textColor="#ff333333"
+                    android:textSize="12.0dip"
+                     android:layout_alignParentLeft="true" />
+
+                <TextView
+                    android:id="@+id/txtestado_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:clickable="true"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="16.0dip"
+                    android:layout_below="@+id/lblestado_orden"
+                    android:text="abierta" />
+                
+                <TextView
+                    android:id="@+id/lblfecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:text="fecha"
+                    android:textColor="#ff333333"
+                    android:textSize="12.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignBaseline="@+id/lblestado_orden" />
+
+                <TextView
+                    android:id="@+id/txtfecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:clickable="true"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="16.0dip"
+                    android:layout_below="@+id/lblfecha"
+                     android:layout_alignParentRight="true"
+                     android:text="10/10/2014"
+                    android:layout_alignBaseline="@+id/txtestado_orden"  />
+                
+            </RelativeLayout>
+            
+            <TextView
+                android:id="@+id/lblresumen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:text="@string/lblresumen"
+                android:textColor="#ff333333"
+                android:textSize="14.0dip" />
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="fill_parent"
+                android:layout_height="4.0dip"
+                android:layout_margin="0.0dip"
+                android:layout_marginLeft="5.0dip"
+                android:layout_marginRight="0.0dip"
+                android:background="@drawable/loginbar" />
+
+            <LinearLayout
+                android:id="@+id/tiempototal_orden"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/lbltiempototal_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/lbltiempototal_orden"
+                    android:textColor="#ff333333"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/txttiempototal_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:clickable="true"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="16.0dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/duracionreal_orden"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/lblduracionreal_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/lblduracionreal_orden"
+                    android:textColor="#ff333333"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/txtduracionreal_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:clickable="true"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="16.0dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tiempopausa_orden"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/lbltiempopausa_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/lbltiempopausa_orden"
+                    android:textColor="#ff333333"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/txttiempopausa_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:clickable="true"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="16.0dip" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lbldetalles_orden"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:text="@string/lbldetalles_orden"
+                android:textColor="#ff333333"
+                android:textSize="14.0dip" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="fill_parent"
+                android:layout_height="4.0dip"
+                android:layout_margin="0.0dip"
+                android:layout_marginLeft="5.0dip"
+                android:layout_marginRight="0.0dip"
+                android:background="@drawable/loginbar" />
+
+            <LinearLayout             
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <TextView                
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/sheet_tecnico"
+                    android:textColor="#ff333333"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/tvTecnico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:clickable="true"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="16.0dip" />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/planta_orden"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/lblplanta_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/lblplanta_orden"
+                    android:textColor="#ff333333"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/txtplanta_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:clickable="true"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="16.0dip" />
+            </LinearLayout>
+
+            <LinearLayout              
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <TextView                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/peticionario"
+                    android:textColor="#ff333333"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/txtpeticionario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:clickable="true"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="16.0dip" />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/direccion_orden"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/lbldireccion_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/lbldireccion_orden"
+                    android:textColor="#ff333333"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/txtdireccion_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:clickable="true"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="16.0dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/expdte_orden"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/lblexpdte_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/lblexpdte_orden"
+                    android:textColor="#ff333333"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/txtexpdte_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:clickable="true"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="16.0dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tipotrabajo_orden"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/lbltipotrabajo_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/lbltipotrabajo_orden"
+                    android:textColor="#ff333333"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/txttipotrabajo_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:clickable="true"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="16.0dip" />
+            </LinearLayout>
+            
+            <LinearLayout             
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <TextView                 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/cargoregion"
+                    android:textColor="#ff333333"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/txtcargoregion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:clickable="true"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="16.0dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/motor_orden"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/lblmotor_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/lblmotor_orden"
+                    android:textColor="#ff333333"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/txtmotor_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:clickable="true"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="16.0dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/numserie_orden"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/lblnumserie_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/lblnumserie_orden"
+                    android:textColor="#ff333333"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/txtnumserie_orden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:clickable="true"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="16.0dip" />
+            </LinearLayout>
+
+            
+        </LinearLayout>
+
+    </ScrollView>   

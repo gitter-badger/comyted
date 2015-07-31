@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.comyted.PaintFragment" >
+
+    <RelativeLayout
+        style="@style/ButtonSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textOff="Pintar"
+            android:textOn="Borrar" />
+
+        <EditText
+            android:id="@+id/stroke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/switch1"
+            android:ems="10"
+            android:gravity="right"
+            android:inputType="number"
+            android:text="3" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent" >
+
+         <LinearLayout
+            android:id="@+id/clearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"            
+            android:gravity="bottom|center_horizontal"
+            android:orientation="horizontal" >
+
+        </LinearLayout>
+        
+        <SurfaceView
+            android:layout_below="@+id/clearLayout"
+            android:id="@+id/surface"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp" />
+       
+    </RelativeLayout>
+
+</LinearLayout>

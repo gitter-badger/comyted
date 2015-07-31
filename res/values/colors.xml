@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <color android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/task_title_color" name="taskTitle">#a8e9a7</color>
+    <color name="gray" >#e6e6e6</color>
+    <color name = "error" >#f9d8d8</color>
+    <color name = "white" >#ffffff</color>    
+<!--     <color name = "hint" >#f4a77c</color> -->
+	<color name = "hint" >#b4b4b4</color>
+	<color name="task_abierta">#ebfa44</color>
+</resources>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dip" >
+
+        <TextView
+            android:id="@+id/subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView1"
+            android:text="@string/la_firma_de_estas_horas_implica_su_aceptaci_n" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/introduzca_la_firma_del_cliente"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </RelativeLayout>
+
+    <include android:id="@+id/firma_cliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/include_signature_display" />
+
+    <TextView
+        android:paddingLeft="30dip"
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/introduzca_la_firma_del_tecnico"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <include android:id="@+id/fima_tecnico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/include_signature_display" />
+
+    <LinearLayout 
+        android:paddingLeft="30dip"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="vertical">
+
+        <LinearLayout 
+            android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:orientation="horizontal">
+    		
+	        <CheckBox
+	            android:id="@+id/firmadaCliente"
+	         	android:focusable="false"
+	            android:clickable="false" 
+	            android:focusableInTouchMode="false"	             
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/firmada_por_el_cliente" />
+
+	        <TextView
+	            android:id="@+id/fechafirmacliente"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:paddingLeft="15dip"	           
+	            android:textAppearance="?android:attr/textAppearanceSmall" />
+	        
+		</LinearLayout>
+
+          <LinearLayout 
+            android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:orientation="horizontal">
+        
+	        <CheckBox
+	            android:id="@+id/firmadaTecnico"
+	            android:focusable="false"
+	            android:clickable="false" 
+	            android:focusableInTouchMode="false"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/firmada_por_el_tecnico" />
+	        
+	        <TextView
+		        android:paddingLeft="10dip"		        
+		        android:id="@+id/fechafirmatecnico"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"		       
+		        android:textAppearance="?android:attr/textAppearanceSmall" />
+	        
+	        </LinearLayout>
+        
+    </LinearLayout>
+    
+</LinearLayout>
+    
+</ScrollView>
+    

@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Comyted</string>
+    <string name="btn_cuentas">Cuentas</string>
+    <string name="btn_contactos">Contactos</string>
+    <string name="btn_plantas">Plantas</string>
+    <string name="btn_ordenes">Ordenes de trabajo</string>
+    <string name="btn_visitas">Visitas</string>
+    <string name="btn_energy">Energy</string>
+    <string name="btn_hojas">Hojas de trabajo</string>
+    <string name="lblTituloVentana"></string>
+    <string name="lblUsuarioConectado">usuario conectado</string>
+    <string name="logo_description">LemurSolution</string>
+    <string name="btn_login">Acceso</string>
+    <string name="lbl_login">Usuario</string>
+    <string name="prompt_email">Email</string>
+    <string name="btn_password">Contraseña</string>
+    <string name="lbl_password">Contraseña</string>
+    <string name="action_sing_in_short">Introduzca su password</string>
+    <string name="login_progress">Validando usuario</string>
+    <string name="title_activity_dashboard_design">DashboardDesignActivity</string>
+    <string name="btn_email">Email</string>
+    <string name="btn_sms">SMS</string>
+    <string name="btn_phone">&#8230;</string>
+    <string name="btn_world">Mapa</string>
+    <string name="incorrect_user_password">Usuario ó contraseña no válidos</string>
+    <string name="inactive_user">Usuario inactivo. Consulte al Administrador</string>
+    <string name="conexion_down">Conexion desactivada. Consulte al Administrador</string>
+    <string name="loading">Cargando&#8230;</string>
+    <string name="imageview">image</string>
+    <string name="signin">Acceder&#8230;</string>
+    <string name="copyright">©Copyright 2015 LemurSolution</string>
+    <string name="access_information">Nota: Por el uso de esta aplicación en tu Android Phone, autorizas el acceso al mismo a Caterpillar Energy Solutions. Para aclaraciones, envie un email a admin@mwm.net</string>
+    <string name="signinginpleasewait">Conectando. Por favor espere &#8230;</string>
+    <string name="about">About Version</string>
+    <string name="about_info">Aplicación Android para personal técnico de Caterpillar Energy Solutions. Todos los datos de Ordenes de trabajo están bajo restricciones intrinsecas de la empresa por lo que su uso fraudulento puede llevar a acciones penales.</string>
+    <string name="about_info1">En caso de trabajar sin conexión las ordenes y hojas de trabajo se sincronizaran automáticamente una vez restablecida la conexion.</string>
+    <string name="about_info2"></string>
+    <string name="image"></string>
+    <string name="menu_refresh">Actualizar</string>
+    <string name="menu_search">Busar</string>
+    <string name="menu_share">Compartir</string>
+
+    <!-- Etiquetas de errores generales -->
+    <string name="error_planta">Error al mostrar la planta</string>
+    <string name="error_motores">Error al mostrar los motores</string>
+
+    <!-- Etiquetas para los Menus -->
+    <string name="action_configuracion">Configuración</string>
+    <string name="action_settings">Conexión</string>
+
+    <!-- Etiquetas para ListLayout -->
+    <string name="defaulttotalvalue">00h 00m</string>
+    <string name="lblorden_totaltime">Total horas:</string>
+
+    <!-- Etiquetas para el email_layout -->
+    <string name="lblmail_asunto">Asunto:(*)</string>
+    <string name="lblmail_telefono">Telefono:(*)</string>
+    <string name="lblmail_cc">C.C:</string>
+    <string name="lblmail_cchint">Opcional&#8230;</string>
+    <string name="lblmail_mensaje">Mensaje(*)</string>
+    <string name="emailform_asunto_hint">tu asunto</string>
+    <string name="emailform_telefono_hint">tu telefono</string>
+    <string name="emailform_email_hint">tu email</string>
+    <string name="emailform_mensaje_hint">Escribe aqui el mensaje que deseas enviar</string>
+    <string name="emailform_nosend">El email no ha sido enviado</string>
+    <string name="emailform_error">Error en el envio. Revise los datos. Stop</string>
+
+    <!-- Etiquetas para el cuentasdetalle_latout -->
+    <string name="lbliden">Id:</string>
+    <string name="lblnumero">Numero:</string>
+    <string name="lblcif">C.I:F:</string>
+    <string name="lblempresa">Empresa:</string>
+    <string name="lbldireccion">Dirección:</string>
+    <string name="lblcp">C.P.:</string>
+    <string name="lblciudad">Ciudad:</string>
+    <string name="lblprovincia">Provincia:</string>
+    <string name="lblpais">Pais:</string>
+    <string name="lbltelefono">Teléfono:</string>
+    <string name="lblmovil">Movil:</string>
+    <string name="lblemail">Email:</string>
+    <string name="sms_nosend">El SMS no ha sido enviado</string>
+    <string name="tel_nosend">El Telefono no ha sido activado</string>
+
+    <!-- Etiquetas para contactosdetalle_layout -->
+    <string name="lblnombre">Nombre:</string>
+    <string name="lbldpto">Dpto:</string>
+
+    <!-- Etiquetas para Settings -->
+    <string name="lblconexiones">Conexiones</string>
+    <string name="lblservicios">Web de Servicios</string>
+    <string name="lblpaginaservicios">Direccíon de Servicios Web</string>
+    <string name="lblUsrlimit">Limitar a usuario</string>
+    <string name="lbllimitarusuario">Mostrar datos relacionados con el usuario</string>
+    <string name="lblemailconfig">Configuración emails</string>
+    <string name="lblemailconfig1">Propiedades de emails</string>
+    <string name="lblemailconfigdesc">Datos de conexion para el envio de emails</string>
+    <string name="lblemailconfiguser">Usuario</string>
+    <string name="lblemailconfigusertitle">Datos de usuario</string>
+    <string name="lblemailconfigusersummary">Introduzca usuario o email del usuario</string>
+    <string name="lblemailconfigpassword">Contraseña</string>
+    <string name="lblemailconfigpasswordtitle">Datos de Contraseña</string>
+    <string name="lblemailconfigpasswordsummary">Introduzca la contraseña del usuario</string>
+    <string name="lblemailconfigsmtp">Servidor SMTP</string>
+    <string name="lblemailconfigsmtptitle">Datos del Servidor SMTP</string>
+    <string name="lblemailconfigsmtpsummary">Introduzca los datos Servidor SMTP</string>
+    <string name="lblemailconfigport">Puerto</string>
+    <string name="lblemailconfigporttitle">Datos del Puerto</string>
+    <string name="lblemailconfigportsummary">Introduzca los datos del puerto del servidor SMTP</string>
+
+    <!-- Etiquetas de confirmacion email -->
+    <string name="email_ok_1">email enviado</string>
+    <string name="email_ok_2">correctamente</string>
+    <string name="email_ok_3">en breve contactará contigo</string>
+    <string name="email_ok_4">si lo prefieres puedes contactar</string>
+    <string name="email_ok_5">con él por teléfono</string>
+
+    <!-- Etiquetas de Ordenes -->
+    <string name="no_ordenes">Vd no tiene Ordenes de trabajo.</string>
+
+    <!-- Etiquetas Detalle de la Orden -->
+    <string name="lblresumen">RESUMEN</string>
+    <string name="lbltiempototal_orden">Tiempo total</string>
+    <string name="lblduracionreal_orden">Tiempo real</string>
+    <string name="lbltiempopausa_orden">Tiempo de Pausa</string>
+    <string name="lbldetalles_orden">DETALLES</string>
+    <string name="lblcliente_orden">Cuenta/Cliente</string>
+    <string name="lbldireccion_orden">Dirección</string>
+    <string name="lblplanta_orden">Planta</string>
+    <string name="lblexpdte_orden">Nº Expediente</string>
+    <string name="lbltipotrabajo_orden">Tipo de trabajo</string>
+    <string name="lblmotor_orden">Motor</string>
+    <string name="lblnumserie_orden">Serie Nº</string>
+    <string name="lblestado_orden">Estado</string>
+
+    <!-- Etiquetas de Hojas -->
+    <string name="no_hojasorden">Esta orden no tiene hojas de trabajo.</string>
+
+    <!-- Etiquetas de la Lista de tareas -->
+    <string name="lblFechatarea">VIE 24 DE MAY</string>
+    <string name="lblHorasDia">07H 25M</string>
+    <string name="lblHoraIncio">09:00</string>
+    <string name="lblHoraFin">13:00</string>
+    <string name="lblDescripcion">Descripcion</string>
+    <string name="lblTotaltarea">04h 00m</string>
+
+    <!-- Etiquetas de detalle de las plantas -->
+    <string name="lblfax">Fax:</string>
+    <string name="lblalias">Alias:</string>
+    <string name="lblmotores">Motores:</string>
+    <string name="lblclienteservice">Cliente Service:</string>
+    <string name="lblcontactoservice">Contacto Service:</string>
+    <string name="lbloperadorservice">Operador Service:</string>
+
+    <!-- Etiquetas de detalle de los motores -->
+    <string name="lblnumserie">Numero de serie:</string>
+    <string name="lblmodelo">Modelo:</string>
+    <string name="lblcombustible">Combustible:</string>
+    <string name="lblnombreplanta">Planta:</string>
+    <string name="lblfechapuestamarcha">Puesta en marcha:</string>
+    <string name="lblregimen">Regimen:</string>
+    <string name="lblsifunciona">Está Funcionando:</string>
+    <string name="lblsimantenimiento">Cto. de Mantenimiento:</string>
+    <string name="lblsirespuestos">Compran Respuestos:</string>
+    <string name="btn_verplanta">Ver Planta</string>
+
+    <!-- Etiquetas para las visitas -->
+    <string name="labelempresa">Empresa:</string>
+    <string name="lblfechavisita">Fecha de visita:</string>
+    <string name="lblfechaalta">Fecha de alta:</string>
+    <string name="lblfechalimite">Fecha limite:</string>
+    <string name="lblresponsable">Responsable:</string>
+    <string name="lblcontacto">Contacto:</string>
+    <string name="lblestado">Estado:</string>
+    <string name="btn_temas">Ver Temas</string>
+    <string name="no_visitas">Vd. no tiene visitas</string>
+
+    <!-- Etiquetas para los temas -->
+    <string name="lblidvisita">Visita nº:</string>
+    <string name="lblidtema">Tema nº:</string>
+    <string name="lbltitulotema">Titulo:</string>
+    <string name="lbldesarrollo">Desarrolllo:</string>
+    <string name="lblpropuesta">Propuesta:</string>
+    <string name="lblobservaciones">Observaciones:</string>
+    <string name="no_temas">La visita no tiene temas</string>
+
+    <!-- Etiquetas de mapas -->
+    <string name="error_geocode">Error en coordenadas. Pruebe reiniciando el dispositivo</string>
+    <string name="nombre_de_usuario_o_contrase_a_invalidos">Usuario o contraseña inválidos</string>
+    <string name="error">Error</string>
+    <string name="editar">Editar</string>
+    <string name="menu_principal">Menu Principal</string>
+    <string name="ordenes_de_trabajo">Ordenes de trabajo</string>
+    <string name="planta">planta</string>
+    <string name="direccion">Dirección</string>
+    <string name="numero_expediente">Nùmero de Expediente</string>
+    <string name="tipo_de_trabajo">Tipo de Trabajo</string>
+    <string name="motor">Motor</string>
+    <string name="numero_de_serie">Numero de Serie</string>
+    <string name="estado">Estado</string>
+    <string name="title_activity_edit_sheet">EditSheet</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="salvando">Salvando &#8230;</string>
+    <string name="title_activity_add_sheet">AddSheetActivity</string>
+    <string name="tecnico">Técnico</string>
+    <string name="title_activity_add_task">AddTaskActivity</string>
+    <string name="requerido">Requerido</string>
+    <string name="entrada_invalida">entrada inválida</string>
+    <string name="new_sheet">Nueva</string>
+    <string name="refresh">Actualizar</string>
+    <string name="configuracion">Configuración</string>
+    <string name="logout">Finalizar Sessión</string>
+    <string name="dateformat">Fecha</string>
+    <string name="timeformat">Tiempo</string>
+    <string name="integer">número</string>
+    <string name="titulo">título</string>
+    <string name="editar_tarea">Editar Tarea</string>
+    <string name="title_activity_signature">Signature</string>
+    <string name="no_hojas_en_orden">Esta orden no tiene hojas de trabajo</string>
+    <string name="no_hojas">Usted no tiene hojas de trabajo</string>
+    <string name="no_tareas">Usted no tiene tareas</string>
+    <string name="title_activity_paint">PaintActivity</string>
+    <string name="dibujar_firma">Dibujar Firma</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cerrar">Cerrar</string>
+    <string name="sincronizacion_fail">Ha ocurrido un fallo durante la sincronización con el servidor</string>
+    <string name="opens">Abiertas</string>
+    <string name="closed">Cerradas</string>
+    <string name="no_hay_ordenes_abiertas">No hay ordenes abiertas</string>
+    <string name="no_hay_ordenes_cerradas">No hay ordenes cerradas</string>
+    <string name="no_hay_hojas_abiertas">No hay hojas abiertas</string>
+    <string name="no_hay_hojas_cerradas">No hay hojas cerradas</string>
+    <string name="no_hay_tareas_abiertas">No hay tareas abiertas</string>
+    <string name="no_hay_tareas_cerradas">No hay tareas cerradas</string>
+    <string name="peticionario">Peticionario</string>
+    <string name="editar_hoja">Editar Hoja</string>
+    <string name="respuesta_invalida">No se pudo completar la operación\nPuede ser que se halla producido un error en el servidor debido a inconcistencias o puede ser que los datos fueron eliminados</string>
+    <string name="no_registrado">Usted no esta registrado o ha introducido credenciales incorrectas\n Verifique su usuario y contraseña</string>
+    <string name="mis_ordenes">Mis Ordenes</string>
+    <string name="ordenes_equipo">Ordenes Equipo</string>
+    <string name="nueva_hoja_de_tarea">Nueva Hoja de Tarea</string>
+    <string name="hoja">Hoja</string>
+    <string name="tareas">Tareas</string>
+    <string name="firma">Firma</string>
+    <string name="no_hoja">No se pudo completar la operación\n Puede ser que la hoja de trabajo halla sido eliminada del servidor o el sistema no entiende la respuesta del servidor</string>
+    <string name="nueva_hoja">Nueva Hoja</string>
+    <string name="hojas_de_trabajo">Hojas de trabajo</string>
+    <string name="hojas">Hojas</string>
+    <string name="add_firma_ok">firma subida</string>
+    <string name="nueva_tarea">Nueva Tarea</string>
+    <string name="no_tarea">No se pudo completar la operación\n Puede ser que la tarea halla sido eliminada del servidor o el sistema no entiende la respuesta del servidor</string>
+    <string name="taller">taller</string>
+    <string name="viaje">viaje</string>
+    <string name="abierta">Abierta</string>
+    <string name="cerrada">Cerrada</string>
+    <string name="horas_de_viaje_">Horas de Viaje :</string>
+    <string name="sincronizacion_finalizada">Sincronización finalizada</string>
+    <string name="operacion_fallida">La operación ha fallado</string>
+    <string name="cargo_region">Cargo Región</string>
+    <string name="tipo_de_hoja">Tipo de Hoja</string>
+    <string name="ref_pedido">Ref Pedido</string>
+    <string name="horas_motor">Horas Motor</string>
+    <string name="fecha">fecha</string>
+    <string name="codigo_postal">Código Postal</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="provincia">Provincia</string>
+    <string name="pais">País</string>
+    <string name="telefono">Teléfono</string>
+    <string name="seleccionar_fecha">Haga click para seleccionar una fecha</string>
+    <string name="de">De</string>
+    <string name="a">A</string>
+    <string name="descanso">Descanso</string>
+    <string name="kilometros">"Kilómetros: "</string>
+    <string name="usuario_no_valido">Usuario no válido para efectuar esta operación</string>
+    <string name="cargoregion">Cargo Región</string>
+    <string name="sheet_tecnico">Técnico</string>
+    <string name="warning">Aviso</string>
+    <string name="validation_fail_message">Hay campos no válidos.\n
+        								   Verifique los campos señalados y ejecute de nuevo la operación</string>
+    <string name="validation_fechainicio_fail">La fecha de inicio debe ser menor que la fecha de fin</string>
+    <string name="validating">Verificando &#8230;</string>
+    <string name="acces_denied_message">Usted no tiene permisos para acceder a esta funcionalidad</string>
+    <string name="fecha_bloqueada">La fecha introducida está bloqueada por Vd en otros conceptos</string>
+    <string name="fecha_no_anterior_al_movil">La fecha debe ser anterior a la fecha del móvil</string>
+    <string name="introduzca_la_firma_del_tecnico">Introduzca la firma del técnico</string>
+    <string name="firmada_por_el_cliente">Firmada por el cliente</string>
+    <string name="firmada_por_el_tecnico">Firmada por el técnico</string>
+    <string name="no_se_permite_adicionar_tareas_a_una_hoja_cerrada">No se permite adicionar tareas a una hoja cerrada</string>
+    <string name="error_hojas_abiertas">Tiene hojas abiertas. No se permite grabar</string>
+    <string name="email_enviado_correctamente">Email enviado correctamente</string>
+    <string name="enviar">Enviar</string>
+    <string name="no_tiene_acceso">No tiene acceso</string>
+    <string name="email">Email</string>
+    <string name="no_se_pudieron_cargar_los_datos">no se pudieron cargar los datos</string>
+    <string name="no_firmada">no firmada</string>
+    <string name="err_fecha_invalida">No se puede poner una fecha posterior a la fecha de la hoja</string>
+    <string name="horas_totales">"Horas Totales : "</string>
+    <string name="fecha_requerida">Fecha requerida</string>
+    <string name="tiempo_final_descanso_requerido">Tiempo final descanso requerido</string>
+    <string name="tiempo_inicial_de_descanso_requerido">Tiempo inicial de descanso requerido</string>
+    <string name="tiempo_final_de_la_tarea_requerido">Tiempo final de la tarea requerido</string>
+    <string name="tiempo_inicial_de_la_tarea_requerido">Tiempo inicial de la tarea requerido</string>
+    <string name="la_fecha_no_valida">La fecha no es válida</string>
+    <string name="fecha_de_tarea_mayor_fecha_de_hoja_">La fecha de la tarea debe ser mayor que la fecha de la hoja.\nFecha de la hoja:</string>
+    <string name="la_hora_de_inicio_de_la_tarea_debe_ser_menor_que_la_hora_de_fin">La hora de inicio de la tarea debe ser menor que la hora de fin</string>
+    <string name="la_hora_inicial_de_descanso_debe_ser_menor_que_la_hora_final_de_descanso">La hora inicial de descanso debe ser menor que la hora final de descanso</string>
+    <string name="la_hora_final_de_descanso_debe_ser_mayor_que_la_hora_inicial_de_descanso">La hora final de descanso debe ser mayor que la hora inicial de descanso</string>
+    <string name="la_hora_inicial_de_descanso_debe_ser_mayor_que_la_hora_inicial_de_la_tarea">La hora inicial de descanso debe ser mayor que la hora inicial de la tarea</string>
+    <string name="la_cantidad_de_horas_no_puede_ser_mayor_que_">"La cantidad de horas no puede ser mayor que "</string>
+    <string name="la_hora_final_de_descanso_debe_ser_menor_que_la_hora_final_de_la_tarea">La hora final de descanso debe ser menor que la hora final de la tarea</string>
+    <string name="no_se_pudieron_salvar_los_datos_ha_ocurrido_un_error_en_el_servidor">No se pudieron salvar los datos.\nHa ocurrido un error en el servidor</string>
+    <string name="enviando">Enviando..</string>
+    <string name="no_posible_editar_hoja">Solamente los supervisores pueden editar una hoja cerrada.\nContacte con la central para abrir nuevamente la hoja</string>
+    <string name="aviso">Aviso</string>
+    <string name="tarea_no_editar">No se puede editar una tarea de una hoja cerrada</string>
+    <string name="informacion">Información</string>
+    <string name="salir">Salir</string>
+    <string name="err_fecha_posterior_movil">No se puede poner una fecha posterior a la fecha de la hoja</string>
+    <string name="orden">Orden</string>
+    <string name="introduzca_la_firma_del_cliente">Introduzca la firma del cliente</string>
+    <string name="la_firma_de_estas_horas_implica_su_aceptaci_n">La firma de estas horas implica su aceptación</string>
+    <string name="order_not_found">La orden no se encuentra en la base de datos</string>
+    <string name="btn_clientes">Clientes</string>
+    <string name="btn_ofertas">Ofertas</string>
+    <string name="btn_agenda">Agenda</string>
+    <string name="btn_campaing">Campañas</string>
+    <string name="no_data">Cargue los datos antes de hacer esta operación.</string>
+    <string name="operation_fail">No se pudo efectuar la operación</string>
+    <string name="update">Actualizar</string>
+    <string name="espere_a_que_ser_cargen_los_datos">Espere a que ser cargen los datos</string>
+    <string name="no_se_ha_cargado_la_hoja">No se ha cargado la hoja</string>
+    <string name="email_no_valido">Email no válido</string>
+    <string name="fin_de_montaje">Fin de Montaje</string>
+    <string name="horas_de_viaje">Horas de viaje</string>
+    <string name="numero_decimal_positivo">Número Decimal Positivo</string>
+    <string name="kilometros_field">Kilómetros</string>
+    <string name="fecha_task">Fecha</string>
+    <string name="inicio_de_tarea">Inicio de Tarea</string>
+    <string name="inicio_de_descanso">Inicio de descanso</string>
+    <string name="fin_de_descanso">Fin de descanso</string>
+    <string name="fin_de_tarea">Fin de Tarea</string>
+    <string name="lbEstadoTarea">Estado :</string>
+    <string name="lbTecnicoTarea">Técnico :</string>    
+</resources>

@@ -1,0 +1,35 @@
+<com.enterlib.widgets.DashboardLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.comyted.activities.DashboardActivity"     
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"  
+    android:layout_weight="1" 
+    android:background="#f8f9fe"
+     >    
+    
+    <!-- Clientes Button -->
+    <Button android:id="@+id/btn_clientes" style="@style/DashboardButton" android:drawableTop="@drawable/btn_clientes" android:text="@string/btn_clientes" />
+    
+    <!-- Contactos Button -->
+    <Button android:id="@+id/btn_contactos" style="@style/DashboardButton" android:drawableTop="@drawable/btn_contactos" android:text="@string/btn_contactos" />
+    
+    <!-- Ofertas Button -->
+    <Button android:id="@+id/btn_ofertas" style="@style/DashboardButton" android:drawableTop="@drawable/btn_ofertas" android:text="@string/btn_ofertas" android:onClick="showOfertas"  />
+    
+    <!-- Ofertas Button -->
+    <Button android:id="@+id/btn_visitas" style="@style/DashboardButton" android:drawableTop="@drawable/btn_visitas" android:text="@string/btn_visitas"/>
+    
+    <!-- Ordenes Button -->
+    <Button android:id="@+id/btn_ordenes" style="@style/DashboardButton" android:drawableTop="@drawable/btn_ordenes" android:text="@string/btn_ordenes" />
+    
+    <!-- Hojas Button -->
+    <Button android:id="@+id/btn_hojas" style="@style/DashboardButton" android:drawableTop="@drawable/btn_hojas" android:text="@string/btn_hojas" />
+    
+    <!-- Agenda Button -->
+    <Button android:id="@+id/btn_agenda" style="@style/DashboardButton" android:drawableTop="@drawable/btn_agenda" android:text="@string/btn_agenda" />
+    
+     <!-- Campañas Button -->
+    <Button android:id="@+id/btn_campaing" style="@style/DashboardButton" android:drawableTop="@drawable/btn_campain" android:text="@string/btn_campaing" />
+             
+</com.enterlib.widgets.DashboardLayout>
