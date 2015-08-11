@@ -53,12 +53,12 @@
             android:name="com.comyted.modules.admin.ActivitySetting"
             android:label="@string/action_configuracion" >
         </activity>
-        <!-- Activities de la aplicación -->
+        <!-- Activities de la aplicaci�n -->
         <activity
             android:name="com.comyted.activities.DashboardActivity"
             android:label="@string/app_name" >
         </activity>
-        <!-- Fin de la declaración de activities -->
+        <!-- Fin de la declaraci�n de activities -->
 
 
         <!-- Activities para las Ordenes de Trabajo -->
@@ -115,5 +115,4 @@
                 android:value="com.comyted.activities.DashboardActivity" />
         </activity>
     </application>
-
 </manifest>
