@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.comyted"
+    android:versionCode="1"
+    android:versionName="1.2.0.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="19" />
+    <!-- Copied from Google Maps Library/AndroidManifest.xml. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.comyted.MainApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_white"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- Declaracion de las Actividades -->
+        <activity
+            android:name="com.comyted.activities.IntroActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.comyted.modules.admin.ActivityLogin"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.comyted.LOGIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.comyted.activities.AboutActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.comyted.ABOUT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- Activities que componen las preferencias -->
+        <activity
+            android:name="com.comyted.modules.admin.ActivitySetting"
+            android:label="@string/action_configuracion" >
+        </activity>
+        <!-- Activities de la aplicación -->
+        <activity
+            android:name="com.comyted.activities.DashboardActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <!-- Fin de la declaración de activities -->
+
+
+        <!-- Activities para las Ordenes de Trabajo -->
+        <activity
+            android:name="com.comyted.modules.orders.ActivityListOrders"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.comyted.modules.orders.ActivityOrder"
+            android:label="@string/app_name" >
+        </activity>
+        <!-- Fin de las Activity para Ordenes de trabajo -->
+
+
+        <!-- Activities para las Hojas de Trabajo -->
+        <activity
+            android:name="com.comyted.modules.sheets.ActivityListSheets"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.comyted.modules.sheets.ActivitySheet"
+            android:label="@string/app_name" >
+        </activity>
+        <!-- android:screenOrientation="portrait" -->
+        <activity
+            android:name="com.comyted.modules.sheets.ActivityEditSheet"
+            android:label="@string/title_activity_edit_sheet"
+            android:parentActivityName="com.comyted.sheets.ActivitySheet" >
+        </activity>
+        <activity
+            android:name="com.comyted.modules.sheets.tasks.ActivityEditTask"
+            android:label="@string/editar_tarea"
+            android:parentActivityName="com.comyted.sheets.ActivitySheet"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.comyted.sheets.ActivitySheet" />
+        </activity>
+        <activity
+            android:name="com.comyted.activities.PaintActivity"
+            android:label="@string/title_activity_paint"
+            android:parentActivityName="com.comyted.sheets.ActivitySheet"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.comyted.sheets.ActivitySheet" />
+        </activity>
+        <activity
+            android:name="com.comyted.modules.clients.ActivityListClients"
+            android:label="@string/title_activity_activity_list_clients"
+            android:parentActivityName="com.comyted.activities.DashboardActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.comyted.activities.DashboardActivity" />
+        </activity>
+    </application>
+
+</manifest>

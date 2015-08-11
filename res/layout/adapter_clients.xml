@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- Icono -->
+    <ImageView
+        android:id="@+id/imageCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/clientes" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageCliente"
+        android:orientation="vertical" >
+
+        <!-- Nombre Empresa -->
+        <TextView
+            android:id="@+id/client_nombreempresa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingenieros AG"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <!-- Direccion -->
+
+        <TextView
+            android:id="@+id/client_direccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ave San Francisco Javier No 9 41018 SEVILLA ESPANA" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <!-- Telefono -->
+              <TextView
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/client_telefono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="5dp"                              
+             		android:drawableLeft="@drawable/call_contact_little"   
+                    android:text="931234567" />
+            
+            <!-- FAX -->
+
+              <TextView
+                  android:id="@+id/client_fax"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_alignParentTop="true"
+                  android:layout_marginLeft="26dp"
+                  android:layout_toRightOf="@+id/client_telefono"
+                  android:drawableLeft="@drawable/call_contact_little"
+                  android:drawablePadding="5dp"
+                  android:text="931234568" />
+            
+        </RelativeLayout>
+        
+        <!-- Email -->          
+         <TextView
+             android:id="@+id/client_email"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:drawablePadding="5dp"                              
+             android:drawableLeft="@drawable/stat_notify_email_generic"                        
+             android:text="info@ingenierosag.com" />
+         
+    </LinearLayout>
+
+</RelativeLayout>

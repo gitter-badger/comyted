@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        
+<LinearLayout
+    android:id="@+id/linearlayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    	<!-- Titulo -->
+    	<EditText
+    	    android:tag="titulo"
+    	    android:id="@+id/title"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="wrap_content"
+    	    android:ems="10"
+    	    android:hint="@string/titulo"
+    	    android:inputType="text|textMultiLine"
+    	    android:lines="3"
+    	    android:textColorHint="@color/hint" />
+    	
+    	<!-- Fecha -->
+    	 <com.enterlib.widgets.DatePickerButton style="@android:attr/buttonBarButtonStyle"
+    	     	android:tag="fecha"    	     	
+ 	            android:id="@+id/fecha"
+ 	            android:layout_width="wrap_content"
+ 	            android:layout_height="wrap_content"  	            
+ 	            android:background="@android:drawable/edit_text"
+ 	            android:ems="10"
+ 	            android:hint="@string/dateformat"
+ 	            android:textColorHint="@color/hint"
+ 	            android:layout_gravity="center_horizontal"
+ 	            android:contentDescription="@string/seleccionar_fecha" />
+    	
+    	<LinearLayout android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:orientation="horizontal"
+					    android:gravity="center_horizontal"
+					    android:background="@drawable/custom_edit_text" >
+		
+    	    <!-- TdFecha Tiempo desde -->
+	   	     <TextView android:text="@string/de" android:layout_width="wrap_content" android:layout_height="wrap_content" android:labelFor="@+id/deTime" />	    	    					    
+			 <com.enterlib.widgets.TimePickerButton
+			     android:id="@+id/deTime"
+			     style="@android:attr/buttonBarButtonStyle"
+			     android:layout_width="156dip"
+			     android:layout_height="wrap_content"
+			     android:background="@android:drawable/edit_text"
+			     android:ems="10"
+			     android:hint="@string/timeformat"
+			     android:textColorHint="@color/hint" />
+    	        
+			<!-- ThFecha Tiempo Hasta -->	    	
+    		<TextView android:text="@string/a" android:layout_width="wrap_content" android:layout_height="wrap_content"  />  	    
+  	    	<com.enterlib.widgets.TimePickerButton
+  	    	    android:id="@+id/aTime"
+  	    	    style="@android:attr/buttonBarButtonStyle"
+  	    	    android:layout_width="110dp"
+  	    	    android:layout_height="wrap_content"
+  	    	    android:background="@android:drawable/edit_text"
+  	    	    android:ems="10"
+  	    	    android:hint="@string/timeformat"
+  	    	    android:textColorHint="@color/hint" />
+  	     </LinearLayout>
+  	    
+  	    <TextView android:text="@string/descanso" android:layout_width="wrap_content"  android:layout_height="wrap_content"/>
+  	      	    
+  	    <LinearLayout android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:orientation="horizontal" 
+					    android:gravity="center_horizontal" 
+					    android:background="@drawable/custom_edit_text" >
+  	    	  	
+			<!-- ddFecha Tiempo descanso desde-->	        	  	    
+  	        <TextView android:text="@string/de" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+  	    	<com.enterlib.widgets.TimePickerButton
+  	    	    android:id="@+id/ddTime"
+  	    	    style="@android:attr/buttonBarButtonStyle"
+  	    	  	android:layout_width="156dip"
+  	    	    android:layout_height="wrap_content"
+  	    	    android:background="@android:drawable/edit_text"
+  	    	    android:ems="10"
+  	    	    android:hint="@string/timeformat"
+  	    	    android:textColorHint="@color/hint" />
+  	    
+  	    	<!-- dhFecha Tiempo descanso hasta -->
+  	    	<TextView  android:text="@string/a" android:layout_width="wrap_content" android:layout_height="wrap_content"  />
+  	    	<com.enterlib.widgets.TimePickerButton
+  	    	    android:id="@+id/daTime"
+  	    	    style="@android:attr/buttonBarButtonStyle"
+  	    	     android:layout_width="110dp"
+  	    	    android:layout_height="wrap_content"
+  	    	    android:background="@android:drawable/edit_text"
+  	    	    android:ems="10"
+  	    	    android:hint="@string/timeformat"
+  	    	    android:textColorHint="@color/hint" />
+  	    
+  	    </LinearLayout>
+  	    
+  	      <TableLayout 
+	        android:id="@+id/panel"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"  	        
+	        android:stretchColumns="1">
+  	    	
+  	    	 <!-- Horas de Viaje -->  	    	
+  	           <TableRow android:layout_marginBottom="10dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+  	                <TextView android:text="@string/horas_de_viaje_" 
+  	                    android:layout_width="wrap_content" 
+  	                    android:layout_height="wrap_content"
+  	                    android:gravity="right"  />
+		  	    	<EditText
+		  	    	    android:id="@+id/ehoras_viaje"
+		  	    	    android:layout_width="match_parent"
+		  	    	    android:layout_height="wrap_content"  	    	     	    	  
+		  	    	    android:ems="10"  	    	    
+		  	    	    android:inputType="numberDecimal" 
+		  	    	    android:hint="@string/requerido" 
+		  	    	    android:textColorHint="@color/hint"
+		  	    	    android:gravity="left"  />  
+  	           </TableRow>
+  	           
+  	           <!-- Kilometros -->
+  	           <TableRow android:layout_marginBottom="10dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+  	               	<TextView android:text="@string/kilometros" android:layout_width="wrap_content" android:layout_height="wrap_content"  android:gravity="right" />  	    	
+		  	    	<EditText android:id="@+id/ekilometers"
+		  	    	    android:layout_width="match_parent" 
+		  	    	    android:layout_height="wrap_content" 
+		  	    	    android:ems="10" 
+		  	    	    android:inputType="numberDecimal" 
+		  	    	    android:hint="@string/requerido" 
+		  	    	    android:textColorHint="@color/hint"
+		  	    	    android:gravity="left" />
+  	           </TableRow> 
+  	           
+  	           <!-- Tecnicos -->
+  	           <TableRow android:layout_marginBottom="10dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+  	               <TextView
+  	                   android:layout_width="wrap_content"
+  	                   android:layout_height="wrap_content"
+  	                   android:gravity="right"
+  	                   android:text="@string/lbTecnicoTarea" />
+
+  	               <com.enterlib.widgets.FilterableSpinner   
+  	                   android:id="@+id/tecnicoBox" 
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content" 
+				        android:gravity="left"
+				        style="@android:style/Widget.DeviceDefault.Light.Spinner"/>
+  	                   
+  	           </TableRow>	
+  	           
+  	           <!-- Estado -->
+  	           <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+  	                <TextView
+  	                    android:layout_width="wrap_content"
+  	                    android:layout_height="wrap_content"
+  	                    android:gravity="right"
+  	                    android:text="@string/lbEstadoTarea" />
+	
+				    <Spinner
+				        android:id="@+id/estado"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:gravity="left" />
+  	           </TableRow>	        	          
+  	    	</TableLayout>	        	    	      	    	      	   	      	   
+</LinearLayout>
+</ScrollView>

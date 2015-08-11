@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" >
+    <ImageView android:id="@+id/icon_hoja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:src="@drawable/icon_orden_abierta" android:layout_alignParentTop="true" android:contentDescription="@string/image" />
+    <ImageView android:id="@+id/checkbox_hoja" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/icon_hoja" style="@style/OrdenesListTimer" android:clickable="false" android:focusableInTouchMode="false" android:src="@drawable/icon_hoja_planta"
+         android:contentDescription="@string/cerrada" />
+    <TextView android:id="@+id/txttitulo_hoja"  
+        android:gravity="center_vertical" android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_marginRight="10.0dip" 
+        android:layout_toRightOf="@id/icon_hoja" 
+        android:layout_alignParentTop="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignWithParentIfMissing="true"      
+        style="@style/OrdenesListText" />
+     <TextView android:id="@+id/txttotalhoras_hoja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/checkbox_hoja" android:layout_marginTop="10.0dip" android:layout_below="@id/txttitulo_hoja" android:hint="@string/defaulttotalvalue" style="@style/OrdenesListTimer" />
+     <TextView android:id="@+id/txtplanta_hoja" android:ellipsize="marquee" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginLeft="10.0dip" android:singleLine="true" android:layout_toRightOf="@id/txttotalhoras_hoja" android:layout_below="@id/txttitulo_hoja" style="@style/OrdenesListDetails" />
+     
+<!--      <TextView -->
+<!--          android:id="@+id/fechafinmontaje" -->
+<!--          android:layout_width="wrap_content" -->
+<!--          android:layout_height="wrap_content" -->
+<!--          android:layout_alignBottom="@+id/checkbox_hoja" -->
+<!--          android:layout_alignRight="@+id/txttitulo_hoja" -->
+<!--          android:text="01/02/2014" /> -->
+
+<!--      <TextView -->
+<!--          android:id="@+id/fecha" -->
+<!--          android:layout_width="wrap_content" -->
+<!--          android:layout_height="wrap_content" -->
+<!--          android:layout_alignBaseline="@+id/fechafinmontaje" -->
+<!--          android:layout_alignBottom="@+id/fechafinmontaje" -->
+<!--          android:layout_toLeftOf="@+id/flecha" -->
+<!--          android:text="01/02/2014" /> -->
+
+<!--      <TextView -->
+<!--          android:id="@+id/flecha" -->
+<!--          android:layout_width="wrap_content" -->
+<!--          android:layout_height="wrap_content" -->
+<!--          android:layout_alignBaseline="@+id/fechafinmontaje" -->
+<!--          android:layout_alignBottom="@+id/fechafinmontaje" -->
+<!--          android:layout_toLeftOf="@+id/fechafinmontaje" -->
+<!--          android:text=" -> " -->
+<!--          android:textAppearance="?android:attr/textAppearanceSmall" /> -->
+
+</RelativeLayout>

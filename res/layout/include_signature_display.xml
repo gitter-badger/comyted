@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp" >
+
+    <ImageView
+        android:id="@+id/imageCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/gray" />
+
+    <ImageButton
+        android:id="@+id/paint_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageCliente"
+        android:src="@drawable/ic_paint" />
+    
+    <ImageButton
+        android:id="@+id/capture_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/paint_img"
+        android:layout_below="@+id/imageCliente"
+        android:layout_toLeftOf="@+id/paint_img"        
+        android:src="@drawable/capture" />
+
+    <ImageButton
+        android:id="@+id/search_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/capture_img"
+        android:layout_below="@+id/imageCliente"
+        android:layout_toLeftOf="@+id/capture_img"
+        android:src="@drawable/search_image" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/search_img"
+        android:layout_toLeftOf="@+id/search_img"
+        android:layout_alignBottom="@+id/search_img"
+        android:text="Guardar" />
+
+</RelativeLayout>

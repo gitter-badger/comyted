@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <PreferenceCategory android:title="@string/lblconexiones" >
+        <EditTextPreference
+            android:dialogTitle="@string/lblservicios"
+            android:key="CONST_URL_SERVICE"
+            android:summary="@string/lblpaginaservicios"
+            android:title="@string/lblservicios"
+            android:defaultValue="http://192.168.100.1:49547"  />
+
+        <!-- http://lemursolution-cessav2.dnsalias.com  -->
+        <!-- http://lemursolution-cessa.dnsalias.com  -->
+        <!-- http://10.0.2.2:49547  -->
+        <CheckBoxPreference
+            android:key="CONST_LMT_USER"
+            android:summary="@string/lbllimitarusuario"
+            android:title="@string/lblUsrlimit" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="Configuración EMAILS">
+        <PreferenceScreen 
+            android:title="@string/lblemailconfig"
+            android:summary="@string/lblemailconfigdesc"
+            android:enabled="false"  >            
+        </PreferenceScreen>
+               
+        <Preference 
+           android:title="@string/informacion"
+           android:icon="@drawable/infologin">
+            <intent android:action="com.comyted.ABOUT" />            
+       </Preference>             
+        
+    </PreferenceCategory>   
+
+</PreferenceScreen>

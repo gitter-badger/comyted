@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" >
+    <!-- Include Footer -->
+<!--     <include android:id="@+id/footerbar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" layout="@layout/footer_layout" /> -->
+
+ <Switch
+     android:id="@+id/switchEstado"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignParentLeft="true"
+     android:layout_alignParentTop="true"
+     android:textOff="@string/opens"
+     android:textOn="@string/closed" />
+
+ <ListView
+     android:id="@+id/listView_ordenes"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_below="@+id/switchEstado"
+     android:fastScrollEnabled="true" >
+ </ListView>
+
+ <EditText
+     android:id="@+id/nameFilterEdit"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_above="@+id/listView_ordenes"
+     android:layout_alignParentRight="true"
+     android:layout_toRightOf="@+id/switchEstado"
+     android:ems="10"
+     android:imeOptions="actionSearch"
+     android:inputType="textPersonName"
+     android:singleLine="true"
+     android:textSize="12sp"   
+     android:textStyle="italic"
+      >
+
+     <requestFocus />
+ </EditText>
+
+</RelativeLayout>

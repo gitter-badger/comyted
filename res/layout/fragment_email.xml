@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+         android:orientation="horizontal" android:clipChildren="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="30.0dip" android:fillViewport="true">
+         
+<LinearLayout
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:orientation="vertical"
+     android:layout_margin="5dip" >
+    
+    <!-- Subject -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="start">
+	    <TextView      
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Asunto"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />	
+	    <EditText
+	        android:id="@+id/subject"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"	     
+	        android:background="@drawable/custom_edit_text"
+	        android:maxLines="3" 
+	        android:inputType="none"
+	        android:enabled="false"
+	        android:focusable="false"
+	        android:focusableInTouchMode="false"	        
+	        android:editable="false" />
+	    </LinearLayout>
+	    
+	<!-- Fecha -->    
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="start" 
+      			  android:layout_marginTop="10dip" >	   
+	    <TextView        
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Fecha de la Hoja"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	    <EditText
+	        android:id="@+id/fecha"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"	       
+	        android:background="@drawable/custom_edit_text"
+	        android:inputType="none" 
+	        android:enabled="false"
+	        android:focusable="false"
+	        android:focusableInTouchMode="false"	        
+	        android:editable="false"  />
+	</LinearLayout>
+   
+    <!-- Email del Cliente -->
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="start" 
+          			android:layout_marginTop="10dip">	   
+	    <TextView        
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Email del Cliente"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	    <EditText
+	        android:id="@+id/email_cliente"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:inputType="textEmailAddress"	       
+	        android:hint="peticionario@domain.com"
+	        android:background="@drawable/custom_edit_text"  />
+	</LinearLayout>
+    
+     <!-- Email del Tecnico -->
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="start"
+         		   android:layout_marginTop="10dip">	   
+	    <TextView        
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"	      
+	        android:text="Email del Técnico"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	    <EditText
+	        android:id="@+id/email_tecnico"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:inputType="textEmailAddress"	       
+	        android:hint="tecnico@domain.com"
+	        android:background="@drawable/custom_edit_text"  />
+	</LinearLayout>
+
+</LinearLayout>
+</ScrollView>

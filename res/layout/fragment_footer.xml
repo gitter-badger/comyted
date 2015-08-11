@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"    
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" style="@style/FooterBar" >
+    
+	<LinearLayout android:id="@+id/layout1"  android:layout_width="fill_parent"
+    				android:layout_height="wrap_content" >
+	    <ImageView
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent"
+	        android:clickable="false"
+	        android:contentDescription="@string/lblUsuarioConectado"
+	        android:paddingLeft="5dip"
+	        android:paddingRight="5dip"
+	        android:scaleType="center"
+	        android:src="@drawable/usuario" />
+	
+	    <TextView
+	        android:id="@+id/lblUsuarioConectado"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="left"
+	        android:paddingTop="10dip"
+	        android:text="@string/lblUsuarioConectado"
+	        android:textColor="#606060" />
+	</LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imsettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/layout1"
+        android:layout_alignParentRight="true"
+        android:adjustViewBounds="false"
+        android:background="@color/gray"
+        android:contentDescription="@string/action_configuracion"
+        android:src="@drawable/ic_settings" />
+
+</RelativeLayout>

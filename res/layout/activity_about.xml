@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="horizontal" android:clipChildren="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="0.0dip" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="0.0dip" android:weightSum="1.0" >
+        <TableLayout android:id="@+id/headerLayouttest" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="0.0dip">
+            <TableRow android:layout_gravity="fill_horizontal" android:layout_marginTop="20.0dip" android:layout_marginBottom="10.0dip">
+                <ImageView android:layout_gravity="fill_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="0.0dip" android:src="@drawable/main_logo" android:scaleType="fitCenter" android:layout_weight="1.0" android:contentDescription="@string/image" />
+            </TableRow>
+        </TableLayout>
+        <RelativeLayout android:id="@+id/relativeLayout3" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="0.0dip">
+            <LinearLayout android:orientation="vertical" android:id="@+id/footer1" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentBottom="true">
+                <TextView android:textSize="20.0dip" android:textColor="#ff333333" android:layout_gravity="center" android:id="@+id/about_info_header" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_marginTop="20.0dip" android:layout_marginBottom="20.0dip" android:text="@string/about" />
+                <TextView android:textColor="#ff333333" android:id="@+id/about_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_marginTop="20.0dip" android:layout_marginBottom="20.0dip" android:text="@string/about_info" />
+                <TextView android:textColor="#ff333333" android:id="@+id/about_info1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_marginTop="20.0dip" android:layout_marginBottom="20.0dip" android:text="@string/about_info1" />
+                <TextView android:textColor="#ff333333" android:id="@+id/about_info2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_marginTop="20.0dip" android:layout_marginBottom="20.0dip" android:text="@string/about_info2" />
+                <TextView android:textColor="#ff545454" android:gravity="bottom" android:id="@+id/copyrightInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/copyright" android:layout_weight="1.0" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

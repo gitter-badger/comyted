@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"        
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal" 
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin" >
+        
+       <TextView android:id="@+id/fecha"    
+           android:layout_width="wrap_content" 
+           android:layout_height="wrap_content"
+           android:layout_alignParentLeft="true" android:text="VIE 24 MAY"  />
+       
+       <TextView android:id="@+id/time"    
+           android:layout_width="wrap_content" 
+           android:layout_height="wrap_content"
+           android:layout_alignParentRight="true" android:text="09:45"  />
+        
+    </RelativeLayout>
+    
+    
+    <RelativeLayout android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"        
+        android:layout_below="@+id/header">     
+        
+         <View
+             android:id="@+id/left"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignBottom="@+id/dhFecha"
+             android:layout_alignParentLeft="true"
+             android:layout_alignParentTop="true"
+             android:layout_alignRight="@+id/tdFecha"             
+             android:layout_toRightOf="@+id/tdFecha"
+             android:background="@color/gray" />
+        
+       	 	<TextView android:id="@+id/tdFecha"  
+       	 	    android:background="@color/gray"
+       	 	    android:paddingLeft="@dimen/activity_horizontal_margin"
+       	 	    android:paddingRight="@dimen/activity_horizontal_margin"       	 	    
+       	 	    android:layout_alignParentLeft="true"   
+           		android:layout_width="wrap_content" 
+           		android:layout_height="wrap_content"
+           		android:text="09:45" 
+           		android:layout_below="@+id/tipo" />
+       	 	
+       	 	<TextView android:id="@+id/thFecha"
+       	 	    android:background="@color/gray"           	 	   
+       	 	    android:paddingLeft="@dimen/activity_horizontal_margin"
+       	 	    android:paddingRight="@dimen/activity_horizontal_margin"  
+           		android:layout_width="wrap_content" 
+           		android:layout_height="wrap_content"
+           		android:layout_alignParentLeft="true" android:text="09:45"
+           		android:layout_below="@+id/tdFecha"  />      	
+            
+       	 	<TextView android:id="@+id/ddFecha"  
+       	 	    android:background="@color/gray"
+       	 	    android:paddingLeft="@dimen/activity_horizontal_margin"
+       	 	    android:paddingRight="@dimen/activity_horizontal_margin"  
+       	 	    android:layout_alignParentLeft="true"  
+           		android:layout_width="wrap_content" 
+           		android:layout_height="wrap_content"
+           		android:text="09:45"
+           		android:layout_below="@+id/title"  />
+       	 	
+       	 	<TextView android:id="@+id/dhFecha" 
+       	 	    android:background="@color/gray"   
+       	 	    android:paddingLeft="@dimen/activity_horizontal_margin"
+       	 	    android:paddingRight="@dimen/activity_horizontal_margin"  
+           		android:layout_width="wrap_content" 
+           		android:layout_height="wrap_content"
+           	    android:text="09:45"
+           	    android:layout_alignParentLeft="true"
+           		android:layout_below="@+id/ddFecha"  />    	
+    	       
+            <TextView
+                android:id="@+id/tipo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/editar"
+                android:layout_toRightOf="@+id/left"
+                android:background="@color/taskTitle"
+                android:text="Reparacion" />
+            
+            <TextView android:id="@+id/title"    
+           		android:layout_width="wrap_content" 
+           		android:layout_height="wrap_content"           		
+           		android:text="Reparacion adsads asd asd as da sd asd"
+           		android:layout_below="@id/tdFecha"
+           		android:layout_toRightOf="@+id/left" 
+           		android:layout_alignBaseline="@+id/thFecha"/>   
+        
+             <TextView
+                 android:id="@+id/horas_viaje"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/title"
+                 android:layout_toRightOf="@+id/left"
+                 android:text="Horas de Viaje: 08:60 " />
+
+             <Button
+                 android:id="@+id/editar"
+                 style="?android:attr/buttonStyleSmall"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignBottom="@+id/tdFecha"
+                 android:layout_alignParentRight="true"
+                 android:layout_alignParentTop="true"
+                 android:background="@drawable/ic_menu_edit" />
+
+             <TextView
+                 android:id="@+id/kilometros"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignBaseline="@+id/dhFecha"
+                 android:layout_alignBottom="@+id/dhFecha"
+                 android:layout_alignLeft="@+id/horas_viaje"
+                 android:text="Kilómetros: 5" />
+   
+    </RelativeLayout>
+
+</RelativeLayout>
