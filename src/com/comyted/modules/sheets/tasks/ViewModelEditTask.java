@@ -10,6 +10,7 @@ import com.comyted.models.HorasLibres;
 import com.comyted.models.IdNameValue;
 import com.comyted.models.SheetDetails;
 import com.comyted.models.TaskEdit;
+import com.comyted.modules.admin.IUserManager;
 import com.comyted.modules.admin.UsersManager;
 import com.comyted.persistence.LocalDatabase;
 import com.comyted.repository.ISheetTaskRepository;
@@ -30,7 +31,7 @@ public class ViewModelEditTask extends EditViewModel<IEditView> {
 	private IdNameValue[] estados;	
 	private TaskEdit task;
 	private SheetDetails sheet;
-	private UsersManager userManager;
+	private IUserManager userManager;
 	private ISheetTaskRepository taskRepository;
 	private IStateRepository stateRepository;			
 	private AppUser user;
@@ -39,7 +40,7 @@ public class ViewModelEditTask extends EditViewModel<IEditView> {
 	public ViewModelEditTask(TaskEdit task,
 			SheetDetails sheet,
 			AppUser user,
-			UsersManager userManager,  
+			IUserManager userManager,  
 			ISheetTaskRepository taskRepository, 
 			IStateRepository stateRepository,
 			IEditView view) {

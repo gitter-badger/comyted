@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item android:id="@+id/refresh" 
+        android:title="@string/refresh" 
+        android:icon="@drawable/ic_refresh_inverse" 
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom" />
+    
+    <item android:id="@+id/sort_az" 
+        android:title="@string/a_z" 
+        android:icon="@drawable/ic_menu_download"
+         android:orderInCategory="100" 
+        android:showAsAction="ifRoom|collapseActionView" />
+    
+<!--     <item android:id="@+id/sort_za"  -->
+<!--         android:title="@string/z_a"  -->
+<!--         android:icon="@drawable/ic_menu_upload" -->
+<!--          android:orderInCategory="100" -->
+<!--         android:showAsAction="ifRoom|withText" /> -->
+    
+    <item android:id="@+id/filter" 
+        android:title="@string/list_client_buscar" 
+        android:icon="@drawable/ic_search_inverse"
+         android:orderInCategory="100"
+        android:showAsAction="ifRoom|collapseActionView"
+         />   
+</menu>
+

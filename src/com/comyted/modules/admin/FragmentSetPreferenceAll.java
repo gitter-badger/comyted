@@ -30,7 +30,7 @@ public class FragmentSetPreferenceAll extends PreferenceFragment {
 				
 				@Override
 				public boolean onPreferenceClick(Preference preference) {					
-					UsersManager userManager = new UsersManager(null);
+					IUserManager userManager = new UsersManager(null);
 					userManager.logOut(new IAsyncCallback() {						
 						@Override
 						public void operationCompleted(Exception e) {

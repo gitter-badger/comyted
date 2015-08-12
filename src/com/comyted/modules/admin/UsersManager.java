@@ -14,7 +14,7 @@ import com.comyted.persistence.LocalDatabase;
 import com.enterlib.exceptions.InvalidOperationException;
 import com.enterlib.threading.IAsyncCallback;
 
-public class UsersManager {
+public class UsersManager implements IUserManager {
 	
 	GetUsersClient client;	
 	LocalDatabase localDb;
@@ -30,17 +30,29 @@ public class UsersManager {
 	}
 	
 	
+	/* (non-Javadoc)
+	 * @see com.comyted.modules.admin.IUserManager#ObtenerUsuarios()
+	 */
+	@Override
 	public AppUser[] ObtenerUsuarios() throws InvalidOperationException {
 		return client.ObtenerUsuarios();
 	}
 
 	
+	/* (non-Javadoc)
+	 * @see com.comyted.modules.admin.IUserManager#ObtenerTecnicos()
+	 */
+	@Override
 	public AppUser[] ObtenerTecnicos() throws InvalidOperationException {
 		return client.ObtenerTecnicos();
 	}
 
 	
 	
+	/* (non-Javadoc)
+	 * @see com.comyted.modules.admin.IUserManager#logIn(java.lang.String, java.lang.String)
+	 */
+	@Override
 	public AppUser logIn(String username, String password)
 			throws InvalidParameterException , InvalidOperationException{	
 		
@@ -53,6 +65,10 @@ public class UsersManager {
 	/* (non-Javadoc)
 	 * @see com.cat_movilidad.business.ICatUserManager#logOut()
 	 */
+	/* (non-Javadoc)
+	 * @see com.comyted.modules.admin.IUserManager#logOut()
+	 */
+	@Override
 	public void logOut() throws InvalidOperationException{
 		if(!client.logOut()){
 			Log.d(getClass().getName(), "Error Logout");
@@ -60,6 +76,10 @@ public class UsersManager {
 	}
 	
 	
+	/* (non-Javadoc)
+	 * @see com.comyted.modules.admin.IUserManager#logOut(com.enterlib.threading.IAsyncCallback)
+	 */
+	@Override
 	public void logOut(IAsyncCallback callback) {		
 		try {
 			logOut();			
@@ -75,6 +95,10 @@ public class UsersManager {
 	 * @see com.cat_movilidad.business.ICatUserManager#checkHorasUsuario(int, java.util.Date)
 	 */
 	
+	/* (non-Javadoc)
+	 * @see com.comyted.modules.admin.IUserManager#checkHorasUsuario(int, java.util.Date)
+	 */
+	@Override
 	public HorasLibres checkHorasUsuario(int cod_usuario, Date fechaHoja)
 			throws InvalidOperationException{
 		HorasLibres result = client.checkHorasUsuario(cod_usuario, 
@@ -83,6 +107,10 @@ public class UsersManager {
 	}
 		
 
+	/* (non-Javadoc)
+	 * @see com.comyted.modules.admin.IUserManager#getLastLoggedUser()
+	 */
+	@Override
 	public UserLogin getLastLoggedUser(){
 		return localDb.getLogin();
 	}

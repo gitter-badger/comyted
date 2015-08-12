@@ -1,0 +1,45 @@
+[
+
+    {
+	    "id":1,
+        "nombreempresa":"Ingerieros AG",
+        "codigo":"4007890",
+        "cif":"B1908836",
+        "direccion":"Avda San Francisco Javier ,No 9",
+        "ciudad":"SEVILLA",
+        "provincia":"SEVILLA",
+        "codpos":"41018",
+        "pais":"ESPAÑA",
+        "telefono":"9542345678",
+        "fax":"9542345679",
+        "email":"info@ingenierosag.com"
+    },
+	{
+	    "id":2,
+	    "nombreempresa":"Generadores Montago",
+	    "codigo":"4007190",
+	    "cif":"B2908836",
+	    "direccion":"Avda de Los Montes 64",
+	    "ciudad":"BARCELONA",
+	    "provincia":"BARCELONA",
+	    "codpos":"08912",
+	    "pais":"ESPAÑA",
+	    "telefono":"931234567",
+	    "fax":"931234568",
+	    "email":"info@montago.es"
+	},
+	{
+	    "id":3,
+	    "nombreempresa":"Almazan Corporation",
+	    "codigo":"4009190",
+	    "cif":"B3908836",
+	    "direccion":"c. Alberto Gomez 450",
+	    "ciudad":"BARBERA DEL VALLES",
+	    "provincia":"BARCELONA",
+	    "codpos":"08090",
+	    "pais":"ESPAÑA",
+	    "telefono":"933451234",
+	    "fax":"933451263",
+	    "email":"info@almazan.com"
+	}
+]

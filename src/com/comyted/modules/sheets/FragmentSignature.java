@@ -229,7 +229,7 @@ public class FragmentSignature extends Fragment
 				}
 			});
 			//set guardar onclick
-			((Button)view.findViewById(R.id.button1)).setOnClickListener(new View.OnClickListener() {
+			((Button)view.findViewById(R.id.orderAscending)).setOnClickListener(new View.OnClickListener() {
 				
 				@Override
 				public void onClick(View arg0) {
@@ -376,8 +376,8 @@ public class FragmentSignature extends Fragment
 				//Decode the image from the TakePictureActity			
 				Bitmap bmp = BitmapFactory.decodeFile(outputFileUri.getPath());
 				bmp = Bitmap.createScaledBitmap(bmp, SignatureManager.SIGNATURE_WIDTH, SignatureManager.SIGNATURE_HEIGHT, true);
-				if(!MainApp.TEST)
-					outputFileUri.delete();
+			
+				outputFileUri.delete();
 				return bmp;
 			}
 			else

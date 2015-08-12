@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.comyted.MainApp;
 import com.comyted.R;
 import com.comyted.models.AppUser;
+import com.comyted.modules.clients.ActivityListClients;
 import com.comyted.modules.orders.ActivityListOrders;
 import com.comyted.modules.sheets.ActivityListSheets;
 
@@ -67,19 +68,28 @@ public class DashboardActivity extends FragmentActivity implements View.OnClickL
 	public void onClick(View view) 
     {
     	Intent i = null;
-    	if (view.getId() == R.id.btn_ordenes) 
-    	{
-    		// Launching Ordenes Screen
+    	
+    	switch (view.getId()) {
+		case R.id.btn_ordenes:			
     		i = new Intent(getApplicationContext(), ActivityListOrders.class);
-    	}
-    	else if (view.getId() == R.id.btn_hojas) 
-    	{
-            i = new Intent(getApplicationContext(), ActivityListSheets.class);
-		} 
-    	if (i != null)
-    	{    		
+			break;
+		case R.id.btn_hojas:
+			i = new Intent(getApplicationContext(), ActivityListSheets.class);
+			break;
+		case R.id.btn_clientes:
+			i = new Intent(getApplicationContext(), ActivityListClients.class);
+			break;			
+		default:
+			break;
+		}
+    	    	
+    	if (i != null){    		
     		startActivity(i);
     	}
+    	else{
+    		Toast tast= Toast.makeText(this, "Modulo no implementado. Se encuentra en construcción", Toast.LENGTH_LONG);
+        	tast.show();
+    	}    		
     }
     
     public void showOfertas(View view){

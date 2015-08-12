@@ -9,16 +9,16 @@
      >    
     
     <!-- Clientes Button -->
-    <Button android:id="@+id/btn_clientes" style="@style/DashboardButton" android:drawableTop="@drawable/btn_clientes" android:text="@string/btn_clientes" />
+    <Button android:id="@+id/btn_clientes" style="@style/DashboardButton" android:drawableTop="@drawable/btn_clientes" android:text="@string/btn_clientes" android:onClick="onClick" />
     
     <!-- Contactos Button -->
-    <Button android:id="@+id/btn_contactos" style="@style/DashboardButton" android:drawableTop="@drawable/btn_contactos" android:text="@string/btn_contactos" />
+    <Button android:id="@+id/btn_contactos" style="@style/DashboardButton" android:drawableTop="@drawable/btn_contactos" android:text="@string/btn_contactos" android:onClick="onClick" />
     
     <!-- Ofertas Button -->
-    <Button android:id="@+id/btn_ofertas" style="@style/DashboardButton" android:drawableTop="@drawable/btn_ofertas" android:text="@string/btn_ofertas" android:onClick="showOfertas"  />
+    <Button android:id="@+id/btn_ofertas" style="@style/DashboardButton" android:drawableTop="@drawable/btn_ofertas" android:text="@string/btn_ofertas" android:onClick="onClick"  />
     
     <!-- Ofertas Button -->
-    <Button android:id="@+id/btn_visitas" style="@style/DashboardButton" android:drawableTop="@drawable/btn_visitas" android:text="@string/btn_visitas"/>
+    <Button android:id="@+id/btn_visitas" style="@style/DashboardButton" android:drawableTop="@drawable/btn_visitas" android:text="@string/btn_visitas" android:onClick="onClick"/>
     
     <!-- Ordenes Button -->
     <Button android:id="@+id/btn_ordenes" style="@style/DashboardButton" android:drawableTop="@drawable/btn_ordenes" android:text="@string/btn_ordenes" />
@@ -27,9 +27,9 @@
     <Button android:id="@+id/btn_hojas" style="@style/DashboardButton" android:drawableTop="@drawable/btn_hojas" android:text="@string/btn_hojas" />
     
     <!-- Agenda Button -->
-    <Button android:id="@+id/btn_agenda" style="@style/DashboardButton" android:drawableTop="@drawable/btn_agenda" android:text="@string/btn_agenda" />
+    <Button android:id="@+id/btn_agenda" style="@style/DashboardButton" android:drawableTop="@drawable/btn_agenda" android:text="@string/btn_agenda" android:onClick="onClick" />
     
      <!-- Campañas Button -->
-    <Button android:id="@+id/btn_campaing" style="@style/DashboardButton" android:drawableTop="@drawable/btn_campain" android:text="@string/btn_campaing" />
+    <Button android:id="@+id/btn_campaing" style="@style/DashboardButton" android:drawableTop="@drawable/btn_campain" android:text="@string/btn_campaing" android:onClick="onClick" />
              
 </com.enterlib.widgets.DashboardLayout>

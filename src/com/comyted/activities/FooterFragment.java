@@ -14,6 +14,7 @@ import com.comyted.R;
 import com.comyted.Utils;
 import com.comyted.models.AppUser;
 import com.comyted.modules.admin.ActivitySetting;
+import com.comyted.modules.admin.IUserManager;
 import com.comyted.modules.admin.UsersManager;
 import com.enterlib.exceptions.InvalidOperationException;
 import com.enterlib.generics.IObserver;
@@ -25,7 +26,7 @@ public class FooterFragment extends Fragment
 {
 		View view;
 		AppUser user;
-		UsersManager usersManager;
+		IUserManager usersManager;
 		
 		@Override
 		public void onCreate(Bundle savedInstanceState) {			

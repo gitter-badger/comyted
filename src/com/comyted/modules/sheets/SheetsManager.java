@@ -9,6 +9,7 @@ import com.comyted.models.SheetDetails;
 import com.comyted.models.SheetEdit;
 import com.comyted.models.SheetSumary;
 import com.comyted.models.Task;
+import com.comyted.modules.admin.IUserManager;
 import com.comyted.modules.admin.UsersManager;
 import com.comyted.persistence.LocalDatabase;
 import com.comyted.repository.ISheetTaskRepository;
@@ -27,11 +28,11 @@ public class SheetsManager
 
 	ISheetsRepository sheetsRepository;
 	ISheetTaskRepository taskRepository;
-	UsersManager usersManager;	
+	IUserManager usersManager;	
 	
 	public SheetsManager(ISheetsRepository sheetsRepository, 
 						ISheetTaskRepository taskRepository,
-						UsersManager userManager) {	
+						IUserManager userManager) {	
 		this.sheetsRepository = sheetsRepository;
 		this.taskRepository = taskRepository;
 		this.usersManager = userManager;

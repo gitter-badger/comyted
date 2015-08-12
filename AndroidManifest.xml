@@ -85,13 +85,11 @@
         <!-- android:screenOrientation="portrait" -->
         <activity
             android:name="com.comyted.modules.sheets.ActivityEditSheet"
-            android:label="@string/title_activity_edit_sheet"
-            android:parentActivityName="com.comyted.sheets.ActivitySheet" >
+            android:label="@string/title_activity_edit_sheet">
         </activity>
         <activity
             android:name="com.comyted.modules.sheets.tasks.ActivityEditTask"
-            android:label="@string/editar_tarea"
-            android:parentActivityName="com.comyted.sheets.ActivitySheet"
+            android:label="@string/editar_tarea"         
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -99,13 +97,14 @@
         </activity>
         <activity
             android:name="com.comyted.activities.PaintActivity"
-            android:label="@string/title_activity_paint"
-            android:parentActivityName="com.comyted.sheets.ActivitySheet"
+            android:label="@string/title_activity_paint"           
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.comyted.sheets.ActivitySheet" />
         </activity>
+        
+        <!-- Actividades de los clientes -->
         <activity
             android:name="com.comyted.modules.clients.ActivityListClients"
             android:label="@string/title_activity_activity_list_clients"
@@ -114,5 +113,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.comyted.activities.DashboardActivity" />
         </activity>
+        <activity
+            android:name="com.comyted.modules.clients.ActivityClient"
+            android:label="@string/title_activity_activity_client"
+            android:parentActivityName="com.comyted.modules.clients.ActivityListClients" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.comyted.modules.clients.ActivityListClients" />
+        </activity>
+         <activity
+            android:name="com.comyted.modules.clients.ActivityEditClient"
+            android:label="EditarCliente">          
+        </activity>
     </application>
+
 </manifest>

@@ -11,6 +11,7 @@ import android.util.Log;
 
 import com.comyted.conectivity.GetUsersClient;
 import com.comyted.models.AppUser;
+import com.comyted.modules.admin.IUserManager;
 import com.comyted.modules.admin.UsersManager;
 import com.enterlib.conetivity.RestClient;
 import com.enterlib.exceptions.InvalidOperationException;
@@ -23,7 +24,7 @@ import com.enterlib.generics.ObservableValue;
  */
 public class MainApp extends Application 
 {
-	public final static boolean TEST = false;
+	public final static boolean TEST = true;
 	public static boolean PROXY = false;
 	public static long SLEEP_TIME = 5000;
 	
@@ -103,7 +104,7 @@ public class MainApp extends Application
 			//automatic logout when the application finish
 			currentUser.clearObservers();
 			Log.d("MainApp", "Application terminate");
-			UsersManager userManager = new UsersManager(null, new GetUsersClient());
+			IUserManager userManager = new UsersManager(null, new GetUsersClient());
 			userManager.logOut();
 		}
 		catch (InvalidOperationException e) 

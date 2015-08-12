@@ -11,8 +11,11 @@ public final class Constants {
 	public static final String TASK_ID = "sheet";
 	public static final String TITLE = "title";
 	public static final String USER_ID = "userId";
+	public static final String CLIENT = "client";
+	public static final String CLIENT_ID = "clientId";
 	
 	public static final DateConverter ServerDateConverter = new DateConverter("yyyy-MM-dd HH:mm:ss");
+	
 	
 	public static final int EDIT_TASK = 1;
 	public static final int EDIT_SHEET = 3;
@@ -20,5 +23,9 @@ public final class Constants {
 	public static final int SHEET_OK = 5;
 	public static final int ADD_TASK = 6;
 	public static final int ADD_SHEET = 7;
+	public static final int CLIENT_MODIFIED = 8;
+	public static final int EDIT_CLIENT = 9;
+	
+	
 	
 }

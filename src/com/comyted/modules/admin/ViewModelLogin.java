@@ -13,7 +13,7 @@ import com.enterlib.serialization.JSonSerializer;
 
 public class ViewModelLogin extends DataViewModel<IDataView> {
 
-	UsersManager userManager;	
+	IUserManager userManager;	
 	AppUser user;
 	String username;	
 	String password;
@@ -23,7 +23,7 @@ public class ViewModelLogin extends DataViewModel<IDataView> {
 	}
 	
 	
-	public ViewModelLogin(UsersManager userManager, IDataView view) {
+	public ViewModelLogin(IUserManager userManager, IDataView view) {
 		super(view);
 		this.userManager = userManager;	
 	}

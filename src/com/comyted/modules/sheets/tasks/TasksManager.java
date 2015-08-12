@@ -14,6 +14,7 @@ import com.comyted.models.SheetDetails;
 import com.comyted.models.Task;
 import com.comyted.models.TaskDetails;
 import com.comyted.models.TaskEdit;
+import com.comyted.modules.admin.IUserManager;
 import com.comyted.modules.admin.UsersManager;
 import com.comyted.persistence.LocalDatabase;
 import com.comyted.repository.ISheetTaskRepository;
@@ -31,12 +32,12 @@ import com.enterlib.validations.ErrorInfo;
 public class TasksManager {
 		
 	ISheetTaskRepository taskRespository;		
-	UsersManager userManager;
+	IUserManager userManager;
 	ISheetsRepository sheetsRepository;
 	
 	public TasksManager(
 			ISheetTaskRepository taskRespository,
-			UsersManager userManager,
+			IUserManager userManager,
 			ISheetsRepository sheetsRepository) {
 		
 		this.taskRespository = taskRespository;				

@@ -345,5 +345,13 @@
     <string name="lbEstadoTarea">Estado :</string>
     <string name="lbTecnicoTarea">Técnico :</string>
     <string name="title_activity_activity_list_clients">Listado de Clientes</string>
+    <string name="no_hay_clientes_registrados">No hay clientes registrados</string>
+    <string name="title_activity_activity_client">ActivityClient</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="a_z">A - Z</string>
+    <string name="z_a">Z - A</string>
+    <string name="list_client_buscar">Buscar...</string>
 
 </resources>
