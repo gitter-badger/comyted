@@ -24,7 +24,10 @@ public class LocalJSONClientRepository extends JSONFileStore
 	
 	public LocalJSONClientRepository(Context context) {
 		super(context);
-				
+					
+	}
+
+	private void loadData() {
 		clients = load(Client[].class, STORE);
 		clientsSummary = new ClientSummary[clients.length];
 		for (int i = 0; i < clients.length; i++) {
@@ -44,12 +47,15 @@ public class LocalJSONClientRepository extends JSONFileStore
 	
 	@Override
 	public ClientSummary[] getClients() throws InvalidOperationException {
+		loadData();
 		return clientsSummary;
 	}
 
 	@Override
 	public Client getClient(int clientId) throws InvalidOperationException {
-		Assert.assertTrue(clientId > 0);
+		Assert.assertTrue(clientId > 0);		
+		
+		loadData();
 		
 		if(clientId > clients.length)
 			return null;
@@ -60,6 +66,10 @@ public class LocalJSONClientRepository extends JSONFileStore
 	@Override
 	public boolean updateClient(Client c) throws InvalidOperationException {
 		Assert.assertTrue(c.id > 0);
+		
+		if(clients == null){
+			loadData();
+		}
 		
 		if(c.id > clients.length)
 			return false;

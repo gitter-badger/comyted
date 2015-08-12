@@ -51,8 +51,8 @@ public class JSONFileStore {
 		OutputStream os = getOutputFromExternalDir(jsonFile);
 	     OutputStreamWriter writer = new OutputStreamWriter(os);
 	     try {
-			writer.write(content);		
-			os.close();
+			writer.write(content);			
+			writer.close();			
 		} catch (IOException e) {
 			Assert.fail(e.getMessage());
 		}	     
@@ -117,11 +117,22 @@ public class JSONFileStore {
 		
 	}
 	
-	private OutputStream getOutputFromExternalDir(String filename){
+	private OutputStream getOutputFromExternalDir(String filename){		
 		File dir = context.getExternalFilesDir(null);
+		File file = new File(dir.getAbsolutePath()+ "/" + filename);
+//		if(!file.exists()){
+//			try {
+//				file.createNewFile();
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+		
 		FileOutputStream fis = null;		
 		   try {
-				fis = new FileOutputStream(dir.getAbsolutePath()+ "/" + filename);
+				fis = new FileOutputStream(file,false);
+			
 				return fis;
 			} catch (FileNotFoundException e) {
 				Log.d("JSONFileStore", "Unable to load file for AppDir in SD card");	

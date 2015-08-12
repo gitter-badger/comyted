@@ -51,7 +51,7 @@ public class FragmentEditTask extends Fragment {
 		private boolean FromSavedInstance;	
 		private Form form;
 		
-		class EditView extends DefaultEditView<Activity> implements OnClickListener{
+		public class EditView extends DefaultEditView<Activity> implements OnClickListener{
 
 			public EditView(Activity activity) {
 				super(activity);			
@@ -250,7 +250,7 @@ public class FragmentEditTask extends Fragment {
 		
 		public void Save(){
 			if(!form.validate()){	
-				Utils.showMessage(getActivity(), "Hay errores de validación.\nComplete correctamente los campos y salve nuevamente.");
+				Utils.showMessage(getActivity(), getString(R.string.noti_errores_validacion));
 				form.showErrorDialog(getActivity(), null);
 				return;
 			}

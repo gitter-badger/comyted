@@ -31,10 +31,10 @@
     <string name="imageview">image</string>
     <string name="signin">Acceder&#8230;</string>
     <string name="copyright">©Copyright 2015 LemurSolution</string>
-    <string name="access_information">Nota: Por el uso de esta aplicación en tu Android Phone, autorizas el acceso al mismo a Caterpillar Energy Solutions. Para aclaraciones, envie un email a admin@mwm.net</string>
+    <string name="access_information"></string>
     <string name="signinginpleasewait">Conectando. Por favor espere &#8230;</string>
     <string name="about">About Version</string>
-    <string name="about_info">Aplicación Android para personal técnico de Caterpillar Energy Solutions. Todos los datos de Ordenes de trabajo están bajo restricciones intrinsecas de la empresa por lo que su uso fraudulento puede llevar a acciones penales.</string>
+    <string name="about_info">Aplicación Android para gestión comercial y servicios de mantenimientos. Todos los datos de Ordenes de trabajo están bajo restricciones intrinsecas de la empresa por lo que su uso fraudulento puede llevar a acciones penales.</string>
     <string name="about_info1">En caso de trabajar sin conexión las ordenes y hojas de trabajo se sincronizaran automáticamente una vez restablecida la conexion.</string>
     <string name="about_info2"></string>
     <string name="image"></string>
@@ -353,5 +353,18 @@
     <string name="a_z">A - Z</string>
     <string name="z_a">Z - A</string>
     <string name="list_client_buscar">Buscar...</string>
+    <string name="c_i_f_">C.I.F:</string>
+    <string name="direccion_">Dirección:</string>
+    <string name="ciudad_">Ciudad:</string>
+    <string name="provincia_">Provincia:</string>
+    <string name="codigo_postal_">Código Postal:</string>
+    <string name="pais_">País:</string>
+    <string name="telefono_">Teléfono:</string>
+    <string name="fax_">FAX:</string>
+    <string name="cliente_salvado">Cliente salvado</string>
+    <string name="noti_errores_validacion">Hay errores de validación.\nComplete correctamente los campos y salve nuevamente.</string>
+    <string name="codigo_">Código:</string>
+    <string name="nombre_de_empresa_">Nombre de empresa:</string>
+    <string name="email_">Email:</string>
 
 </resources>

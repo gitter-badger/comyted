@@ -3,7 +3,6 @@ package com.comyted.modules.clients;
 import com.comyted.R;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.view.Menu;
 import android.view.MenuItem;
 
 public class ActivityListClients extends FragmentActivity {

@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.cat_movilidad.AddTaskActivity" >
+
+     <item android:id="@+id/refresh" 
+        android:title="@string/refresh" 
+        android:icon="@drawable/ic_refresh_inverse" 
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom" />
+     
+     <item
+        android:id="@+id/save"
+        android:title="@string/guardar"
+        android:icon="@drawable/ic_save"       
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom" />    
+	
+</menu>
