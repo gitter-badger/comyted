@@ -1,5 +1,7 @@
 package com.comyted.modules.clients;
 
+import java.util.List;
+
 import com.comyted.Constants;
 import com.comyted.MainApp;
 import com.comyted.R;
@@ -7,11 +9,16 @@ import com.comyted.Utils;
 import com.comyted.models.Client;
 import com.enterlib.app.DefaultDataView;
 import com.enterlib.app.PresentUtils;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Intent;
+import android.location.Address;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -152,7 +159,38 @@ public class FragmentClient extends Fragment {
 			setText(R.id.client_fax, c.fax);
 			setText(R.id.client_email, c.email);
 			
-			//ic_menu_sort_alphabetically
+			//show map
+			
+			GoogleMap map = ((SupportMapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
+			if(map != null){
+				List<Address>adress = vm.getAdresses();			
+
+				if(adress.size() > 0){
+					Address addr = adress.get(0);
+					MarkerOptions marker = new MarkerOptions()
+					.position(new LatLng(addr.getLatitude(), addr.getLongitude()))
+					.title(c.direccion);			
+
+					map.addMarker(marker);
+				}
+				else{
+					map.clear();
+				}				
+			}
+			
+			showNotifications();						
+		}
+
+		private void showNotifications() {
+			List<String>notifications = vm.getNotifications();
+			if(notifications.size() > 0){
+				StringBuilder sb = new StringBuilder();
+				for (int i = 0; i < notifications.size(); i++) {
+					sb.append(notifications.get(i));
+					sb.append('\n');
+				}
+				Utils.showAlertDialog(getActivity(), getString(R.string.aviso), sb.toString(),null);
+			}
 		}
 		
 		private void setText(int id, String text){
