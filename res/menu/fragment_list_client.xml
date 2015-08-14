@@ -9,9 +9,9 @@
     
     <item android:id="@+id/sort_az" 
         android:title="@string/a_z" 
-        android:icon="@drawable/ic_menu_download"
+        android:icon="@drawable/ic_menu_sort_alphabetically"
          android:orderInCategory="100" 
-        android:showAsAction="ifRoom|collapseActionView" />
+        android:showAsAction="ifRoom" />
     
 <!--     <item android:id="@+id/sort_za"  -->
 <!--         android:title="@string/z_a"  -->
@@ -23,7 +23,7 @@
         android:title="@string/list_client_buscar" 
         android:icon="@drawable/ic_search_inverse"
          android:orderInCategory="100"
-        android:showAsAction="ifRoom|collapseActionView"
+        android:showAsAction="ifRoom"
          />   
 </menu>
 

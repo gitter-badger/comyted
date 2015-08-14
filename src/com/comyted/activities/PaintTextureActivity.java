@@ -21,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.Surface;
+import android.view.Surface.OutOfResourcesException;
 import android.view.TextureView;
 import android.view.TextureView.SurfaceTextureListener;
 import android.view.View;
@@ -325,7 +326,16 @@ public class PaintTextureActivity extends Activity {
 				break;
 			case MSG_CLEAR:
 				//grab render device
-				Canvas c = holder.lockCanvas(surfRec);							
+				Canvas c=null;
+				try {
+					c = holder.lockCanvas(surfRec);
+				} catch (IllegalArgumentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (OutOfResourcesException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}							
 																			
 				c.drawColor(Color.BLACK);	
 				c.drawRect(border, paintErase);
@@ -346,7 +356,16 @@ public class PaintTextureActivity extends Activity {
 			if(x >= 0 && y >= 0)
 			{
 				//grab render device
-				Canvas c = holder.lockCanvas(surfRec);
+				Canvas c=null;
+				try {
+					c = holder.lockCanvas(surfRec);
+				} catch (IllegalArgumentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (OutOfResourcesException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 						
 				float tx = (float)x / (float)surfWidth;
 				float ty = (float)y / (float)surfHeight;

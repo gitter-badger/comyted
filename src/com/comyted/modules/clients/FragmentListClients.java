@@ -30,10 +30,12 @@ import com.enterlib.widgets.FilterDialog;
 
 public class FragmentListClients extends android.support.v4.app.Fragment{
 
+	private static final String SELECTION = "SELECTION";
 	private View rootView;
 	private DataView view;
 	private ViewModelListClients vm;
-	private int selectedPosition;	
+	private int selectedPosition;
+	private Menu menu;	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {		
@@ -66,6 +68,10 @@ public class FragmentListClients extends android.support.v4.app.Fragment{
 			repo = new ClientRepository(new GetClientesClient(), null);
 		}
 		
+		if(savedInstanceState!=null){
+			selectedPosition = savedInstanceState.getInt(SELECTION);
+		}
+		
 		vm = new ViewModelListClients(view, repo);
 	}
 			
@@ -90,6 +96,7 @@ public class FragmentListClients extends android.support.v4.app.Fragment{
 	
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		this.menu = menu;
 		inflater.inflate(R.menu.fragment_list_client, menu);
 	}
 	
@@ -130,6 +137,13 @@ public class FragmentListClients extends android.support.v4.app.Fragment{
 		}    		
 	}
 	
+	@Override
+	public void onSaveInstanceState(Bundle outState) {		
+		super.onSaveInstanceState(outState);
+		
+		outState.putInt(SELECTION, selectedPosition);
+	}
+	
 	class DataView extends DefaultDataView<Activity> implements OnItemClickListener{
 		
 		private AdapterClients adapter;
@@ -167,7 +181,11 @@ public class FragmentListClients extends android.support.v4.app.Fragment{
 			listView.setOnItemClickListener(this);
 			listView.refreshDrawableState();
 			
-			sortByName();
+			if(menu!=null){
+				MenuItem menuItem = menu.findItem(R.id.sort_az);
+				menuItem.setIcon(R.drawable.ic_menu_sort_alphabetically);
+				menuItem.setTitle(R.string.a_z);
+			}
 		}
 
 		@Override

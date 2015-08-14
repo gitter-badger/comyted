@@ -27,6 +27,8 @@ public class DashboardActivity extends FragmentActivity implements View.OnClickL
         setContentView(R.layout.activity_dashboard);
                
         AppUser user = MainApp.getCurrentUser();
+        if(user == null)
+        	finish();        
         
         AuthorizeOrders(user);
         

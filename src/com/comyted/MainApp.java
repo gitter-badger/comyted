@@ -24,7 +24,7 @@ import com.enterlib.generics.ObservableValue;
  */
 public class MainApp extends Application 
 {
-	public final static boolean TEST = true;
+	public final static boolean TEST = false;
 	public static boolean PROXY = false;
 	public static long SLEEP_TIME = 5000;
 	
@@ -128,13 +128,4 @@ public class MainApp extends Application
 		return instance.getConfigValues().get(ConfigValues.CONST_URL_SERVICE);
 	}
 	
-	public static RestClient getClient(String operationUrl, boolean get)
-	{
-		String url = getBaseUrl() + operationUrl;		
-		RestClient restClient = new RestClient()
-			.setUrl(url)
-			.setMethod(get ? RestClient.RequestMethod.GET : RestClient.RequestMethod.POST);
-			
-		return restClient;
-	}
 }

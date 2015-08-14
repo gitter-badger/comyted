@@ -199,6 +199,8 @@ public class ActivityListOrders extends FragmentActivity
 	{
 		
 		 private static final String ENABLE_USER_FILTER = "enableUserFilter";
+
+		private static final String SELECTION = null;
 		 
 		OrderSumary[] opensOrders;
 		OrderSumary[] closeOrders;
@@ -210,6 +212,8 @@ public class ActivityListOrders extends FragmentActivity
 		AdapterOrders adapter;
 		EditText searchEdit;
 		boolean ordersSetted;
+
+		private int selectedPosition;
 		
 		public static OrdenListFragment newInstance(boolean enableFilter){
 				OrdenListFragment fragment = new OrdenListFragment();
@@ -247,6 +251,10 @@ public class ActivityListOrders extends FragmentActivity
 		public void onActivityCreated(Bundle savedInstanceState) {			
 			super.onActivityCreated(savedInstanceState);			
 			
+			if(savedInstanceState!=null){
+				selectedPosition = savedInstanceState.getInt(SELECTION);
+			}
+			
 			listViewOrdenes.setOnItemClickListener(this);			
 			estado.setOnCheckedChangeListener(this);					
 			
@@ -272,8 +280,12 @@ public class ActivityListOrders extends FragmentActivity
 				if(!estado.isChecked()){
 					if(opensOrders == null || opensOrders.length == 0)
 						Utils.showMessage(getActivity(), getActivity().getString(R.string.no_hay_ordenes_abiertas));										
-					else
-						adapter = new AdapterOrders(getActivity(), opensOrders);																										
+					else{
+						adapter = new AdapterOrders(getActivity(), opensOrders);
+						//check that the previus selected position is valid
+						if(selectedPosition >= opensOrders.length)
+							selectedPosition = 0;
+					}
 				}
 				else{
 					if(closeOrders == null || closeOrders.length == 0){
@@ -281,10 +293,15 @@ public class ActivityListOrders extends FragmentActivity
 					}
 					else{
 						adapter = new AdapterOrders(getActivity(), closeOrders);
+						if(selectedPosition >= closeOrders.length)
+							selectedPosition = 0;
 					}
 				}				
 				listViewOrdenes.setAdapter(adapter);
 				listViewOrdenes.refreshDrawableState();
+								
+				
+				listViewOrdenes.setSelection(selectedPosition);
 			}
 		}
 		
@@ -295,6 +312,7 @@ public class ActivityListOrders extends FragmentActivity
   		public void onItemClick(android.widget.AdapterView<?> arg0, View arg1, int position, long id)
   		{
   			if (arg0 != null){
+  				selectedPosition = position;
   				Object obj =  arg0.getItemAtPosition(position);
 	  			if (obj != null && obj instanceof OrderSumary){
 	  				//llamar a la actividad de vista de detalle de una hoja
@@ -390,6 +408,12 @@ public class ActivityListOrders extends FragmentActivity
 			return false;
 		}		
 	  	
+		@Override
+		public void onSaveInstanceState(Bundle outState) {		
+			super.onSaveInstanceState(outState);
+			
+			outState.putInt(SELECTION, selectedPosition);
+		}
 	}
 
 	

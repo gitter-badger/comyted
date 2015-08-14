@@ -11,8 +11,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />    
+    
     <application
         android:name="com.comyted.MainApp"
         android:allowBackup="true"
@@ -20,6 +20,8 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
 
+        <uses-library android:name="com.google.android.maps"/>
+        
         <!-- Declaracion de las Actividades -->
         <activity
             android:name="com.comyted.activities.IntroActivity"

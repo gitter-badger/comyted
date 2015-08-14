@@ -6,14 +6,17 @@
         <!-- BANNER -->
         <TableLayout android:id="@+id/headerLayouttest" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="0.0dip">
             <TableRow android:layout_gravity="fill_horizontal" android:layout_marginTop="20.0dip" android:layout_marginBottom="10.0dip" >                
-                <ImageView android:layout_gravity="fill_vertical" 
+
+                <ImageView
                     android:layout_width="fill_parent"
-                     android:layout_height="60dip" 
-                     android:layout_marginBottom="20.0dip" 
-                     android:src="@drawable/main_logo" 
-                     android:scaleType="fitCenter" 
-                     android:layout_weight="1.0"                      
-                     android:contentDescription="@string/imageview" />
+                    android:layout_height="60dip"
+                    android:layout_gravity="fill_vertical"
+                    android:layout_marginBottom="20.0dip"
+                    android:layout_weight="1.0"
+                    android:contentDescription="@string/imageview"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/main_logo2" />
+
             </TableRow>
         </TableLayout>
         

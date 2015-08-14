@@ -1,5 +1,7 @@
 package com.comyted.conectivity;
 
+import junit.framework.Assert;
+
 import com.comyted.MainApp;
 import com.enterlib.conetivity.WCFServiceClient;
 
@@ -13,7 +15,9 @@ public class AppServiceClient extends WCFServiceClient {
 
 	@Override
 	public String getBaseUrl() {
-		return MainApp.getBaseUrl();
+		String url = MainApp.getBaseUrl();
+		Assert.assertNotNull("SERVICE URL NULL", url);
+		return url;
 	}	
 
 }

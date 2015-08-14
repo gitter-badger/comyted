@@ -38,20 +38,20 @@
 
 	             <TextView
 	                 android:gravity="right"
-	                 android:text="Cliente Nº:"
+	                 android:text="@string/cliente_n_"
 	                 android:textStyle="bold" />
 
-	             <TextView android:id="@+id/client_id" android:gravity="left" android:text="4" android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+	             <TextView android:id="@+id/client_id" android:gravity="left"  android:layout_height="wrap_content" android:layout_width="wrap_content"/>
 	              
 	             <!-- Codigo -->
-	              <TextView android:gravity="right" android:textStyle="bold" android:text="Código:" android:layout_marginLeft="10dp"/>
-	              <TextView android:id="@+id/client_codigo" android:gravity="left" android:text="4007890" android:layout_height="wrap_content" android:layout_width="wrap_content" />
+	              <TextView android:gravity="right" android:textStyle="bold" android:text="@string/codigo_" android:layout_marginLeft="10dp"/>
+	              <TextView android:id="@+id/client_codigo" android:gravity="left"  android:layout_height="wrap_content" android:layout_width="wrap_content" />
 	        </TableRow>
 	        
 	        <TableRow>
 	            <!-- C.I.F -->
-	             <TextView  android:text="C.I.F:"  android:gravity="right" android:textStyle="bold" />
-	             <TextView android:id="@+id/client_cif"  android:gravity="left" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="B1908836"/>  
+	             <TextView  android:text="@string/c_i_f_"  android:gravity="right" android:textStyle="bold" />
+	             <TextView android:id="@+id/client_cif"  android:gravity="left" android:layout_height="wrap_content" android:layout_width="wrap_content" />  
 	        </TableRow>
 	        
 	    </TableLayout>
@@ -63,24 +63,24 @@
      <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
          
          <!-- Direccion -->
-         <TextView  android:text="Dirección:"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-	     <TextView android:id="@+id/client_direccion"  android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Avda San Francisco javier ,No 9"/>
+         <TextView  android:text="@string/direccion_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+	     <TextView android:id="@+id/client_direccion"  android:layout_height="wrap_content" android:layout_width="wrap_content" />
 	     
 	     <!-- Ciudad -->
-         <TextView  android:text="Ciudad:"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-	     <TextView android:id="@+id/client_ciudad"  android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="SEVILLA"/>
+         <TextView  android:text="@string/ciudad_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+	     <TextView android:id="@+id/client_ciudad"  android:layout_height="wrap_content" android:layout_width="wrap_content" />
 
 	     <!-- Provincia -->
-         <TextView  android:text="Provincia:"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-	     <TextView android:id="@+id/client_provincia"  android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="SEVILLA"/>
+         <TextView  android:text="@string/provincia_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+	     <TextView android:id="@+id/client_provincia"  android:layout_height="wrap_content" android:layout_width="wrap_content" />
 	     
 	     <!-- Codigo Postal -->
-         <TextView  android:text="Código Postal:"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-	     <TextView android:id="@+id/client_codpos"  android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="41018"/>
+         <TextView  android:text="@string/codigo_postal_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+	     <TextView android:id="@+id/client_codpos"  android:layout_height="wrap_content" android:layout_width="wrap_content" />
 
 	     <!-- Pais -->
-         <TextView  android:text="País:"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-	     <TextView android:id="@+id/client_pais"  android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="ESPANA"/>	     	     
+         <TextView  android:text="@string/pais_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+	     <TextView android:id="@+id/client_pais"  android:layout_height="wrap_content" android:layout_width="wrap_content" />	     	     
 	     	  
      </LinearLayout>
      
@@ -94,15 +94,34 @@
 <!--             	<TextView  android:text="Teléfono:" android:drawableRight="@drawable/call_contact_little" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" /> -->
 <!--                 <TextView android:id="@+id/client_telefono"  android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="9542345878"/> -->
 <!--             </LinearLayout>         		     	 -->
-			<TextView  android:text="Teléfono:" android:drawableRight="@drawable/call_contact_little" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" /> -->
-            <TextView android:id="@+id/client_telefono"  android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="9542345878"/> 
+
+			<TextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:drawableRight="@drawable/ic_action_phone_little"
+			    android:text="@string/telefono_"
+			    android:textStyle="bold" />
+			
+            <TextView android:id="@+id/client_telefono"  android:layout_height="wrap_content" android:layout_width="wrap_content" /> 
 				     
 	     <!-- FAX -->
-         <TextView  android:text="FAX:" android:drawableRight="@drawable/call_contact_little"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-	     <TextView android:id="@+id/client_fax"  android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="9542345879"/>
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:drawableRight="@drawable/ic_action_paste_little"
+             android:text="@string/fax_"
+             android:textStyle="bold" />
+	     <TextView android:id="@+id/client_fax"  android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="9542345879"/>	     
 	     
-	      <TextView  android:text="@string/email_" android:drawableRight="@drawable/stat_notify_email_generic"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" 	         		
-            		android:drawablePadding="5dp"/>
+	     <!-- Email -->
+	     <TextView
+	          android:layout_width="wrap_content"
+	          android:layout_height="wrap_content"
+	          android:drawablePadding="5dp"
+	          android:drawableRight="@drawable/stat_notify_email_generic"
+	          android:text="@string/email_"
+	          android:textStyle="bold" />
+
 	     <TextView android:id="@+id/client_email"  android:layout_height="wrap_content" android:layout_width="match_parent" />
 	     
      </LinearLayout>

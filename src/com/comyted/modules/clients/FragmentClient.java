@@ -9,7 +9,7 @@ import com.enterlib.app.DefaultDataView;
 import com.enterlib.app.PresentUtils;
 
 import android.app.Activity;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -23,8 +23,8 @@ public class FragmentClient extends Fragment {
 
 	private ViewGroup rootView;	
 	private ViewModelClient vm;
-	private DataView view;	
-		
+	private DataView view;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {	
 		super.onCreate(savedInstanceState);
@@ -81,7 +81,7 @@ public class FragmentClient extends Fragment {
 		
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) 
-	{
+	{		
 		inflater.inflate(R.menu.fragment_sheet, menu);		
 	}
 	
@@ -150,7 +150,9 @@ public class FragmentClient extends Fragment {
 			setText(R.id.client_pais, c.pais);
 			setText(R.id.client_telefono, c.telefono);
 			setText(R.id.client_fax, c.fax);
+			setText(R.id.client_email, c.email);
 			
+			//ic_menu_sort_alphabetically
 		}
 		
 		private void setText(int id, String text){

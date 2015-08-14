@@ -30,7 +30,7 @@
     <string name="loading">Cargando&#8230;</string>
     <string name="imageview">image</string>
     <string name="signin">Acceder&#8230;</string>
-    <string name="copyright">©Copyright 2015 LemurSolution</string>
+    <string name="copyright">©Copyright 2015 Gentalia, s.l</string>
     <string name="access_information"></string>
     <string name="signinginpleasewait">Conectando. Por favor espere &#8230;</string>
     <string name="about">About Version</string>
@@ -366,5 +366,6 @@
     <string name="codigo_">Código:</string>
     <string name="nombre_de_empresa_">Nombre de empresa:</string>
     <string name="email_">Email:</string>
+    <string name="cliente_n_">Cliente Nº:</string>
 
 </resources>

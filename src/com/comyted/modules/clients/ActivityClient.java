@@ -18,20 +18,18 @@ import com.comyted.testing.repository.LocalJSONClientRepository;
 
 import android.app.Activity;
 import android.app.ActionBar;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class ActivityClient extends FragmentActivity 
-		implements ActionBar.TabListener {
+public class ActivityClient extends Activity implements ActionBar.TabListener {
 
 	public static int THEME = R.style.AppTheme;
 	
@@ -71,7 +69,7 @@ public class ActivityClient extends FragmentActivity
 
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the activity.
-		mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+		mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
 
 		// Set up the ViewPager with the sections adapter.
 		mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -190,6 +188,5 @@ public class ActivityClient extends FragmentActivity
 			return null;
 		}
 	}
-
 	
 }
