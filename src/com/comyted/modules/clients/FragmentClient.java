@@ -53,6 +53,7 @@ public class FragmentClient extends Fragment {
 		view = new DataView(getActivity());
 		
 		vm = activity.getViewModel();
+		
 		vm.setView(view);
 		
 		/*
@@ -62,7 +63,7 @@ public class FragmentClient extends Fragment {
 		 * actualizar la vista sino se un EventHandler al Evento que se lanzara cuando
 		 * los datos del ViewModel esten disponibles 
 		 * */
-		if(vm.getClient()!=null){
+		if(vm.isLoaded()){
 			//Si los datos estan disponibles se actualiza la vista
 			view.onDataLoaded();
 		}
