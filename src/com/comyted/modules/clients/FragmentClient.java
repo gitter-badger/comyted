@@ -9,8 +9,10 @@ import com.comyted.Utils;
 import com.comyted.models.Client;
 import com.enterlib.app.DefaultDataView;
 import com.enterlib.app.PresentUtils;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -166,13 +168,20 @@ public class FragmentClient extends Fragment {
 			if(map != null){
 				List<Address>adress = vm.getAdresses();			
 
-				if(adress.size() > 0){
+				if(adress.size() > 0){					
 					Address addr = adress.get(0);
+					
+					LatLng location = new LatLng(addr.getLatitude(), addr.getLongitude());
 					MarkerOptions marker = new MarkerOptions()
-					.position(new LatLng(addr.getLatitude(), addr.getLongitude()))
+					.position(location)
 					.title(c.direccion);			
-
+					
+					//adds a marker to the location
 					map.addMarker(marker);
+					
+					//move the camera to the location					
+					CameraPosition cameraPosition = new CameraPosition.Builder().target(location).zoom(12).build();
+					map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));	
 				}
 				else{
 					map.clear();

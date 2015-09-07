@@ -2,8 +2,10 @@ package com.comyted.modules.clients;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import android.location.Address;
 import android.location.Geocoder;
+import android.util.Log;
 
 import com.comyted.conectivity.GetClientesClient;
 import com.comyted.models.AppUser;
@@ -28,11 +30,12 @@ public class ViewModelClient extends DataViewModel<IDataView> {
 		
 		this.clientId = clientId;
 		this.repository = repository;
+		this.geocoder = geocoder;
 	}
 	
 	/**Constructor for Production*/
 	public ViewModelClient(int clientId, IDataView view, Geocoder geocoder){
-		this(clientId, view, new ClientRepository(new GetClientesClient(), null),geocoder);
+		this(clientId, view, new ClientRepository(new GetClientesClient(), null), geocoder);
 	}
 
 	@Override
@@ -45,12 +48,13 @@ public class ViewModelClient extends DataViewModel<IDataView> {
 				adresses = geocoder.getFromLocationName(client.direccion, 1);
 			}else{
 				adresses = new ArrayList<Address>();
-				notifications.add("No se pudo determinar las coordenadas de la dirección del cliente");
+				notifications.add("No se pudo determinar las coordenadas del cliente");
 			}
 		}
 		catch(Exception e){
 			notifications.add("No se pudo determinar las coordenadas de la dirección del cliente");
 			adresses = new ArrayList<Address>();
+			Log.d("ViewModelClient", e.getMessage(), e);
 		}
 		
 		return true;

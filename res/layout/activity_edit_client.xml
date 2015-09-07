@@ -1,107 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-          	  xmlns:tools="http://schemas.android.com/tools"
-          	  tools:context="com.comyted.modules.clients.FragmentClient"
-         	 android:orientation="horizontal" 
-         	 android:clipChildren="true" 
-         	 android:layout_width="fill_parent" 
-         	 android:layout_height="fill_parent" 
-         	 android:layout_marginBottom="30.0dip" 
-         	 android:fillViewport="true">
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.comyted.modules.clients.ActivityEditClient"
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent">
 
-<LinearLayout     
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"    
-    android:orientation="vertical" >
+    <!-- Content -->
+	<ScrollView  android:orientation="horizontal" 
+	         	 android:clipChildren="true" 
+	         	 android:layout_width="fill_parent" 
+	         	 android:layout_height="fill_parent" 	         	 
+	         	 android:fillViewport="true"  
+	         	 android:layout_above="@+id/footerbar">
+	
+	<LinearLayout     
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingBottom="@dimen/activity_vertical_margin"
+	    android:paddingLeft="@dimen/activity_horizontal_margin"
+	    android:paddingRight="@dimen/activity_horizontal_margin"
+	    android:paddingTop="@dimen/activity_vertical_margin"    
+	    android:orientation="vertical" >
+	
+	    <!-- nombreempresa -->
+	     <EditText android:id="@+id/client_nombreempresa"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:drawableBottom="@color/gray"
+	                android:shadowDy="2.0"
+	                android:minLines="1"
+	                android:maxLines="3"              
+	                android:textAppearance="?android:attr/textAppearanceLarge" />
+	    
+	     <!-- Delimiter -->
+	     <View android:background="@drawable/loginbar" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginLeft="5.0dip" />
+	     
+	    <!-- Seccion 1 -->
+	       <TableLayout 	     
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:stretchColumns="1">		                  	  	         	
+		        <TableRow>	            	           
+		             <!-- Codigo -->
+		              <TextView android:gravity="right" android:textStyle="bold" android:text="@string/codigo_" android:layout_marginLeft="10dp"/>
+		              <EditText android:id="@+id/client_codigo" android:gravity="left" android:inputType="text" android:layout_height="wrap_content" android:layout_width="wrap_content" />
+		        </TableRow>
+		        
+		        <TableRow>
+		            <!-- C.I.F -->
+		             <TextView  android:text="@string/c_i_f_"  android:gravity="right" android:textStyle="bold" />
+		             <EditText android:id="@+id/client_cif"  android:gravity="left" android:layout_height="wrap_content" android:layout_width="wrap_content" android:inputType="text"/>  
+		        </TableRow>
+		        
+		    </TableLayout>
+		    
+	      <!-- Delimiter -->
+	     <View android:background="@drawable/loginbar" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginLeft="5.0dip" />
+	    
+	     <!-- Section 2 -->
+	     <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
+	         
+	         <!-- Direccion -->
+	         <TextView  android:text="@string/direccion_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		     <EditText android:inputType="textMultiLine" android:id="@+id/client_direccion"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Avda San Francisco javier ,No 9" android:minLines="1" android:maxLines="2" />
+		     
+		     <!-- Ciudad -->
+	         <TextView  android:text="@string/ciudad_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		     <EditText android:inputType="textAutoCorrect" android:id="@+id/client_ciudad"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="SEVILLA"/>
+	
+		     <!-- Provincia -->
+	         <TextView  android:text="@string/provincia_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		     <EditText android:inputType="textAutoCorrect" android:id="@+id/client_provincia"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="SEVILLA"/>
+		     
+		     <!-- Codigo Postal -->
+	         <TextView  android:text="@string/codigo_postal_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		     <EditText android:inputType="text" android:id="@+id/client_codpos"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="41018"/>
+	
+		     <!-- Pais -->
+	         <TextView  android:text="@string/pais_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		     <EditText android:inputType="textAutoCorrect" android:id="@+id/client_pais"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="ESPANA"/>	     	     
+		     	  
+	     </LinearLayout>
+	     
+	     <!-- Delimiter -->
+	     <View android:background="@drawable/loginbar" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginLeft="5.0dip" />
+	     
+	     <!-- Section 3 -->
+	     <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
+	            <!-- Telefono -->
+	<!--             <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/custom_edit_text"> -->
+	<!--             	<TextView  android:text="Teléfono:" android:drawableRight="@drawable/call_contact_little" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" /> -->
+	<!--                 <TextView android:id="@+id/client_telefono"  android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="9542345878"/> -->
+	<!--             </LinearLayout>         		     	 -->
+				<TextView  android:text="@string/telefono_" 
+				      android:drawableRight="@drawable/ic_action_phone_little"
+				    android:textStyle="bold" 
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content" /> -->
+	            <EditText android:inputType="phone" android:id="@+id/client_telefono"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="9542345878"/> 
+					     
+		     <!-- FAX -->
+	         <TextView  android:text="@string/fax_"   android:drawableRight="@drawable/ic_action_paste_little"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		     <EditText android:inputType="phone" android:id="@+id/client_fax"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="9542345879"/>
+		     
+		     <!-- Email -->
+		     <TextView  android:text="@string/email_" android:drawableRight="@drawable/stat_notify_email_generic"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" 	         		
+	            		android:drawablePadding="5dp"/>
+		     <EditText android:inputType="textEmailAddress" android:id="@+id/client_email"  android:layout_height="wrap_content" android:layout_width="match_parent" />
+		     
+	     </LinearLayout>
+	     
+	</LinearLayout>
+	
+	</ScrollView>
 
-    <!-- nombreempresa -->
-     <EditText android:id="@+id/client_nombreempresa"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableBottom="@color/gray"
-                android:shadowDy="2.0"
-                android:minLines="1"
-                android:maxLines="3"              
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-    
-     <!-- Delimiter -->
-     <View android:background="@drawable/loginbar" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginLeft="5.0dip" />
-     
-    <!-- Seccion 1 -->
-       <TableLayout 	     
+	<!-- Footer -->	
+	<fragment
+	        android:id="@+id/footerbar"
+	        android:name="com.comyted.activities.FooterFragment"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:stretchColumns="1">		                  	  	         	
-	        <TableRow>	            	           
-	             <!-- Codigo -->
-	              <TextView android:gravity="right" android:textStyle="bold" android:text="@string/codigo_" android:layout_marginLeft="10dp"/>
-	              <EditText android:id="@+id/client_codigo" android:gravity="left" android:inputType="text" android:layout_height="wrap_content" android:layout_width="wrap_content" />
-	        </TableRow>
-	        
-	        <TableRow>
-	            <!-- C.I.F -->
-	             <TextView  android:text="@string/c_i_f_"  android:gravity="right" android:textStyle="bold" />
-	             <EditText android:id="@+id/client_cif"  android:gravity="left" android:layout_height="wrap_content" android:layout_width="wrap_content" android:inputType="text"/>  
-	        </TableRow>
-	        
-	    </TableLayout>
-	    
-      <!-- Delimiter -->
-     <View android:background="@drawable/loginbar" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginLeft="5.0dip" />
-    
-     <!-- Section 2 -->
-     <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
-         
-         <!-- Direccion -->
-         <TextView  android:text="@string/direccion_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-	     <EditText android:inputType="textMultiLine" android:id="@+id/client_direccion"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Avda San Francisco javier ,No 9" android:minLines="1" android:maxLines="2" />
-	     
-	     <!-- Ciudad -->
-         <TextView  android:text="@string/ciudad_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-	     <EditText android:inputType="textAutoCorrect" android:id="@+id/client_ciudad"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="SEVILLA"/>
+	        android:layout_alignParentBottom="true"
+	        tools:layout="@layout/fragment_footer" />
 
-	     <!-- Provincia -->
-         <TextView  android:text="@string/provincia_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-	     <EditText android:inputType="textAutoCorrect" android:id="@+id/client_provincia"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="SEVILLA"/>
-	     
-	     <!-- Codigo Postal -->
-         <TextView  android:text="@string/codigo_postal_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-	     <EditText android:inputType="text" android:id="@+id/client_codpos"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="41018"/>
-
-	     <!-- Pais -->
-         <TextView  android:text="@string/pais_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-	     <EditText android:inputType="textAutoCorrect" android:id="@+id/client_pais"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="ESPANA"/>	     	     
-	     	  
-     </LinearLayout>
-     
-     <!-- Delimiter -->
-     <View android:background="@drawable/loginbar" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginLeft="5.0dip" />
-     
-     <!-- Section 3 -->
-     <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
-            <!-- Telefono -->
-<!--             <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/custom_edit_text"> -->
-<!--             	<TextView  android:text="Teléfono:" android:drawableRight="@drawable/call_contact_little" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" /> -->
-<!--                 <TextView android:id="@+id/client_telefono"  android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="9542345878"/> -->
-<!--             </LinearLayout>         		     	 -->
-			<TextView  android:text="@string/telefono_" android:drawableRight="@drawable/call_contact_little" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" /> -->
-            <EditText android:inputType="phone" android:id="@+id/client_telefono"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="9542345878"/> 
-				     
-	     <!-- FAX -->
-         <TextView  android:text="@string/fax_" android:drawableRight="@drawable/call_contact_little"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-	     <EditText android:inputType="phone" android:id="@+id/client_fax"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="9542345879"/>
-	     
-	     <!-- Email -->
-	     <TextView  android:text="@string/email_" android:drawableRight="@drawable/stat_notify_email_generic"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" 	         		
-            		android:drawablePadding="5dp"/>
-	     <EditText android:inputType="textEmailAddress" android:id="@+id/client_email"  android:layout_height="wrap_content" android:layout_width="match_parent" />
-	     
-     </LinearLayout>
-     
-</LinearLayout>
-
-</ScrollView>
+</RelativeLayout>
