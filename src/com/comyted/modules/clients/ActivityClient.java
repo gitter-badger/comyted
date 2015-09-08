@@ -173,7 +173,6 @@ public class ActivityClient extends FragmentActivity implements ActionBar.TabLis
 
 		@Override
 		public CharSequence getPageTitle(int position) {
-			Locale l = Locale.getDefault();
 			switch (position) {
 			case 0:
 				return "Datos";

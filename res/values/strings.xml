@@ -31,7 +31,7 @@
     <string name="imageview">image</string>
     <string name="signin">Acceder&#8230;</string>
     <string name="copyright">©Copyright 2015 Gentalia, s.l</string>
-    <string name="access_information"></string>
+    <string name="access_information">Aplicación para gestión comercial y servicios de mantenimientos. Todos los datos están bajo restricciones intrinsecas de la empresa por lo que su uso fraudulento puede llevar a acciones penales.</string>
     <string name="signinginpleasewait">Conectando. Por favor espere &#8230;</string>
     <string name="about">About Version</string>
     <string name="about_info">Aplicación Android para gestión comercial y servicios de mantenimientos. Todos los datos de Ordenes de trabajo están bajo restricciones intrinsecas de la empresa por lo que su uso fraudulento puede llevar a acciones penales.</string>

@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.comyted.R;
@@ -60,9 +61,10 @@ public class ActivityLogin extends Activity
         view =new DataView(this);
         vm = new ViewModelLogin(this, view);        
         
+        
         form = new Form();
-        form.addValidator(new TextViewField((TextView)findViewById(R.id.txtlogin), true));
-        form.addValidator(new TextViewField((TextView)findViewById(R.id.txtpassword), true));
+        form.addValidator(new TextViewField((EditText)findViewById(R.id.txtlogin), true));
+        form.addValidator(new TextViewField((EditText)findViewById(R.id.txtpassword), true));
         
         UserLogin login = vm.getLastLoggedUser();
         if(login!=null){

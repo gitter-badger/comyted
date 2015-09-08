@@ -11,7 +11,7 @@
     android:orientation="vertical">
 
     <!-- Title -->
-    <TextView  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/titulo" />       
+    <TextView  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/titulo" android:drawableLeft="@drawable/required_text_icon" />       
     <EditText
         android:id="@+id/title"
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
         android:textColorHint="@color/hint" />
 
     <!-- Tecnico -->
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tecnico"  />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tecnico"  android:drawableLeft="@drawable/required_text_icon" />
     <com.enterlib.widgets.FilterableSpinner
         android:id="@+id/tecnicoBox" 
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
         style="@android:style/Widget.DeviceDefault.Light.Spinner" />
 
     <!-- Planta -->
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/planta"  />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/planta"  android:drawableLeft="@drawable/required_text_icon"/>
     <com.enterlib.widgets.FilterableSpinner
         android:id="@+id/plantaBox" 
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
         style="@android:style/Widget.DeviceDefault.Light.Spinner" />
     
     <!-- Peticionario -->
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/peticionario"  />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/peticionario"  android:drawableLeft="@drawable/required_text_icon"/>
     <Spinner android:id="@+id/peticionario" android:layout_width="match_parent" android:layout_height="wrap_content" />
     
     <!-- Expediente -->
@@ -50,15 +50,15 @@
         android:textColorHint="@color/hint" />
     
     <!-- Trabajo -->
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tipo_de_trabajo"  />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tipo_de_trabajo" android:drawableLeft="@drawable/required_text_icon" />
     <Spinner android:id="@+id/trabajo" android:layout_width="match_parent" android:layout_height="wrap_content" />
     
     <!-- Motor -->
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/motor"  />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/motor"  android:drawableLeft="@drawable/required_text_icon"/>
     <Spinner android:id="@+id/motor" android:layout_width="match_parent" android:layout_height="wrap_content" />
     
     <!-- numero de serie -->
-    <TextView  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/numero_de_serie"  />    
+    <TextView  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/numero_de_serie" android:drawableLeft="@drawable/required_text_icon" />    
     <EditText  android:id="@+id/num_serie" 
         		android:inputType="text"  
         		android:layout_width="match_parent" 
@@ -67,11 +67,11 @@
         		android:textColorHint="@color/hint" />
     
     <!-- Cargo Region -->
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cargo_region"  />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cargo_region" android:drawableLeft="@drawable/required_text_icon" />
     <Spinner android:id="@+id/cargoRegion" android:layout_width="match_parent" android:layout_height="wrap_content" />
     
     <!-- Tipo de Hoja -->
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tipo_de_hoja"  />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tipo_de_hoja" android:drawableLeft="@drawable/required_text_icon" />
     <Spinner android:id="@+id/tipohoja" android:layout_width="match_parent" android:layout_height="wrap_content" />    
     
     <!-- Ref Pedido -->       
@@ -85,7 +85,7 @@
     
     
     <!-- Horas Motor -->
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/horas_motor"  />    
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/horas_motor"  android:drawableLeft="@drawable/required_text_icon"/>    
     <EditText
         android:id="@+id/horasmotor"
         android:layout_width="match_parent"
@@ -95,15 +95,15 @@
         android:textColorHint="@color/hint" />
     
     <!-- Fecha Hoja -->
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/fecha"  />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/fecha"  android:drawableLeft="@drawable/required_text_icon"/>
     <com.enterlib.widgets.DatePickerButton android:id="@+id/fecha" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@android:drawable/edit_text" android:hint="@string/requerido" android:textColorHint="@color/hint"  style="@android:attr/buttonBarButtonStyle" />
    
 	<!-- Fecha Fin Montaje -->        
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/fin_de_montaje"  />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/fin_de_montaje"  android:drawableLeft="@drawable/required_text_icon"/>
     <com.enterlib.widgets.DatePickerButton android:id="@+id/finmontaje" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@android:drawable/edit_text" android:hint="@string/requerido" android:textColorHint="@color/hint"  style="@android:attr/buttonBarButtonStyle" />
     
     <!-- Estado -->
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/estado"  />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/estado"  android:drawableLeft="@drawable/required_text_icon"/>
     <Spinner android:id="@+id/estado" android:layout_width="match_parent" android:layout_height="wrap_content" />
     
     <!-- Direccion -->
@@ -143,7 +143,7 @@
         android:inputType="text"
         android:textColorHint="@color/hint" />
     
-    <!-- Paiz -->
+    <!-- Pais -->
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pais"  />
     <EditText
         android:id="@+id/pais"

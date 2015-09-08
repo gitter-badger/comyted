@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-          	  xmlns:tools="http://schemas.android.com/tools"
-          	  tools:context="com.comyted.modules.clients.FragmentClient"
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+          	 xmlns:tools="http://schemas.android.com/tools"
+          	 tools:context="com.comyted.modules.clients.FragmentClient"
          	 android:orientation="horizontal" 
          	 android:clipChildren="true" 
          	 android:layout_width="fill_parent" 
@@ -100,7 +100,9 @@
 			    android:layout_height="wrap_content"
 			    android:drawableRight="@drawable/ic_action_phone_little"
 			    android:text="@string/telefono_"
-			    android:textStyle="bold" />
+			    android:textStyle="bold"
+			    android:id="@+id/lbCliente_telefono"
+			    android:clickable="true" />
 			
             <TextView android:id="@+id/client_telefono"  android:layout_height="wrap_content" android:layout_width="wrap_content" /> 
 				     

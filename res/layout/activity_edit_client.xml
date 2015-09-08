@@ -7,10 +7,10 @@
     android:layout_height="match_parent">
 
     <!-- Content -->
-	<ScrollView  android:orientation="horizontal" 
+	<ScrollView  
 	         	 android:clipChildren="true" 
-	         	 android:layout_width="fill_parent" 
-	         	 android:layout_height="fill_parent" 	         	 
+	         	 android:layout_width="match_parent" 
+	         	 android:layout_height="match_parent" 	         	 
 	         	 android:fillViewport="true"  
 	         	 android:layout_above="@+id/footerbar">
 	
@@ -24,14 +24,17 @@
 	    android:orientation="vertical" >
 	
 	    <!-- nombreempresa -->
-	     <EditText android:id="@+id/client_nombreempresa"
-	                android:layout_width="match_parent"
-	                android:layout_height="wrap_content"
-	                android:drawableBottom="@color/gray"
-	                android:shadowDy="2.0"
-	                android:minLines="1"
-	                android:maxLines="3"              
-	                android:textAppearance="?android:attr/textAppearanceLarge" />
+		<TextView  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nombre:" android:drawableLeft="@drawable/required_text_icon" />
+	     <EditText
+	         android:id="@+id/client_nombreempresa"
+	         android:layout_width="match_parent"
+	         android:layout_height="wrap_content"
+	         android:drawableBottom="@color/gray"	       
+	         android:maxLines="3"
+	         android:minLines="1"
+	         android:shadowDy="2.0"
+	          android:hint="@string/requerido"
+	         android:textAppearance="?android:attr/textAppearanceLarge" />
 	    
 	     <!-- Delimiter -->
 	     <View android:background="@drawable/loginbar" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginLeft="5.0dip" />
@@ -43,14 +46,14 @@
 		        android:stretchColumns="1">		                  	  	         	
 		        <TableRow>	            	           
 		             <!-- Codigo -->
-		              <TextView android:gravity="right" android:textStyle="bold" android:text="@string/codigo_" android:layout_marginLeft="10dp"/>
-		              <EditText android:id="@+id/client_codigo" android:gravity="left" android:inputType="text" android:layout_height="wrap_content" android:layout_width="wrap_content" />
+		              <TextView android:gravity="right" android:textStyle="bold" android:text="@string/codigo_" android:layout_marginLeft="10dp"  android:drawableLeft="@drawable/required_text_icon"/>
+		              <EditText android:id="@+id/client_codigo" android:gravity="left" android:inputType="text" android:layout_height="wrap_content" android:layout_width="wrap_content"  android:hint="@string/requerido"/>
 		        </TableRow>
 		        
 		        <TableRow>
 		            <!-- C.I.F -->
-		             <TextView  android:text="@string/c_i_f_"  android:gravity="right" android:textStyle="bold" />
-		             <EditText android:id="@+id/client_cif"  android:gravity="left" android:layout_height="wrap_content" android:layout_width="wrap_content" android:inputType="text"/>  
+		             <TextView  android:text="@string/c_i_f_"  android:gravity="right" android:textStyle="bold"  android:drawableLeft="@drawable/required_text_icon" android:layout_marginLeft="10dp"/>
+		             <EditText android:id="@+id/client_cif"  android:gravity="left" android:layout_height="wrap_content" android:layout_width="wrap_content" android:inputType="text"  android:hint="@string/requerido"/>  
 		        </TableRow>
 		        
 		    </TableLayout>
@@ -62,24 +65,24 @@
 	     <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
 	         
 	         <!-- Direccion -->
-	         <TextView  android:text="@string/direccion_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-		     <EditText android:inputType="textMultiLine" android:id="@+id/client_direccion"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Avda San Francisco javier ,No 9" android:minLines="1" android:maxLines="2" />
+	         <TextView  android:text="@string/direccion_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content"  android:drawableLeft="@drawable/required_text_icon"/>
+		     <EditText android:inputType="textMultiLine" android:id="@+id/client_direccion"  android:layout_height="wrap_content" android:layout_width="match_parent"  android:hint="@string/requerido" android:minLines="1" android:maxLines="2" />
 		     
 		     <!-- Ciudad -->
-	         <TextView  android:text="@string/ciudad_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-		     <EditText android:inputType="textAutoCorrect" android:id="@+id/client_ciudad"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="SEVILLA"/>
+	         <TextView  android:text="@string/ciudad_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content"  android:drawableLeft="@drawable/required_text_icon"/>
+		     <EditText android:inputType="textAutoCorrect" android:id="@+id/client_ciudad"  android:layout_height="wrap_content" android:layout_width="match_parent"  android:hint="@string/requerido" />
 	
 		     <!-- Provincia -->
-	         <TextView  android:text="@string/provincia_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-		     <EditText android:inputType="textAutoCorrect" android:id="@+id/client_provincia"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="SEVILLA"/>
+	         <TextView  android:text="@string/provincia_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content"  android:drawableLeft="@drawable/required_text_icon"/>
+		     <EditText android:inputType="textAutoCorrect" android:id="@+id/client_provincia"  android:layout_height="wrap_content" android:layout_width="match_parent"  android:hint="@string/requerido"/>
 		     
 		     <!-- Codigo Postal -->
-	         <TextView  android:text="@string/codigo_postal_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-		     <EditText android:inputType="text" android:id="@+id/client_codpos"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="41018"/>
+	         <TextView  android:text="@string/codigo_postal_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content"  android:drawableLeft="@drawable/required_text_icon"/>
+		     <EditText android:inputType="text" android:id="@+id/client_codpos"  android:layout_height="wrap_content" android:layout_width="match_parent" android:hint="@string/requerido" />
 	
 		     <!-- Pais -->
-	         <TextView  android:text="@string/pais_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-		     <EditText android:inputType="textAutoCorrect" android:id="@+id/client_pais"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="ESPANA"/>	     	     
+	         <TextView  android:text="@string/pais_"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content"  android:drawableLeft="@drawable/required_text_icon"/>
+		     <EditText android:inputType="textAutoCorrect" android:id="@+id/client_pais"  android:layout_height="wrap_content" android:layout_width="match_parent"  android:hint="@string/requerido"/>	     	     
 		     	  
 	     </LinearLayout>
 	     
@@ -94,20 +97,23 @@
 	<!--                 <TextView android:id="@+id/client_telefono"  android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="9542345878"/> -->
 	<!--             </LinearLayout>         		     	 -->
 				<TextView  android:text="@string/telefono_" 
-				      android:drawableRight="@drawable/ic_action_phone_little"
+				    android:drawableRight="@drawable/ic_action_phone_little"
+				    android:drawableLeft="@drawable/required_text_icon"
 				    android:textStyle="bold" 
 				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content" /> -->
-	            <EditText android:inputType="phone" android:id="@+id/client_telefono"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="9542345878"/> 
+				    android:layout_height="wrap_content" /> 
+	            <EditText android:inputType="phone" android:id="@+id/client_telefono"  android:layout_height="wrap_content" android:layout_width="match_parent"  android:hint="@string/requerido" /> 
 					     
 		     <!-- FAX -->
-	         <TextView  android:text="@string/fax_"   android:drawableRight="@drawable/ic_action_paste_little"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-		     <EditText android:inputType="phone" android:id="@+id/client_fax"  android:layout_height="wrap_content" android:layout_width="match_parent" android:text="9542345879"/>
+	         <TextView  android:text="@string/fax_" android:drawableRight="@drawable/ic_action_paste_little"  
+	             android:drawableLeft="@drawable/required_text_icon" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		     <EditText android:inputType="phone" android:id="@+id/client_fax"  android:layout_height="wrap_content" android:layout_width="match_parent"  android:hint="@string/requerido"/>
 		     
 		     <!-- Email -->
 		     <TextView  android:text="@string/email_" android:drawableRight="@drawable/stat_notify_email_generic"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" 	         		
-	            		android:drawablePadding="5dp"/>
-		     <EditText android:inputType="textEmailAddress" android:id="@+id/client_email"  android:layout_height="wrap_content" android:layout_width="match_parent" />
+	            		android:drawablePadding="5dp"
+	            		 android:drawableLeft="@drawable/required_text_icon" />
+		     <EditText android:inputType="textEmailAddress" android:id="@+id/client_email"  android:layout_height="wrap_content" android:layout_width="match_parent"  android:hint="@string/requerido"/>
 		     
 	     </LinearLayout>
 	     

@@ -174,7 +174,7 @@ public class FragmentEditSheet extends Fragment
 			
 			//TextView Fields
 			form.addValidator(new TextViewField((TextView) findView(R.id.title), "titulo",getString(R.string.titulo),true));
-			form.addValidator(new TextViewField((TextView) findView(R.id.expediente), "expediente", getString(R.string.numero_expediente), false));
+			form.addValidator(new TextViewField((TextView) findView(R.id.expediente  ), "expediente", getString(R.string.numero_expediente), false));
 			form.addValidator(new TextViewField((TextView) findView(R.id.num_serie), "numseriemotor",getString(R.string.numero_de_serie), true));
 			form.addValidator(new TextViewField((TextView) findView(R.id.refpedido), "refpedido",getString(R.string.ref_pedido),false));
 			form.addValidator(new TextViewField((TextView) findView(R.id.horasmotor), "horasmotor", getString(R.string.horas_motor),true)

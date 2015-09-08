@@ -10,15 +10,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
-
-    	<!-- Titulo -->
+    
+		<!-- Titulo -->
+		<TextView  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Titulo:" />    
     	<EditText
     	    android:tag="titulo"
     	    android:id="@+id/title"
     	    android:layout_width="fill_parent"
     	    android:layout_height="wrap_content"
     	    android:ems="10"
-    	    android:hint="@string/titulo"
+    	    android:hint="@string/requerido"
     	    android:inputType="text|textMultiLine"
     	    android:lines="3"
     	    android:textColorHint="@color/hint" />
@@ -31,7 +32,7 @@
  	            android:layout_height="wrap_content"  	            
  	            android:background="@android:drawable/edit_text"
  	            android:ems="10"
- 	            android:hint="@string/dateformat"
+ 	            android:hint="@string/requerido"
  	            android:textColorHint="@color/hint"
  	            android:layout_gravity="center_horizontal"
  	            android:contentDescription="@string/seleccionar_fecha" />
@@ -51,7 +52,7 @@
 			     android:layout_height="wrap_content"
 			     android:background="@android:drawable/edit_text"
 			     android:ems="10"
-			     android:hint="@string/timeformat"
+			     android:hint="@string/requerido"
 			     android:textColorHint="@color/hint" />
     	        
 			<!-- ThFecha Tiempo Hasta -->	    	
@@ -63,7 +64,7 @@
   	    	    android:layout_height="wrap_content"
   	    	    android:background="@android:drawable/edit_text"
   	    	    android:ems="10"
-  	    	    android:hint="@string/timeformat"
+  	    	   android:hint="@string/requerido"
   	    	    android:textColorHint="@color/hint" />
   	     </LinearLayout>
   	    
@@ -84,7 +85,7 @@
   	    	    android:layout_height="wrap_content"
   	    	    android:background="@android:drawable/edit_text"
   	    	    android:ems="10"
-  	    	    android:hint="@string/timeformat"
+  	    	   android:hint="@string/requerido"
   	    	    android:textColorHint="@color/hint" />
   	    
   	    	<!-- dhFecha Tiempo descanso hasta -->
@@ -96,7 +97,7 @@
   	    	    android:layout_height="wrap_content"
   	    	    android:background="@android:drawable/edit_text"
   	    	    android:ems="10"
-  	    	    android:hint="@string/timeformat"
+  	    	  android:hint="@string/requerido"
   	    	    android:textColorHint="@color/hint" />
   	    
   	    </LinearLayout>

@@ -7,6 +7,7 @@ import com.comyted.MainApp;
 import com.comyted.R;
 import com.comyted.Utils;
 import com.comyted.models.Client;
+import com.enterlib.StringUtils;
 import com.enterlib.app.DefaultDataView;
 import com.enterlib.app.PresentUtils;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -19,6 +20,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import android.app.Activity;
 import android.content.Intent;
 import android.location.Address;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -26,9 +28,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-public class FragmentClient extends Fragment {
+public class FragmentClient extends Fragment implements OnClickListener {
 
 	private ViewGroup rootView;	
 	private ViewModelClient vm;
@@ -43,7 +47,9 @@ public class FragmentClient extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) 
 	{					
-		 rootView = (ViewGroup)inflater.inflate(R.layout.fragment_client, container, false);		 
+		 rootView = (ViewGroup)inflater.inflate(R.layout.fragment_client, container, false);	
+		 TextView lbPhone = (TextView) rootView.findViewById(R.id.lbCliente_telefono);
+		 lbPhone.setOnClickListener(this);
 		 return rootView;
 	}
 	
@@ -135,6 +141,27 @@ public class FragmentClient extends Fragment {
 		}
 	}
 	
+	public void onClick(View view){		
+		String phoneNumber= getViewText(R.id.client_telefono);
+		if(StringUtils.isNullOrWhitespace(phoneNumber)){
+			PresentUtils.showMessage(getActivity(), "El cliente no tiene teléfono");
+			return;
+		}
+		
+		Intent i = new Intent(android.content.Intent.ACTION_DIAL, 
+								Uri.parse("tel:+"+ phoneNumber)); 
+		startActivity(i);
+	}
+	
+	private String getViewText(int id){
+		TextView tv = (TextView) rootView.findViewById(id);
+		return tv.getText().toString();
+	}
+	
+	private void setText(int id, String text){
+		PresentUtils.setTextViewText(rootView, id, text);
+	}
+	
 	class DataView extends DefaultDataView<Activity>{
 
 		public DataView(Activity activity) {
@@ -201,11 +228,8 @@ public class FragmentClient extends Fragment {
 				}
 				Utils.showAlertDialog(getActivity(), getString(R.string.aviso), sb.toString(),null);
 			}
-		}
+		}				
 		
-		private void setText(int id, String text){
-			PresentUtils.setTextViewText(rootView, id, text);
-		}
 	}
 	
 }
