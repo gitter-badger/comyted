@@ -189,9 +189,8 @@ public class FragmentClient extends Fragment implements OnClickListener {
 			setText(R.id.client_fax, c.fax);
 			setText(R.id.client_email, c.email);
 			
-			//show map
-			
-			GoogleMap map = ((SupportMapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
+			//show map			
+			GoogleMap map = ((SupportMapFragment)getFragmentManager().findFragmentById(R.id.googleMap)).getMap();
 			if(map != null){
 				List<Address>adress = vm.getAdresses();			
 
