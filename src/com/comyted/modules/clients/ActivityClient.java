@@ -9,7 +9,7 @@ import com.comyted.MainApp;
 import com.comyted.R;
 import com.comyted.conectivity.GetClientesClient;
 import com.comyted.models.ClientSummary;
-import com.comyted.modules.contacts.FragmentContacts;
+import com.comyted.modules.contacts.FragmentClientContacts;
 import com.comyted.modules.offers.FragmentOffers;
 import com.comyted.modules.visits.FragmentVisits;
 import com.comyted.repository.ClientRepository;
@@ -156,7 +156,7 @@ public class ActivityClient extends FragmentActivity implements ActionBar.TabLis
 			case 0:
 				return new FragmentClient();
 			case 1:
-				return new FragmentContacts();
+				return new FragmentClientContacts();
 			case 2:
 				return new FragmentVisits();
 			case 3:

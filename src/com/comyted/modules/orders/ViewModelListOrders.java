@@ -9,7 +9,7 @@ import com.comyted.repository.OrderRepository;
 import com.enterlib.app.DataViewModel;
 import com.enterlib.app.IReporterDataView;
 
-public class ViewModelListOrders extends DataViewModel<IReporterDataView> {
+public class ViewModelListOrders extends DataViewModel {
 	
 	
 	

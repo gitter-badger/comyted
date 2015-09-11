@@ -11,7 +11,7 @@ import com.enterlib.app.DataViewModel;
 import com.enterlib.app.IDataView;
 import com.enterlib.serialization.JSonSerializer;
 
-public class ViewModelLogin extends DataViewModel<IDataView> {
+public class ViewModelLogin extends DataViewModel {
 
 	IUserManager userManager;	
 	AppUser user;

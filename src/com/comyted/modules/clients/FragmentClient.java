@@ -6,6 +6,7 @@ import com.comyted.Constants;
 import com.comyted.MainApp;
 import com.comyted.R;
 import com.comyted.Utils;
+import com.comyted.activities.ActivityMap;
 import com.comyted.models.Client;
 import com.enterlib.StringUtils;
 import com.enterlib.app.DefaultDataView;
@@ -19,6 +20,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.location.Address;
 import android.net.Uri;
 import android.os.Bundle;
@@ -30,6 +32,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class FragmentClient extends Fragment implements OnClickListener {
@@ -37,6 +42,7 @@ public class FragmentClient extends Fragment implements OnClickListener {
 	private ViewGroup rootView;	
 	private ViewModelClient vm;
 	private DataView view;
+	FrameLayout frame;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {	
@@ -50,6 +56,28 @@ public class FragmentClient extends Fragment implements OnClickListener {
 		 rootView = (ViewGroup)inflater.inflate(R.layout.fragment_client, container, false);	
 		 TextView lbPhone = (TextView) rootView.findViewById(R.id.lbCliente_telefono);
 		 lbPhone.setOnClickListener(this);
+		 
+		 frame = (FrameLayout) rootView.findViewById(R.id.framelayout);
+		 ImageView mapView = (ImageView) frame.findViewById(R.id.googleMapImage);
+		 mapView.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Client client = vm.getClient();
+				if(client == null){
+					PresentUtils.showMessage(getActivity(), "No hay ningun cliente cargado");
+					return;
+				}
+				if(StringUtils.isNullOrWhitespace(client.direccion)){
+					PresentUtils.showMessage(getActivity(), "El cliente no posee dirección");
+					return;
+				}
+				
+				Intent intent = new Intent(getActivity(), ActivityMap.class);
+				intent.putExtra(Constants.ADDRESS, client.direccion);
+				startActivity(intent);				
+			}
+		});
 		 return rootView;
 	}
 	
@@ -162,7 +190,7 @@ public class FragmentClient extends Fragment implements OnClickListener {
 		PresentUtils.setTextViewText(rootView, id, text);
 	}
 	
-	class DataView extends DefaultDataView<Activity>{
+	class DataView extends DefaultDataView<Activity> implements IClientView{
 
 		public DataView(Activity activity) {
 			super(activity);		
@@ -190,30 +218,31 @@ public class FragmentClient extends Fragment implements OnClickListener {
 			setText(R.id.client_email, c.email);
 			
 			//show map			
-			GoogleMap map = ((SupportMapFragment)getFragmentManager().findFragmentById(R.id.googleMap)).getMap();
-			if(map != null){
-				List<Address>adress = vm.getAdresses();			
-
-				if(adress.size() > 0){					
-					Address addr = adress.get(0);
-					
-					LatLng location = new LatLng(addr.getLatitude(), addr.getLongitude());
-					MarkerOptions marker = new MarkerOptions()
-					.position(location)
-					.title(c.direccion);			
-					
-					//adds a marker to the location
-					map.addMarker(marker);
-					
-					//move the camera to the location					
-					CameraPosition cameraPosition = new CameraPosition.Builder().target(location).zoom(12).build();
-					map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));	
-				}
-				else{
-					map.clear();
-				}				
-			}
+//			GoogleMap map = ((SupportMapFragment)getFragmentManager().findFragmentById(R.id.googleMap)).getMap();
+//			if(map != null){
+//				List<Address>adress = vm.getAdresses();			
+//
+//				if(adress.size() > 0){					
+//					Address addr = adress.get(0);
+//					
+//					LatLng location = new LatLng(addr.getLatitude(), addr.getLongitude());
+//					MarkerOptions marker = new MarkerOptions()
+//					.position(location)
+//					.title(c.direccion);			
+//					
+//					//adds a marker to the location
+//					map.addMarker(marker);
+//					
+//					//move the camera to the location					
+//					CameraPosition cameraPosition = new CameraPosition.Builder().target(location).zoom(12).build();
+//					map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));	
+//				}
+//				else{
+//					map.clear();
+//				}				
+//			}
 			
+			vm.loadMapAsync();
 			showNotifications();						
 		}
 
@@ -227,6 +256,28 @@ public class FragmentClient extends Fragment implements OnClickListener {
 				}
 				Utils.showAlertDialog(getActivity(), getString(R.string.aviso), sb.toString(),null);
 			}
+		}
+
+		@Override
+		public void BeginDownloadMap() {
+			ProgressBar pbar = (ProgressBar) frame.findViewById(R.id.googleMapProgressBar);
+			pbar.setVisibility(View.VISIBLE);			
+			
+			ImageView mapView = (ImageView) frame.findViewById(R.id.googleMapImage);
+			mapView.setVisibility(View.INVISIBLE);
+			mapView.setEnabled(false);
+		}
+
+		@Override
+		public void EndDownLoadMap(Bitmap map) {
+			ProgressBar pbar = (ProgressBar) frame.findViewById(R.id.googleMapProgressBar);
+			pbar.setVisibility(View.INVISIBLE);			
+			
+			ImageView mapView = (ImageView) frame.findViewById(R.id.googleMapImage);
+			mapView.setImageBitmap(map);						
+			mapView.setVisibility(View.VISIBLE);			
+			mapView.setEnabled(map != null);
+			
 		}				
 		
 	}

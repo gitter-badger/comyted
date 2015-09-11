@@ -367,5 +367,6 @@
     <string name="nombre_de_empresa_">Nombre de empresa:</string>
     <string name="email_">Email:</string>
     <string name="cliente_n_">Cliente Nº:</string>
+    <string name="title_activity_activity_map">Mapa</string>
 
 </resources>

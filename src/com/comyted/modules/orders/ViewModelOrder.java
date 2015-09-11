@@ -6,7 +6,7 @@ import com.comyted.repository.OrderRepository;
 import com.enterlib.app.DataViewModel;
 import com.enterlib.app.IDataView;
 
-public class ViewModelOrder extends DataViewModel<IDataView> {
+public class ViewModelOrder extends DataViewModel {
 	
 	Order order;
 	IOrderRepository repository;

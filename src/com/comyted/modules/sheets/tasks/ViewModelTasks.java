@@ -8,7 +8,7 @@ import com.comyted.repository.SheetTaskRepository;
 import com.enterlib.app.DataViewModel;
 import com.enterlib.app.IDataView;
 
-public class ViewModelTasks extends DataViewModel<IDataView> {
+public class ViewModelTasks extends DataViewModel {
 	
 	
 	TasksManager taskManager;

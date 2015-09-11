@@ -168,7 +168,9 @@ public class FragmentListClients extends android.support.v4.app.Fragment{
 				return;
 			}
 								
-			adapter = new AdapterClients(getActivity(), vm.getClients());				
+			adapter = new AdapterClients(getActivity(), vm.getClients());	
+			
+			
 			listView.setAdapter(adapter);
 			
 			//check that the previus selected position is valid

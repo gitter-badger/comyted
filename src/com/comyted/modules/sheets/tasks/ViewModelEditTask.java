@@ -25,7 +25,7 @@ import com.enterlib.exceptions.ValidationException;
 import com.enterlib.app.IEditView;
 import com.enterlib.validations.ErrorInfo;
 
-public class ViewModelEditTask extends EditViewModel<IEditView> {
+public class ViewModelEditTask extends EditViewModel {
 		
 	private IdNameValue[]tecnicos;
 	private IdNameValue[] estados;	

@@ -5,7 +5,7 @@ import com.comyted.repository.ISheetsRepository;
 import com.enterlib.app.DataViewModel;
 import com.enterlib.app.IDataView;
 
-public class ViewModelListSheets extends DataViewModel<IDataView>{
+public class ViewModelListSheets extends DataViewModel{
 	
 	private int orderId;		
 	private ISheetsRepository repository;	

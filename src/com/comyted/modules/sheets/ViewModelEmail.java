@@ -11,7 +11,7 @@ import com.enterlib.exceptions.InvalidOperationException;
 import com.enterlib.app.EditViewModel;
 import com.enterlib.app.IEditView;
 
-public class ViewModelEmail extends EditViewModel<IEditView> {
+public class ViewModelEmail extends EditViewModel {
 
 	private int sheetId;
 	private SheetEmailRequest sheetEmailRequest;   
@@ -57,7 +57,7 @@ public class ViewModelEmail extends EditViewModel<IEditView> {
 	@Override
 	protected boolean saveAsync() throws InvalidOperationException {
 		if(sheetEmailRequest == null) {
-			  IEditView view = getView();
+			  IEditView view = (IEditView) getView();
 			  throw new InvalidOperationException(view!=null?
 					  view.getString(R.string.no_data):"No hay datos");
 		}

@@ -11,22 +11,25 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />   
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    
-     <!--
+
+    <!--
 20	     The following two permissions are not required to use
 21	     Google Maps Android API v2, but are recommended.
-22	    -->
-23	    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-24	    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    
+22
+    -->
+23	    
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+24	    
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <!-- Maps API needs OpenGL ES 2.0. -->
-  <uses-feature
-    android:glEsVersion="0x00020000"
-    android:required="true"/>
-    
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
     <application
         android:name="com.comyted.MainApp"
         android:allowBackup="true"
@@ -34,14 +37,14 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
 
-<!--     <uses-library android:name="com.google.android.maps"/> -->
-		 <meta-data
-	            android:name="com.google.android.gms.version"
-	            android:value="@integer/google_play_services_version" />
-	        <meta-data
-	            android:name="com.google.android.maps.v2.API_KEY"
-	            android:value="AIzaSyAU9ShujnIg3IDQxtPrafaf7Q1qOvFVdwNmWc4" />
-        
+        <!-- <uses-library android:name="com.google.android.maps"/> -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAU9ShujnIg3IDQxtPrafaf7Q1qOvFVdwNmWc4" />
+
         <!-- Declaracion de las Actividades -->
         <activity
             android:name="com.comyted.activities.IntroActivity"
@@ -107,11 +110,11 @@
         <!-- android:screenOrientation="portrait" -->
         <activity
             android:name="com.comyted.modules.sheets.ActivityEditSheet"
-            android:label="@string/title_activity_edit_sheet">
+            android:label="@string/title_activity_edit_sheet" >
         </activity>
         <activity
             android:name="com.comyted.modules.sheets.tasks.ActivityEditTask"
-            android:label="@string/editar_tarea"         
+            android:label="@string/editar_tarea"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -119,13 +122,13 @@
         </activity>
         <activity
             android:name="com.comyted.activities.PaintActivity"
-            android:label="@string/title_activity_paint"           
+            android:label="@string/title_activity_paint"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.comyted.sheets.ActivitySheet" />
         </activity>
-        
+
         <!-- Actividades de los clientes -->
         <activity
             android:name="com.comyted.modules.clients.ActivityListClients"
@@ -143,9 +146,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.comyted.modules.clients.ActivityListClients" />
         </activity>
-         <activity
+        <activity
             android:name="com.comyted.modules.clients.ActivityEditClient"
-            android:label="EditarCliente">          
+            android:label="EditarCliente" >
+        </activity>
+        <activity
+            android:name="com.comyted.activities.ActivityMap"
+            android:label="@string/title_activity_activity_map" >
         </activity>
     </application>
 

@@ -11,7 +11,7 @@ import com.enterlib.threading.IWorkPost;
 
 import android.graphics.Bitmap;
 
-public class ViewModelSignature extends DataViewModel<IDataView> {
+public class ViewModelSignature extends DataViewModel {
 		
 	public static final int TECNITIAN = 1;
 	public static final int CLIENT = 2;

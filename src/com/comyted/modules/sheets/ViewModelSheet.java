@@ -11,7 +11,7 @@ import com.enterlib.generics.SimpleEvent;
 import com.enterlib.generics.ObservableValue;
 import com.enterlib.app.IDataView;
 
-public class ViewModelSheet extends DataViewModel<IDataView> {
+public class ViewModelSheet extends DataViewModel {
 	
 	public static final int TASKS = 1;
 	public static final int SHEET = 2;

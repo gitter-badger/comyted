@@ -40,7 +40,7 @@ import com.enterlib.exceptions.InvalidOperationException;
 import com.enterlib.threading.AsyncManager;
 import com.enterlib.threading.IWorkPost;
 
-public class ViewModelEditSheet extends EditViewModel<IViewSheetEdit>  {
+public class ViewModelEditSheet extends EditViewModel  {
 
 	int orderId;
 	int sheetId;
@@ -207,7 +207,7 @@ public class ViewModelEditSheet extends EditViewModel<IViewSheetEdit>  {
 	}
 	
 	public void loadEngines(final int plantId, final String plantName){
-		IViewSheetEdit view = getView();
+		IViewSheetEdit view = (IViewSheetEdit) getView();
 		if(view!=null && view.isValid())
 			view.showProgressDialog();	
 		
@@ -246,7 +246,7 @@ public class ViewModelEditSheet extends EditViewModel<IViewSheetEdit>  {
 				
 				@Override
 				public void onWorkFinish(Exception workException) {		
-					IViewSheetEdit view = getView();
+					IViewSheetEdit view = (IViewSheetEdit) getView();
 					if(view !=null && view.isValid()){									
 						view.dismisProgressDialog();
 						if(workException!=null)
@@ -294,7 +294,7 @@ public class ViewModelEditSheet extends EditViewModel<IViewSheetEdit>  {
     	    
 		if(orderId > 0)
 		{	
-			IViewSheetEdit view = getView();
+			IViewSheetEdit view = (IViewSheetEdit) getView();
 			//get the order for the sheet
 			order = ordersRep.getOrder(orderId);
 			if(order == null){

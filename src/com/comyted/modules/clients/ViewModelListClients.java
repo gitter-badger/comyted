@@ -7,7 +7,7 @@ import com.comyted.repository.IClientRepository;
 import com.enterlib.app.DataViewModel;
 import com.enterlib.app.IDataView;
 
-public class ViewModelListClients extends DataViewModel<IDataView> {
+public class ViewModelListClients extends DataViewModel {
 	
 
 	ClientSummary[] clients;

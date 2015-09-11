@@ -6,7 +6,7 @@ import com.comyted.models.Client;
 import com.enterlib.app.EditViewModel;
 import com.enterlib.app.IEditView;
 
-public class ViewModelEditClient extends EditViewModel<IEditView> {
+public class ViewModelEditClient extends EditViewModel {
 
 	public Client getClient() {
 		return client;
