@@ -18,11 +18,11 @@
     <!--
 20	     The following two permissions are not required to use
 21	     Google Maps Android API v2, but are recommended.
-22
+22
     -->
-23	    
+23	    
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-24	    
+24	    
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <!-- Maps API needs OpenGL ES 2.0. -->
@@ -153,6 +153,18 @@
         <activity
             android:name="com.comyted.activities.ActivityMap"
             android:label="@string/title_activity_activity_map" >
+        </activity>
+        <activity
+            android:name="com.comyted.modules.contacts.ActivityContact"
+            android:label="@string/title_activity_activity_contact" >
+        </activity>
+          <activity
+            android:name="com.comyted.modules.contacts.ActivityListContacts"
+            android:label="Contactos"
+            android:parentActivityName="com.comyted.activities.DashboardActivity" >
+              <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.comyted.activities.DashboardActivity" />
         </activity>
     </application>
 

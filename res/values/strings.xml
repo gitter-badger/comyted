@@ -368,5 +368,7 @@
     <string name="email_">Email:</string>
     <string name="cliente_n_">Cliente Nº:</string>
     <string name="title_activity_activity_map">Mapa</string>
+    <string name="title_activity_activity_contact">ActivityContact</string>
+    <string name="crear">Crear</string>
 
 </resources>

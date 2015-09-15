@@ -5,13 +5,14 @@ import java.util.Locale;
 import junit.framework.Assert;
 
 import com.comyted.Constants;
+import com.comyted.SupportEmptyFragment;
 import com.comyted.MainApp;
 import com.comyted.R;
 import com.comyted.conectivity.GetClientesClient;
 import com.comyted.models.ClientSummary;
 import com.comyted.modules.contacts.FragmentClientContacts;
-import com.comyted.modules.offers.FragmentOffers;
-import com.comyted.modules.visits.FragmentVisits;
+import com.comyted.modules.offers.FragmentClientOffers;
+import com.comyted.modules.visits.FragmentClientVisits;
 import com.comyted.repository.ClientRepository;
 import com.comyted.repository.IClientRepository;
 import com.comyted.testing.repository.LocalJSONClientRepository;
@@ -158,9 +159,9 @@ public class ActivityClient extends FragmentActivity implements ActionBar.TabLis
 			case 1:
 				return new FragmentClientContacts();
 			case 2:
-				return new FragmentVisits();
+				return new SupportEmptyFragment();
 			case 3:
-				return new FragmentOffers();		
+				return new SupportEmptyFragment();		
 			}
 			return null;
 		}

@@ -15,9 +15,8 @@ import com.enterlib.app.DataViewModel;
 import com.enterlib.app.IFilterableAdapter;
 import com.enterlib.widgets.FilterDialog;
 
-public abstract class SupportListFragment extends SupportRefreshableFragment
-		implements OnItemClickListener {
-
+public abstract class ListFragment extends RefreshableFragment
+									implements OnItemClickListener{
 	public static final String SELECTION = "SELECTION";
 	
 	private FilterDialog mDialog;	

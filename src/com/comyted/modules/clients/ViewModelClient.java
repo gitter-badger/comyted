@@ -1,31 +1,21 @@
 package com.comyted.modules.clients;
 
-import java.net.URL;
 import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.http.client.utils.URLEncodedUtils;
 
 import android.graphics.Bitmap;
 import android.location.Address;
 import android.location.Geocoder;
-import android.net.Uri;
-import android.util.Log;
-
 import com.comyted.conectivity.GetClientesClient;
 import com.comyted.models.AppUser;
 import com.comyted.models.Client;
 import com.comyted.repository.ClientRepository;
 import com.comyted.repository.IClientRepository;
 import com.enterlib.app.DataViewModel;
-import com.enterlib.app.IDataView;
 import com.enterlib.conetivity.RestClient;
-import com.enterlib.threading.AsyncManager;
 import com.enterlib.threading.AsyncNotifyTask;
 import com.enterlib.threading.IAsyncCallback;
-import com.enterlib.threading.IAsyncInvocator;
 
 public class ViewModelClient extends DataViewModel implements IAsyncCallback {
 	

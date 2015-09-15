@@ -30,32 +30,30 @@
      <View android:background="@drawable/loginbar" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginLeft="5.0dip" />
      
     <!-- Seccion 1 -->
-       <TableLayout 	     
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content">		                  	  	         	
-	        <TableRow>
-	            <!-- Cliente -->
-
-	             <TextView
-	                 android:gravity="right"
-	                 android:text="@string/cliente_n_"
-	                 android:textStyle="bold" />
-
-	             <TextView android:id="@+id/client_id" android:gravity="left"  android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+		<!-- Cliente -->
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"             
+             android:text="@string/cliente_n_"
+             android:textStyle="bold" />
+         <TextView android:id="@+id/client_id" android:layout_height="wrap_content" android:layout_width="wrap_content"/>
 	              
-	             <!-- Codigo -->
-	              <TextView android:gravity="right" android:textStyle="bold" android:text="@string/codigo_" android:layout_marginLeft="10dp"/>
-	              <TextView android:id="@+id/client_codigo" android:gravity="left"  android:layout_height="wrap_content" android:layout_width="wrap_content" />
-	        </TableRow>
-	        
-	        <TableRow>
-	            <!-- C.I.F -->
-	             <TextView  android:text="@string/c_i_f_"  android:gravity="right" android:textStyle="bold" />
-	             <TextView android:id="@+id/client_cif"  android:gravity="left" android:layout_height="wrap_content" android:layout_width="wrap_content" />  
-	        </TableRow>
-	        
-	    </TableLayout>
-	    
+          <!-- Codigo -->
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:text="@string/codigo_"
+               android:textStyle="bold" />
+           <TextView android:id="@+id/client_codigo" android:layout_height="wrap_content" android:layout_width="wrap_content" />        
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp">
+          <!-- C.I.F -->
+             <TextView  android:text="@string/c_i_f_" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" />
+             <TextView android:id="@+id/client_cif"  android:layout_height="wrap_content" android:layout_width="wrap_content" />
+    </LinearLayout>     	    
       <!-- Delimiter -->
      <View android:background="@drawable/loginbar" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginLeft="5.0dip" />
     
@@ -123,8 +121,7 @@
 	          android:drawableRight="@drawable/stat_notify_email_generic"
 	          android:text="@string/email_"
 	          android:textStyle="bold" />
-
-	     <TextView android:id="@+id/client_email"  android:layout_height="wrap_content" android:layout_width="match_parent" />
+	     <TextView android:id="@+id/client_email"  android:layout_height="wrap_content" android:layout_width="match_parent" android:clickable="true" />
 	     
      </LinearLayout>
      

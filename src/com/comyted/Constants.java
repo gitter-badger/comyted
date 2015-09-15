@@ -14,6 +14,8 @@ public final class Constants {
 	public static final String CLIENT = "client";	
 	public static final String CLIENT_ID = "clientId";
 	public static final String ADDRESS = "ADDRESS";
+	public static final String ID = "ID";
+	public static final String ENTIRY = "ENTITY";
 	
 	public static final DateConverter ServerDateConverter = new DateConverter("yyyy-MM-dd HH:mm:ss");
 	
@@ -26,9 +28,10 @@ public final class Constants {
 	public static final int ADD_SHEET = 7;
 	public static final int CLIENT_MODIFIED = 8;
 	public static final int EDIT_CLIENT = 9;
-	public static final int CONTACT_MODIFIED = 10;
-	
-	
-	
+	public static final int CONTACT_MODIFIED = 10;	
+	public static final int MODIFIED = 11;
+	public static final int OK = 12;
+	public static final int CANCEL = 13;
+	public static final int EDIT = 14;
 	
 }

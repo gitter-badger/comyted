@@ -13,7 +13,6 @@ import com.comyted.conectivity.GetUsersClient;
 import com.comyted.models.AppUser;
 import com.comyted.modules.admin.IUserManager;
 import com.comyted.modules.admin.UsersManager;
-import com.enterlib.conetivity.RestClient;
 import com.enterlib.exceptions.InvalidOperationException;
 import com.enterlib.generics.IObserver;
 import com.enterlib.generics.ObservableValue;

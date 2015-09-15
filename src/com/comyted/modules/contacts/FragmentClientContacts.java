@@ -5,15 +5,22 @@ import java.util.Comparator;
 import junit.framework.Assert;
 
 import com.comyted.Constants;
+import com.comyted.R;
 import com.comyted.SupportListFragment;
 import com.comyted.models.ClientContactSummary;
+import com.comyted.models.Contact;
 import com.comyted.repository.ContactsRepository;
 import com.comyted.repository.IContactsRepository;
 import com.enterlib.app.CollectionAdapter;
 import com.enterlib.app.DataViewModel;
 import com.enterlib.app.IDataView;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -35,9 +42,9 @@ public class FragmentClientContacts extends SupportListFragment {
 	
 	CollectionAdapter<ClientContactSummary> adapter;
 	private ContactSummaryComparator comparator;
-	
+		
 	@Override
-	protected void updateUI() {
+	public void onDataLoaded() {
 		
 		 ViewModelClientContacts viewModel = (ViewModelClientContacts) getViewModel();
 		 ClientContactSummary[] contacts = viewModel.getContacts();
@@ -47,7 +54,7 @@ public class FragmentClientContacts extends SupportListFragment {
 			 setAdapter(null);
 			 return;
 		 }	 
-		 adapter = new AdapterContacts(getActivity(), contacts);
+		 adapter = new AdapterClientContacts(getActivity(), contacts);
 		 setAdapter(adapter);
 	}
 
@@ -62,18 +69,51 @@ public class FragmentClientContacts extends SupportListFragment {
 		comparator.Order = sortOrder;
 		adapter.sort(comparator);		
 	}
+	
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		inflater.inflate(R.menu.fragment_client_contacts, menu);
+		setMenu(menu);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {		
+		if(super.onOptionsItemSelected(item)){
+			return true;
+		}
+		
+		int id = item.getItemId();
+		DataViewModel vm = getViewModel();	
+		switch (id) {		
+			case R.id.add:
+				
+				return true;
+		}
+		return false;
+	}
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
-		// TODO Auto-generated method stub		
+		ClientContactSummary c = (ClientContactSummary) parent.getItemAtPosition(position);
+		Intent intent = new Intent(getActivity(), ActivityContact.class)
+		.putExtra(Constants.ID, c.id);
+		
+		startActivityForResult(intent, Constants.EDIT);
+	}
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {		
+		if(resultCode == Constants.MODIFIED)
+			getViewModel().load();
 	}
 
 	@Override
-	protected DataViewModel createViewModel(IDataView view, FragmentActivity activity) {		
+	protected DataViewModel createViewModel() {		
 		IContactsRepository contactRepository = new ContactsRepository();
+		Activity activity = getActivity();
 		int clientId = activity.getIntent().getIntExtra(Constants.CLIENT_ID, 0);
-		return new ViewModelClientContacts(view, contactRepository, clientId);
+		return new ViewModelClientContacts(this, contactRepository, clientId);
 	}
 
 	

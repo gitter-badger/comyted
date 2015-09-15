@@ -12,6 +12,7 @@ import com.comyted.MainApp;
 import com.comyted.R;
 import com.comyted.models.AppUser;
 import com.comyted.modules.clients.ActivityListClients;
+import com.comyted.modules.contacts.ActivityListContacts;
 import com.comyted.modules.orders.ActivityListOrders;
 import com.comyted.modules.sheets.ActivityListSheets;
 
@@ -80,6 +81,9 @@ public class DashboardActivity extends FragmentActivity implements View.OnClickL
 			break;
 		case R.id.btn_clientes:
 			i = new Intent(getApplicationContext(), ActivityListClients.class);
+			break;
+		case R.id.btn_contactos:
+			i = new Intent(getApplicationContext(), ActivityListContacts.class);
 			break;			
 		default:
 			break;

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+          	 xmlns:tools="http://schemas.android.com/tools"          	 
+         	 android:orientation="horizontal" 
+         	 android:clipChildren="true" 
+         	 android:layout_width="fill_parent" 
+         	 android:layout_height="fill_parent"          	 
+         	 android:fillViewport="true">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <!-- nombrecontacto -->
+
+    <TextView
+        android:id="@+id/contact_nombrecontacto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableBottom="@color/gray"
+        android:shadowDy="2.0"
+        android:text="Jesus lopez"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <!-- Delimiter -->
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="4.0dip"
+        android:layout_marginLeft="5.0dip"
+        android:background="@drawable/loginbar" />
+
+    <!-- Seccion 1 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <!-- Id -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contacto Nº:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/contact_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Cliente -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:text="Cliente:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/contact_nombrecliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Almazan Corporation,SL." />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+
+        <!-- Puesto -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Puesto:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/contact_puesto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jefe de Compras" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+
+        <!-- Departamento -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Departamento:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/contact_departamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Comercial" />
+    </LinearLayout>
+    <!-- Delimiter -->
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="4.0dip"
+        android:layout_marginLeft="5.0dip"
+        android:background="@drawable/loginbar" />
+
+    <!-- Section 2 -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <!-- Direccion -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/direccion_"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/contact_direccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Ciudad -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ciudad_"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/contact_ciudad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Provincia -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/provincia_"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/contact_provincia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Codigo Postal -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/codigo_postal_"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/contact_codpos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Pais -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pais_"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/contact_pais"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- Delimiter -->
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="4.0dip"
+        android:layout_marginLeft="5.0dip"
+        android:background="@drawable/loginbar" />
+
+    <!-- Section 3 -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!-- Telefono -->
+            <TextView
+                android:id="@+id/lbContact_telefono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:drawableRight="@drawable/ic_action_phone_little"
+                android:text="@string/telefono_"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/contact_telefono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9542345879" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/contact_session3_margin"
+            android:orientation="vertical" >
+
+            <!-- FAX -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_action_paste_little"
+                android:text="@string/fax_"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/contact_fax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9542345879" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/contact_session3_margin"
+            android:orientation="vertical" >
+
+            <!-- Email -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/stat_notify_email_generic"
+                android:text="@string/email_"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/contact_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="jose@gmail.com" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Observaciones -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Observaciones:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/contact_observations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.31" />
+
+    <com.comyted.MapView  android:id="@+id/framelayout" android:layout_width="match_parent"
+        				  android:layout_height="164dp" />
+<!--     <FrameLayout -->
+<!--         android:id="@+id/framelayout" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="164dp" > -->
+
+<!--         <ProgressBar -->
+<!--             android:id="@+id/googleMapProgressBar" -->
+<!--             android:layout_width="match_parent" -->
+<!--             android:layout_height="match_parent" -->
+<!--             android:indeterminate="true" -->
+<!--             android:visibility="invisible" /> -->
+
+<!--         <ImageView -->
+<!--             android:id="@+id/googleMapImage" -->
+<!--             android:layout_width="fill_parent" -->
+<!--             android:layout_height="fill_parent" -->
+<!--             android:adjustViewBounds="true" -->
+<!--             android:contentDescription="Mapa de Google" -->
+<!--             android:scaleType="fitXY" -->
+<!--             android:visibility="visible" /> -->
+<!--     </FrameLayout> -->
+</LinearLayout>
+
+</ScrollView>

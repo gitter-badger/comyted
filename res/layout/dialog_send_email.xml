@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+    
+    <ScrollView 
+        android:clipChildren="true" 
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent"       
+        android:fillViewport="true"
+        android:layout_above="@+id/email_button_panel"
+         >
+        
+    <LinearLayout android:layout_width="match_parent"
+				  android:layout_height="wrap_content"
+				  android:orientation="vertical"
+				 android:scrollbars="vertical"  >				     
+    
+    <!-- De -->
+    <LinearLayout
+        android:paddingTop="5dip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gray_rectangle"
+        android:orientation="vertical" >
+        <TextView android:text="De:"  android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/email_sender" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:inputType="textEmailAddress"/>
+    </LinearLayout>
+
+    <!-- Para -->
+    <LinearLayout android:paddingTop="5dip" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"  android:background="@drawable/gray_rectangle" >
+        <TextView android:text="Para:" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/email_receiver" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:inputType="textEmailAddress"/>
+    </LinearLayout>
+    
+    <!-- CC -->
+    <LinearLayout android:paddingTop="5dip" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/gray_rectangle" android:orientation="vertical" >
+        <TextView android:text="CC:"  android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/email_cc" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:inputType="text|textEmailAddress"/>
+    </LinearLayout>
+    
+    <!-- Subject -->
+    <LinearLayout android:paddingTop="5dip" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/gray_rectangle" android:orientation="vertical" >
+        <TextView android:text="Subject:" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/email_subject" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:inputType="textEmailSubject"/>
+    </LinearLayout>
+    
+    <!-- Text -->
+<!--     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/custom_edit_text" android:orientation="vertical" >         -->
+
+        <EditText
+            android:layout_margin="5dip"
+            android:id="@+id/email_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/textfield_default"
+            android:inputType="textMultiLine"
+            android:maxLines="10"
+            android:minLines="3" />
+
+<!--     </LinearLayout> -->
+    
+    </LinearLayout>
+    
+    </ScrollView>
+    
+     <LinearLayout android:id="@+id/email_button_panel" 
+         android:layout_width="match_parent" 
+         android:layout_height="wrap_content" 
+         android:background="@drawable/gray_rectangle" 
+         android:orientation="horizontal"
+         android:layout_alignParentBottom="true" android:gravity="center_horizontal" >         
+
+         <Button
+             android:id="@+id/email_cancel"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"                          
+             android:drawableLeft="@drawable/ic_action_cancel"
+             android:layout_weight="0.5"
+             android:text="Cancelar"
+             android:background="@drawable/gray_rectangle"
+              />
+         
+         <Button
+             android:id="@+id/email_send"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:drawableLeft="@drawable/stat_notify_email_generic"
+             android:layout_weight="0.5"
+             android:background="@drawable/gray_rectangle"
+             android:text="Enviar"
+              />
+
+    </LinearLayout>
+    
+</RelativeLayout>

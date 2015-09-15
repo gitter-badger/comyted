@@ -30,21 +30,20 @@
             android:text="Ingenieros AG"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <!-- Empresa -->        
-        <TextView
-            android:id="@+id/contact_nombreempresa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ingenieros AG" />
+        <!-- Puesto -->
         
-        
-        <!-- Puesto -->       
         <TextView
             android:id="@+id/contact_puesto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Director Comercial" />
-     
+
+        <!-- Departamento -->
+        <TextView
+            android:id="@+id/contact_departamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comercial" />
         
         <RelativeLayout
             android:layout_width="match_parent"

@@ -1,27 +1,20 @@
 package com.comyted.modules.clients;
 
 import java.util.List;
-
 import com.comyted.Constants;
+import com.comyted.SupportMailDialogFragment;
 import com.comyted.MainApp;
 import com.comyted.R;
 import com.comyted.Utils;
 import com.comyted.activities.ActivityMap;
 import com.comyted.models.Client;
+import com.comyted.models.MailMessage;
 import com.enterlib.StringUtils;
 import com.enterlib.app.DefaultDataView;
 import com.enterlib.app.PresentUtils;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.location.Address;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -56,6 +49,25 @@ public class FragmentClient extends Fragment implements OnClickListener {
 		 rootView = (ViewGroup)inflater.inflate(R.layout.fragment_client, container, false);	
 		 TextView lbPhone = (TextView) rootView.findViewById(R.id.lbCliente_telefono);
 		 lbPhone.setOnClickListener(this);
+		 TextView lbEmail = (TextView) rootView.findViewById(R.id.client_email);
+		 
+		 lbEmail.setOnClickListener(new OnClickListener() {			
+			@Override
+			public void onClick(View v) {
+				Client client = vm.getClient();
+				if(client == null){
+					PresentUtils.showMessage(getActivity(), "Espera a que se cargen los datos");
+					return;
+				}
+				
+				MailMessage message=new MailMessage();
+				message.Sender = MainApp.getCurrentUser().email;
+				message.Receiver =client.email;
+				
+				SupportMailDialogFragment frag = SupportMailDialogFragment.newInstance(message);
+				frag.show(getFragmentManager(), "com.comyted.MailDialogFragment");
+			}
+		});
 		 
 		 frame = (FrameLayout) rootView.findViewById(R.id.framelayout);
 		 ImageView mapView = (ImageView) frame.findViewById(R.id.googleMapImage);
@@ -156,8 +168,7 @@ public class FragmentClient extends Fragment implements OnClickListener {
 					 			.putExtra(Constants.CLIENT, client);
 			
 			startActivityForResult(intent, Constants.EDIT_CLIENT);
-		}
-		
+		}		
 	}	
 		
 	@Override
