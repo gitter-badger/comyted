@@ -48,6 +48,7 @@ public abstract class ListFragment extends RefreshableFragment
 		return adapter;
 	}
 
+	
 	protected void setAdapter(IFilterableAdapter adapter) {
 		this.adapter = adapter;
 		
@@ -87,7 +88,7 @@ public abstract class ListFragment extends RefreshableFragment
 
 	protected ListView getListView() {
 		return listView;
-	}
+	}		
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {		
@@ -109,8 +110,13 @@ public abstract class ListFragment extends RefreshableFragment
     }
 
 
-	public void showSearchDialog(){
-		mDialog = new FilterDialog(getActivity(), adapter, getSelectedPosition());	
+	public final void showSearchDialog(){
+		if(adapter == null)
+			return;
+		
+		mDialog = createFilterDialog();	
+		if(mDialog == null)
+			return;
 		
 		mDialog.setOnSelectedItemlistener(new FilterDialog.OnItemSelectedListener() {
 			@Override
@@ -121,6 +127,10 @@ public abstract class ListFragment extends RefreshableFragment
 						
 		});
 		mDialog.show();
+	}
+	
+	protected FilterDialog createFilterDialog(){
+		return new FilterDialog(getActivity(), adapter, getSelectedPosition());	
 	}
 	
 	@Override
@@ -144,21 +154,13 @@ public abstract class ListFragment extends RefreshableFragment
 		int id = item.getItemId();
 		DataViewModel vm = getViewModel();	
 		switch (id) {				
-			case R.id.sort_az:				
+			case R.id.sort_az:
 				sortItems(SortOrder);
 				SortOrder = -SortOrder;
-				if(SortOrder == 1){
-					item.setIcon(R.drawable.ic_menu_download);
-					item.setTitle(R.string.a_z);
-				}
-				else{					
-					item.setIcon(R.drawable.ic_menu_upload);
-					item.setTitle(R.string.z_a);
-				}					
-				return true;
-//			case R.id.sort_za:
-//				view.sortByName(-1);
-//				return true;				
+				MenuValue value = getMenuValue(SortOrder);
+				item.setIcon(value.iconRes);
+				item.setTitle(value.titleRes);					
+				return true;			
 			case R.id.filter:
 				showSearchDialog();
 				return true;				
@@ -166,11 +168,23 @@ public abstract class ListFragment extends RefreshableFragment
 		return false;
 	}
 	
-	
-		
+	protected MenuValue getMenuValue(int sortOrder){		
+		return sortOrder == 1 ? 
+				new MenuValue(R.drawable.ic_menu_download,R.string.a_z):
+				new MenuValue(R.drawable.ic_menu_upload, R.string.z_a);
+	}
 	
 	protected abstract void sortItems(int sortOrder);
 	
 	public abstract void onItemClick(AdapterView<?> parent, View view, int position, long id);
+	
+	class MenuValue{
+		public MenuValue(int iconRes, int titleRes) {
+			this.iconRes = iconRes;
+			this.titleRes = titleRes;
+		}
+		public int iconRes;
+		public int titleRes;
+	}
 	
 }

@@ -64,8 +64,8 @@ public class FragmentListContacts extends ListFragment {
 		}		
 		int id = item.getItemId();		
 		switch (id) {		
-			case R.id.edit:
-				
+			case R.id.add:
+				startActivityForResult(new Intent(getActivity(), ActivityEditContact.class), Constants.EDIT);
 				return true;
 		}
 		return false;
@@ -80,12 +80,7 @@ public class FragmentListContacts extends ListFragment {
 		
 		startActivityForResult(intent, Constants.EDIT);
 	}
-	
-	@Override
-	public void onActivityResult(int requestCode, int resultCode, Intent data) {		
-		if(resultCode == Constants.MODIFIED)
-			getViewModel().load();
-	}
+		
 
 	@Override
 	protected DataViewModel createViewModel() {

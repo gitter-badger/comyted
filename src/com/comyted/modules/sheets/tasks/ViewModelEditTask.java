@@ -113,12 +113,17 @@ public class ViewModelEditTask extends EditViewModel {
 		if(error!=null)
 			throw new ValidationException(error);
 		
+		boolean result;
 		// salvar tarea	
 		if(task.codtarea > 0)
-			taskRepository.updateTask(task);
+			result = taskRepository.updateTask(task);
 		else
-			taskRepository.createTask(task);
+			result = taskRepository.createTask(task);
 		
+		 if(!result){
+			 throw new InvalidOperationException(getView().getString(R.string.no_se_pudo_salvar));
+		 }
+			
 		return true;
 	}
 	

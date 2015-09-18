@@ -53,6 +53,9 @@ public class MapView extends FrameLayout
 	}
 
 	void init(Context context){
+		if(isInEditMode())
+			return;
+		
 		//Get the layout inflater
 		LayoutInflater lif = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		if(lif==null)

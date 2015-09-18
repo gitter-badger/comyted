@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- Icono -->
+ 	<ImageView
+        android:id="@+id/image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/visitas" />
+ 
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/image"
+        android:orientation="vertical" >
+
+        <!-- Fecha Visita -->
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:id="@+id/visit_fecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha : 02/02/2015"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">           
+	     	<!-- Fecha Alta -->	       
+	        <TextView
+	            android:id="@+id/visit_fecha_limite"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Fecha Limite 05/02/2015"
+	            android:layout_alignParentLeft="true"	  	            
+	            />
+	        <!-- Fecha limite -->
+	          <TextView
+		            android:id="@+id/visit_fecha_alta"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"          
+		            android:text="Fecha Alta: 01/01/2015"
+		            android:layout_below="@+id/visit_fecha_limite"
+		          />	              
+        </RelativeLayout>
+        
+        <!-- Responsable -->      
+        
+        <TextView
+            android:id="@+id/visit_responsable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Responsable: Ramon Galiano" />
+
+        <!-- Estado -->
+        <TextView
+            android:id="@+id/visit_estado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estado: Primera Fase" />
+                     
+    </LinearLayout>
+   
+</RelativeLayout>

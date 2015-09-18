@@ -15,7 +15,7 @@ public final class Constants {
 	public static final String CLIENT_ID = "clientId";
 	public static final String ADDRESS = "ADDRESS";
 	public static final String ID = "ID";
-	public static final String ENTIRY = "ENTITY";
+	public static final String ENTITY = "ENTITY";
 	
 	public static final DateConverter ServerDateConverter = new DateConverter("yyyy-MM-dd HH:mm:ss");
 	

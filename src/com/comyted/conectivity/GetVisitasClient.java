@@ -1,11 +1,12 @@
 package com.comyted.conectivity;
 
 import com.comyted.models.ClientVisit;
+import com.comyted.models.ContactVisit;
 import com.enterlib.exceptions.InvalidOperationException;
 
-public class GetVisitas extends AppServiceClient {
+public class GetVisitasClient extends AppServiceClient {
 
-	public GetVisitas() {
+	public GetVisitasClient() {
 		super("GetVisitas.svc");		
 	}
 
@@ -14,4 +15,12 @@ public class GetVisitas extends AppServiceClient {
 				 new RequestParameter("cod_cliente", cod_cliente),
 				 new RequestParameter("cod_usuario", cod_usuario));
 	}
+	
+	public ContactVisit[] ObtenerVisitasUsuarioContacto(int cod_contacto, int cod_usuario) throws InvalidOperationException
+	{
+		return get(ContactVisit[].class, "ObtenerVisitasUsuarioContacto", 
+				 new RequestParameter("cod_contacto", cod_contacto),
+				 new RequestParameter("cod_usuario", cod_usuario));
+	}
+		
 }

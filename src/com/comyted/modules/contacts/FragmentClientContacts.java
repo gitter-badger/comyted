@@ -17,6 +17,7 @@ import com.enterlib.app.IDataView;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -42,7 +43,8 @@ public class FragmentClientContacts extends SupportListFragment {
 	
 	CollectionAdapter<ClientContactSummary> adapter;
 	private ContactSummaryComparator comparator;
-		
+	private int clientId;	
+	
 	@Override
 	public void onDataLoaded() {
 		
@@ -82,11 +84,11 @@ public class FragmentClientContacts extends SupportListFragment {
 			return true;
 		}
 		
-		int id = item.getItemId();
-		DataViewModel vm = getViewModel();	
+		int id = item.getItemId();	
 		switch (id) {		
-			case R.id.add:
-				
+			case R.id.add:									
+				startActivityForResult(new Intent(getActivity(), ActivityEditContact.class)
+				.putExtra(Constants.CLIENT_ID, clientId), Constants.EDIT);
 				return true;
 		}
 		return false;
@@ -97,7 +99,8 @@ public class FragmentClientContacts extends SupportListFragment {
 			long id) {
 		ClientContactSummary c = (ClientContactSummary) parent.getItemAtPosition(position);
 		Intent intent = new Intent(getActivity(), ActivityContact.class)
-		.putExtra(Constants.ID, c.id);
+		.putExtra(Constants.ID, c.id)
+		.putExtra(Constants.CLIENT_ID, clientId);		
 		
 		startActivityForResult(intent, Constants.EDIT);
 	}
@@ -110,9 +113,8 @@ public class FragmentClientContacts extends SupportListFragment {
 
 	@Override
 	protected DataViewModel createViewModel() {		
-		IContactsRepository contactRepository = new ContactsRepository();
-		Activity activity = getActivity();
-		int clientId = activity.getIntent().getIntExtra(Constants.CLIENT_ID, 0);
+		clientId = getActivity().getIntent().getIntExtra(Constants.CLIENT_ID, 0);
+		IContactsRepository contactRepository = new ContactsRepository();		
 		return new ViewModelClientContacts(this, contactRepository, clientId);
 	}
 

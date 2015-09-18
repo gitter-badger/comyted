@@ -4,6 +4,8 @@ import java.util.Locale;
 
 import com.comyted.EmptyFragment;
 import com.comyted.R;
+import com.comyted.modules.visits.FragmentContactVisits;
+
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
@@ -71,29 +73,9 @@ public class ActivityContact extends Activity implements ActionBar.TabListener {
 			actionBar.addTab(actionBar.newTab()
 					.setText(mSectionsPagerAdapter.getPageTitle(i))
 					.setTabListener(this));
-		}
+		}			
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_contact, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
+	
 	@Override
 	public void onTabSelected(ActionBar.Tab tab,
 			FragmentTransaction fragmentTransaction) {
@@ -130,7 +112,7 @@ public class ActivityContact extends Activity implements ActionBar.TabListener {
 			case 1:
 				return new EmptyFragment();				
 			case 2:
-				return new EmptyFragment();		
+				return new FragmentContactVisits();		
 			}			
 			return null;
 		}

@@ -2,8 +2,9 @@ package com.comyted.conectivity;
 
 import com.comyted.models.ClientContactSummary;
 import com.comyted.models.Contact;
+import com.comyted.models.ContactEdit;
 import com.comyted.models.ContactSummary;
-import com.enterlib.conetivity.WCFServiceClient.RequestParameter;
+import com.comyted.models.IdNameValue;
 import com.enterlib.exceptions.InvalidOperationException;
 
 public class GetContactosClient extends AppServiceClient {
@@ -32,5 +33,17 @@ public class GetContactosClient extends AppServiceClient {
 		
 		return get(ContactSummary[].class, "ObtenerContactos");
 	}
+	
+	public ContactEdit ObtenerContactoEdit(int cod_contacto) throws InvalidOperationException{
+		return get(ContactEdit.class, "ObtenerContactoEdit",
+				 new RequestParameter("cod_contacto", cod_contacto));
+	}
+	
+	 public IdNameValue[] ObtenerDepartamentos() throws InvalidOperationException{
+		 return get(IdNameValue[].class, "ObtenerDepartamentos");
+	 }
 
+	 public IdNameValue[] ObtenerListaClientes() throws InvalidOperationException{
+		 return get(IdNameValue[].class, "ObtenerListaClientes");
+	 }
 }

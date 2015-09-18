@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+          	 xmlns:tools="http://schemas.android.com/tools"          	 
+         	 android:orientation="horizontal" 
+         	 android:clipChildren="true" 
+         	 android:layout_width="fill_parent" 
+         	 android:layout_height="fill_parent"          	 
+         	 android:fillViewport="true">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <!-- Section 1 -->
+    
+    <!-- nombrecontacto -->
+	<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" >	  
+        <TextView android:text="Nombre: " android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" />
+	    <EditText
+	        android:id="@+id/contact_nombrecontacto"	        
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:inputType="text" />
+    </LinearLayout>
+
+	<!-- apellido1contacto -->
+	<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" >	  
+        <TextView android:text="Primer Apellido: " android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" />
+	    <EditText
+	        android:id="@+id/contact_apellido1contacto"	        
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:inputType="text" />
+    </LinearLayout>
+    
+	<!-- apellido2contacto -->
+	<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" >	  
+        <TextView android:text="Segundo Apellido: " android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" />
+	    <EditText
+	        android:id="@+id/contact_apellido2contacto"	        
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:inputType="text" />
+    </LinearLayout>
+	
+	
+    <!-- Delimiter -->
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="4.0dip"
+        android:layout_marginLeft="5.0dip"
+        android:background="@drawable/loginbar" />
+
+    <!-- Seccion 2 -->
+     <!-- cliente -->
+	<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" >	  
+        <TextView android:text="Cliente: " android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" />
+        <com.enterlib.widgets.FilterableSpinner   
+  	                   android:id="@+id/contact_cliente"	         
+				       android:layout_width="match_parent"
+				       android:layout_height="wrap_content" 				       
+				       style="@android:style/Widget.DeviceDefault.Light.Spinner"/>	    
+    </LinearLayout>
+
+	<!-- puesto -->
+	<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" >	  
+        <TextView android:text="Puesto: " android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" />
+	    <EditText
+	        android:id="@+id/contact_puesto"	        
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:inputType="text" />
+    </LinearLayout>
+    
+	<!-- departamento -->
+	<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" >	  
+        <TextView android:text="Departamento: " android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" />
+       <Spinner
+	        android:id="@+id/contact_departamento"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"/>	    
+    </LinearLayout>
+    
+     <!-- Delimiter -->
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="4.0dip"
+        android:layout_marginLeft="5.0dip"
+        android:background="@drawable/loginbar" />
+
+    <!-- Seccion 3 -->	      
+    <!-- Direccion -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="@string/direccion_"
+        android:textStyle="bold" />
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/contact_direccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Ciudad -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ciudad_"
+        android:textStyle="bold" />
+
+    <EditText
+        android:inputType="textCapWords"
+        android:id="@+id/contact_ciudad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Provincia -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/provincia_"
+        android:textStyle="bold" />
+    <EditText
+        android:inputType="textCapWords"
+        android:id="@+id/contact_provincia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Codigo Postal -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/codigo_postal_"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/contact_codpos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Pais -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pais_"
+        android:textStyle="bold" />
+
+    <EditText
+        android:inputType="textCapWords"
+        android:id="@+id/contact_pais"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" /> 
+  
+    <!-- Delimiter -->
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="4.0dip"
+        android:layout_marginLeft="5.0dip"
+        android:background="@drawable/loginbar" />
+
+    <!-- Section 4 -->
+	<!-- Telefono -->         		     	 
+		<TextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:drawableRight="@drawable/ic_action_phone_little"
+			    android:text="@string/telefono_"
+			    android:textStyle="bold"			    
+			    />		
+            <EditText android:inputType="phone" android:id="@+id/contact_telefono"  android:layout_height="wrap_content" android:layout_width="match_parent" /> 
+				     
+	     <!-- FAX -->
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:drawableRight="@drawable/ic_action_paste_little"
+             android:text="@string/fax_"
+             android:textStyle="bold" />
+	     <EditText android:inputType="phone" android:id="@+id/contact_fax"  android:layout_height="wrap_content" android:layout_width="match_parent" />	     
+	     
+	     <!-- Email -->
+	     <TextView
+	          android:layout_width="wrap_content"
+	          android:layout_height="wrap_content"
+	          android:drawablePadding="5dp"
+	          android:drawableRight="@drawable/stat_notify_email_generic"
+	          android:text="@string/email_"
+	          android:textStyle="bold" />
+	     <EditText android:inputType="textEmailAddress" android:id="@+id/client_email"  android:layout_height="wrap_content" android:layout_width="match_parent"  />
+
+
+    <!-- Observaciones -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Observaciones:"
+        android:textStyle="bold" />
+
+    <EditText
+        android:inputType="textMultiLine"
+        android:id="@+id/contact_observations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minLines="3"        
+        android:layout_weight="0.31" />
+</LinearLayout>
+
+</ScrollView>

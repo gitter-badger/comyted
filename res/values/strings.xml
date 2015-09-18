@@ -370,5 +370,8 @@
     <string name="title_activity_activity_map">Mapa</string>
     <string name="title_activity_activity_contact">ActivityContact</string>
     <string name="crear">Crear</string>
+    <string name="salvado_">salvado...</string>
+    <string name="entero_positivo">Número entero positivo</string>
+    <string name="no_se_pudo_salvar">No se pudo salvar</string>
 
 </resources>
