@@ -8,10 +8,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.comyted.ActivityMap$PlaceholderFragment" >
 
+    <TextView android:id="@+id/map_adress" 
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+        android:text="Edif c-20 apt 30, Zona 6,Alamar,Havana,Cuba"
+        android:layout_alignParentTop="true" 
+        android:textStyle="bold"/>
+    
      <fragment
-    android:id="@+id/googleMap"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    class="com.google.android.gms.maps.SupportMapFragment" />
+	    android:id="@+id/googleMap"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    class="com.google.android.gms.maps.SupportMapFragment"
+	    android:layout_below="@+id/map_adress" />
 
 </RelativeLayout>

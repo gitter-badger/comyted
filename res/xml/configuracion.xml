@@ -22,7 +22,11 @@
        <PreferenceScreen 
             android:title="@string/lblemailconfig"
             android:summary="@string/lblemailconfigdesc"
-            android:enabled="false"  >            
+            android:enabled="true">
+            <EditTextPreference android:dialogTitle="@string/lblemailconfiguser" android:key="CONST_EMAIL_USER" android:title="@string/lblemailconfigusertitle" android:summary="@string/lblemailconfigusersummary" />
+            <EditTextPreference android:dialogTitle="@string/lblemailconfigpassword" android:key="CONST_EMAIL_PASSWORD" style="@style/passwordstyle" android:title="@string/lblemailconfigpasswordtitle" android:summary="@string/lblemailconfigpasswordsummary"/>
+            <EditTextPreference android:dialogTitle="@string/lblemailconfigsmtp" android:key="CONST_EMAIL_SMTP" android:title="@string/lblemailconfigsmtptitle" android:summary="@string/lblemailconfigsmtpsummary" />
+            <EditTextPreference android:dialogTitle="@string/lblemailconfigport" android:key="CONST_EMAIL_PORT" android:title="@string/lblemailconfigporttitle" android:summary="@string/lblemailconfigportsummary" />      
         </PreferenceScreen>
                
         <Preference 

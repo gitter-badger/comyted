@@ -1,9 +1,10 @@
 package com.comyted.modules.clients;
 
 import java.util.List;
+
 import com.comyted.Constants;
-import com.comyted.SupportMailDialogFragment;
 import com.comyted.MainApp;
+import com.comyted.MailDialogFragment;
 import com.comyted.R;
 import com.comyted.Utils;
 import com.comyted.activities.ActivityMap;
@@ -12,12 +13,13 @@ import com.comyted.models.MailMessage;
 import com.enterlib.StringUtils;
 import com.enterlib.app.DefaultDataView;
 import com.enterlib.app.PresentUtils;
+
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -64,7 +66,7 @@ public class FragmentClient extends Fragment implements OnClickListener {
 				message.Sender = MainApp.getCurrentUser().email;
 				message.Receiver =client.email;
 				
-				SupportMailDialogFragment frag = SupportMailDialogFragment.newInstance(message);
+				MailDialogFragment frag = MailDialogFragment.newInstance(message);
 				frag.show(getFragmentManager(), "com.comyted.MailDialogFragment");
 			}
 		});

@@ -8,10 +8,13 @@ public class GetOfertasClient extends AppServiceClient {
 	public GetOfertasClient() {
 		super("GetOfertas.svc");		
 	}
-	
+
+	public ClientOffert[] ObtenerOfertas() throws InvalidOperationException{
+		return get(ClientOffert[].class, "ObtenerOfertas");
+	}
+
 	public ClientOffert[] ObtenerOfertasCliente(int cod_cliente) throws InvalidOperationException{
 		 return get(ClientOffert[].class, "ObtenerOfertasCliente",
 				 new RequestParameter("cod_cliente", cod_cliente));
-	}
-
+	}	
 }

@@ -201,9 +201,15 @@ public class ViewModelEditSheet extends EditViewModel  {
 				
 	@Override
 	protected boolean saveAsync() throws Exception {
-		return sheetId > 0 ?
-					sheetsManager.updateSheet(sheetEdit):
-					sheetsManager.createSheet(sheetEdit);			
+		boolean result;
+		 if(sheetId > 0)
+			result = sheetsManager.updateSheet(sheetEdit);
+		else
+			result = sheetsManager.createSheet(sheetEdit);
+		 if(!result){
+			 throw new InvalidOperationException(getView().getString(R.string.no_se_pudo_salvar));
+		 }
+		return true;
 	}
 	
 	public void loadEngines(final int plantId, final String plantName){

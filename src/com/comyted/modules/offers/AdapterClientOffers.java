@@ -6,38 +6,25 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.comyted.R;
+import com.comyted.generics.ListAdapter;
 import com.comyted.models.ClientOffert;
 import com.enterlib.app.CollectionAdapter;
 import com.enterlib.app.PresentUtils;
 import com.enterlib.converters.Converters;
 
-public class AdapterClientOffers extends CollectionAdapter<ClientOffert> {
-	
-	private LayoutInflater _inflater;
-
+public class AdapterClientOffers extends ListAdapter<ClientOffert> {		
 	public AdapterClientOffers(Context context, ClientOffert[] objects) {
-		super(context, R.layout.adapter_client_offers, objects);
-	
-		_inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-	}
-	
+		super(context, R.layout.adapter_client_offers, objects);		
+	}		
+
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		View view = null;
-		
-		if(convertView != null)
-			view = convertView;
-		else
-			view = _inflater.inflate(R.layout.adapter_client_offers, null);		
-		
-		ClientOffert c = getItem(position);
-		PresentUtils.setTextViewText(view, R.id.oferta_codoferta, String.valueOf(c.codoferta));
-		PresentUtils.setTextViewText(view, "Contacto: ",R.id.oferta_contacto, c.nombrecontacto);
-		PresentUtils.setTextViewText(view, "Fecha: ", R.id.oferta_fecha_propuesta, Converters.DateToStringConverter.getString(c.fechapropuesta));
-		PresentUtils.setTextViewText(view, "Responsable: ", R.id.oferta_responsable, c.responsable);
-		PresentUtils.setTextViewText(view, "Tipo: ", R.id.oferta_tipo, c.tipooferta);
-		PresentUtils.setTextViewText(view, "Estado: ", R.id.oferta_estado, c.estadooferta);
-		
-		return view;
+	protected void updateView(View view, ClientOffert item, int position) {
+		PresentUtils.setTextViewText(view, R.id.oferta_codoferta, String.valueOf(item.id));
+		PresentUtils.setTextViewText(view, R.id.oferta_descripcion, item.nombreproyecto);
+		PresentUtils.setTextViewText(view, "Contacto: ",R.id.oferta_contacto, item.nombrecontacto);
+		PresentUtils.setTextViewText(view, "Fecha: ", R.id.oferta_fecha_propuesta, item.fechapropuesta);
+		PresentUtils.setTextViewText(view, "Responsable: ", R.id.oferta_responsable, item.responsable);
+		PresentUtils.setTextViewText(view, "Tipo: ", R.id.oferta_tipo, item.tipooferta);
+		PresentUtils.setTextViewText(view, "Estado: ", R.id.oferta_estado, item.estado);	
 	}
 }

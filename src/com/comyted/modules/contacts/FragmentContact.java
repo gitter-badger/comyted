@@ -1,50 +1,44 @@
 package com.comyted.modules.contacts;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-
+import junit.framework.Assert;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.comyted.Constants;
 import com.comyted.MainApp;
 import com.comyted.MapView;
-import com.comyted.MialDialogFragment;
+import com.comyted.MailDialogFragment;
 import com.comyted.R;
 import com.comyted.RefreshableFragment;
-import com.comyted.activities.ActivityMap;
 import com.comyted.models.Contact;
 import com.comyted.models.MailMessage;
+import com.comyted.modules.clients.ActivityEditClient;
 import com.comyted.repository.ContactsRepository;
 import com.enterlib.StringUtils;
 import com.enterlib.app.DataViewModel;
 import com.enterlib.app.PresentUtils;
 import com.enterlib.app.RepositoryViewModel;
-import com.enterlib.conetivity.RestClient;
-import com.enterlib.threading.AsyncNotifyTask;
-import com.enterlib.threading.IAsyncCallback;
 
 public class FragmentContact extends RefreshableFragment 
 							 implements OnClickListener {
-	private ViewGroup rootView;
-	private FrameLayout frame;
+	private ViewGroup rootView;	
 	private RepositoryViewModel<Contact> viewModel;
 	protected Bitmap adressMap;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {	
 		super.onCreate(savedInstanceState);
-		setHasOptionsMenu(true);
+		setHasOptionsMenu(true);		
 	}	
 	
 	
@@ -69,32 +63,10 @@ public class FragmentContact extends RefreshableFragment
 				message.Sender = MainApp.getCurrentUser().email;
 				message.Receiver =entity.email;
 				
-				MialDialogFragment frag = MialDialogFragment.newInstance(message);
+				MailDialogFragment frag = MailDialogFragment.newInstance(message);
 				frag.show(getFragmentManager(), "com.comyted.MailDialogFragment");
 			}
-		});
-		 
-//		 frame = (FrameLayout) rootView.findViewById(R.id.framelayout);
-//		 ImageView mapView = (ImageView) frame.findViewById(R.id.googleMapImage);
-//		 mapView.setOnClickListener(new OnClickListener() {
-//			
-//			@Override
-//			public void onClick(View v) {
-//				Contact entity = viewModel.getEntity();
-//				if(entity == null){
-//					PresentUtils.showMessage(getActivity(), "No hay ningun contacto cargado");
-//					return;
-//				}
-//				if(StringUtils.isNullOrWhitespace(entity.direccion)){
-//					PresentUtils.showMessage(getActivity(), "El Contacto no posee dirección");
-//					return;
-//				}
-//				
-//				Intent intent = new Intent(getActivity(), ActivityMap.class);
-//				intent.putExtra(Constants.ADDRESS, entity.direccion);
-//				startActivity(intent);				
-//			}
-//		});
+		});		
 		 return rootView;
 	}
 	
@@ -105,6 +77,7 @@ public class FragmentContact extends RefreshableFragment
 			PresentUtils.showMessage(getActivity(), "no hay cliente");
 			return;
 		}
+		getActivity().setTitle(c.nombrecontacto);
 			
 		setText(R.id.contact_id, String.valueOf(c.id));
 		setText(R.id.contact_nombrecontacto, c.nombrecontacto);
@@ -128,18 +101,44 @@ public class FragmentContact extends RefreshableFragment
 
 	@Override
 	protected DataViewModel createViewModel() {
-		viewModel = new RepositoryViewModel<Contact>(this, 
-				getActivity().getIntent().getIntExtra(Constants.ID, 0) ,
-				new ContactsRepository());
+		int id =getActivity().getIntent().getIntExtra(Constants.ID, 0);
+		Assert.assertTrue(id > 0);
+		
+		viewModel = new RepositoryViewModel<Contact>(this,id,new ContactsRepository());
+		
 		return viewModel;
 	}
 
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) 
+	{		
+		inflater.inflate(R.menu.fragment_sheet, menu);		
+	}	
+
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) 
+	{
+		if(super.onOptionsItemSelected(item))
+			return true;		
+		switch (item.getItemId()) {
+		case R.id.edit:			
+			Contact c = viewModel.getEntity();			
+			Intent intent = new Intent(getActivity(), ActivityEditContact.class)
+					 			.putExtra(Constants.ID, c.id)
+					 			.putExtra(Constants.CLIENT_ID, getActivity().getIntent().getIntExtra(Constants.CLIENT_ID, 0));			
+			startActivityForResult(intent, Constants.EDIT);
+			return true;		
+		default:
+			return false;
+		}
+	}
 
 	@Override
 	public void onClick(View v) {
 		String phoneNumber= getViewText(R.id.contact_telefono);
 		if(StringUtils.isNullOrWhitespace(phoneNumber)){
-			PresentUtils.showMessage(getActivity(), "El cliente no tiene teléfono");
+			PresentUtils.showMessage(getActivity(), "El contacto no tiene teléfono");
 			return;
 		}
 		
@@ -148,79 +147,6 @@ public class FragmentContact extends RefreshableFragment
 		startActivity(i);
 	}
 	
-	private String getViewText(int id){
-		TextView tv = (TextView) rootView.findViewById(id);
-		return tv.getText().toString();
-	}
-	private void setText(int id, String text){
-		PresentUtils.setTextViewText(rootView, id, text);
-	}
 
-//	public void loadMapAsync(final Contact contact){		
-//		if(!isValid())
-//			return;
-//				
-//		BeginDownloadMap();
-//		
-//		ImageView mapView = (ImageView) frame.findViewById(R.id.googleMapImage);
-//		int width = mapView.getWidth();
-//		int height = mapView.getHeight();
-//		String size = width+"x"+height;
-//		final String url;
-//		try {
-//			url = "http://maps.googleapis.com/maps/api/staticmap?size="+size+"&markers=size:mid|color:red|" 
-//					+ URLEncoder.encode(contact.direccion, "UTF-8") + "&zoom=15&sensor=false";
-//			
-//		} catch (UnsupportedEncodingException e) {			
-//			e.printStackTrace();
-//			onFailure(e);
-//			return;
-//		}
-//		
-//		new AsyncNotifyTask(this) {			
-//			@Override
-//			protected void doInBackground() throws Exception {												
-//				adressMap = RestClient.downloadImage2(url);
-//				
-//			}
-//		}.run();
-//	}
-//
-//
-//	@Override
-//	public void operationCompleted(Exception e) {			
-//		if(!isValid())
-//			return;
-//		
-//		if(e!=null){
-//			onFailure(e);
-//			EndDownLoadMap(null);
-//			return;
-//		}
-//	
-//		EndDownLoadMap(adressMap);		
-//	}
-//	
-//	
-//	public void BeginDownloadMap() {
-//		ProgressBar pbar = (ProgressBar) frame.findViewById(R.id.googleMapProgressBar);
-//		pbar.setVisibility(View.VISIBLE);			
-//		
-//		ImageView mapView = (ImageView) frame.findViewById(R.id.googleMapImage);
-//		mapView.setVisibility(View.INVISIBLE);
-//		mapView.setEnabled(false);
-//	}
-//
-//
-//	public void EndDownLoadMap(Bitmap map) {
-//		ProgressBar pbar = (ProgressBar) frame.findViewById(R.id.googleMapProgressBar);
-//		pbar.setVisibility(View.INVISIBLE);			
-//		
-//		ImageView mapView = (ImageView) frame.findViewById(R.id.googleMapImage);
-//		mapView.setImageBitmap(map);						
-//		mapView.setVisibility(View.VISIBLE);			
-//		mapView.setEnabled(map != null);
-//		
-//	}				
 
 }

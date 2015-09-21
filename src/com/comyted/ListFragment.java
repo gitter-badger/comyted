@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
-
 import com.enterlib.app.DataViewModel;
 import com.enterlib.app.IFilterableAdapter;
 import com.enterlib.widgets.FilterDialog;
@@ -25,9 +24,7 @@ public abstract class ListFragment extends RefreshableFragment
 	private IFilterableAdapter adapter;
 	private View rootView;
 	private ListView listView;
-	private int selectedPosition;
-	
-	public String EmptyMessage = "No hay datos";
+	private int selectedPosition;	
 	
 	public int getSelectedPosition() {
 		return selectedPosition;
@@ -48,11 +45,12 @@ public abstract class ListFragment extends RefreshableFragment
 		return adapter;
 	}
 
+	
 	protected void setAdapter(IFilterableAdapter adapter) {
 		this.adapter = adapter;
 		
 		if(adapter ==null || adapter.getCount() == 0){
-			Utils.showMessage(getActivity(), EmptyMessage);		
+			Utils.showMessage(getActivity(), getNoItemsAlertMessage());		
 			listView.setAdapter(null);		
 			listView.refreshDrawableState();
 			return;
@@ -81,13 +79,17 @@ public abstract class ListFragment extends RefreshableFragment
 		}
 	}
 	
+	protected String getNoItemsAlertMessage(){
+		return getString(R.string.no_hay_datos);
+	}
+	
 	protected View getRootView() {
 		return rootView;
 	}
 
 	protected ListView getListView() {
 		return listView;
-	}
+	}		
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {		
@@ -109,9 +111,18 @@ public abstract class ListFragment extends RefreshableFragment
     }
 
 
-	public void showSearchDialog(){
-		mDialog = new FilterDialog(getActivity(), adapter, getSelectedPosition());	
+	public final void showSearchDialog(){
+		if(adapter == null)
+			return;
 		
+		mDialog = createFilterDialog();	
+		if(mDialog == null)
+			return;
+		
+		String hint = getFilterHint();
+		if(hint!=null){			
+			mDialog.setFilterCriteria(hint);
+		}
 		mDialog.setOnSelectedItemlistener(new FilterDialog.OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> parent,
@@ -121,6 +132,14 @@ public abstract class ListFragment extends RefreshableFragment
 						
 		});
 		mDialog.show();
+	}
+	
+	protected FilterDialog createFilterDialog(){
+		return new FilterDialog(getActivity(), adapter, getSelectedPosition());	
+	}
+	
+	protected String getFilterHint(){
+		return null;
 	}
 	
 	@Override
@@ -144,21 +163,13 @@ public abstract class ListFragment extends RefreshableFragment
 		int id = item.getItemId();
 		DataViewModel vm = getViewModel();	
 		switch (id) {				
-			case R.id.sort_az:				
+			case R.id.sort_az:
 				sortItems(SortOrder);
 				SortOrder = -SortOrder;
-				if(SortOrder == 1){
-					item.setIcon(R.drawable.ic_menu_download);
-					item.setTitle(R.string.a_z);
-				}
-				else{					
-					item.setIcon(R.drawable.ic_menu_upload);
-					item.setTitle(R.string.z_a);
-				}					
-				return true;
-//			case R.id.sort_za:
-//				view.sortByName(-1);
-//				return true;				
+				MenuValue value = getMenuValue(SortOrder);
+				item.setIcon(value.iconRes);
+				item.setTitle(value.titleRes);					
+				return true;			
 			case R.id.filter:
 				showSearchDialog();
 				return true;				
@@ -166,11 +177,23 @@ public abstract class ListFragment extends RefreshableFragment
 		return false;
 	}
 	
-	
-		
+	protected MenuValue getMenuValue(int sortOrder){		
+		return sortOrder == 1 ? 
+				new MenuValue(R.drawable.ic_menu_download,R.string.a_z):
+				new MenuValue(R.drawable.ic_menu_upload, R.string.z_a);
+	}
 	
 	protected abstract void sortItems(int sortOrder);
 	
 	public abstract void onItemClick(AdapterView<?> parent, View view, int position, long id);
+	
+	class MenuValue{
+		public MenuValue(int iconRes, int titleRes) {
+			this.iconRes = iconRes;
+			this.titleRes = titleRes;
+		}
+		public int iconRes;
+		public int titleRes;
+	}
 	
 }

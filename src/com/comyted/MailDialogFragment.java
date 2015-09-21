@@ -1,5 +1,7 @@
 package com.comyted;
 
+import java.util.Properties;
+
 import com.comyted.models.MailMessage;
 import com.enterlib.app.DefaultEditView;
 import com.enterlib.app.EditViewModel;
@@ -23,15 +25,23 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MialDialogFragment extends DialogFragment {
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
+public class MailDialogFragment extends DialogFragment {
 	public static final String MESSAGE = "MESSAEGE";  
 	MailMessage message;
 	Form form;
 	private View rootView;
 	private ViewModel viewModel;
 	
-	public static MialDialogFragment newInstance(MailMessage message){
-		MialDialogFragment fragment = new MialDialogFragment();
+	public static MailDialogFragment newInstance(MailMessage message){
+		MailDialogFragment fragment = new MailDialogFragment();
 		fragment.message = message;
 		Bundle args = new Bundle();
 		args.putSerializable(MESSAGE, message);
@@ -112,10 +122,10 @@ public class MialDialogFragment extends DialogFragment {
 		 RegExValueValidator emailValidator =new RegExValueValidator("(\\w+)(\\.(\\w+))*@(\\w+)(\\.(\\w+))*", 
 				 activity.getString(R.string.email_no_valido));
 		 
-		 RegExValueValidator emailCCValidator =new RegExValueValidator("(\\w+)(\\.(\\w+))*@(\\w+)(\\.(\\w+))*(\\s*;\\s*(\\w+)(\\.(\\w+))*@(\\w+)(\\.(\\w+))*)*", 
+		 RegExValueValidator emailCCValidator =new RegExValueValidator("(\\w+)(\\.(\\w+))*@(\\w+)(\\.(\\w+))*(\\s*,\\s*(\\w+)(\\.(\\w+))*@(\\w+)(\\.(\\w+))*)*", 
 				 activity.getString(R.string.email_no_valido)); 
 		 
-		 form.addField(new TextViewField((TextView)rootView.findViewById(R.id.email_subject), "Subject",true));
+		 form.addField(new TextViewField((TextView)rootView.findViewById(R.id.email_subject), "Subject",false));
 		 form.addField(new TextViewField((TextView)rootView.findViewById(R.id.email_text), "Text", true));		 	     	    
 	     form.addField(new TextViewField((TextView)rootView.findViewById(R.id.email_sender), "Sender" ,true).addValueValidator(emailValidator));
 	     form.addField(new TextViewField((TextView)rootView.findViewById(R.id.email_receiver), "Receiver",true).addValueValidator(emailValidator));
@@ -163,9 +173,9 @@ public class MialDialogFragment extends DialogFragment {
 		}
 
 		@Override
-		protected boolean saveAsync() throws Exception {
-			// TODO Send Email
-			
+		protected boolean saveAsync() throws Exception {			
+			MailSender sender = new MailSender();
+		    sender.sendMail(message.Subject, message.Text, message.Sender, message.Receiver, message.CC);
 			return true;
 		}
 

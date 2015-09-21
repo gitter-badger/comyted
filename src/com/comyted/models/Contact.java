@@ -1,6 +1,13 @@
 package com.comyted.models;
 
-public class Contact   {
+import java.io.Serializable;
+
+public class Contact  implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public int id;
 	public String nombrecontacto;
 	public String nombreempresa;
@@ -15,5 +22,11 @@ public class Contact   {
 	public String fax;
 	public String email;
 	public String observaciones;
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return nombrecontacto!=null?nombrecontacto : super.toString();
+	}	
 		
 }

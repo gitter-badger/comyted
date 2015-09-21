@@ -1,77 +1,39 @@
 package com.comyted.modules.contacts;
 
-import java.util.Comparator;
-
 import junit.framework.Assert;
 
 import com.comyted.Constants;
 import com.comyted.R;
-import com.comyted.SupportListFragment;
+import com.comyted.conectivity.GetContactosClient;
+import com.comyted.generics.DefaultComparator;
+import com.comyted.generics.ListAdapter;
+import com.comyted.generics.ListFragment;
 import com.comyted.models.ClientContactSummary;
-import com.comyted.models.Contact;
-import com.comyted.repository.ContactsRepository;
-import com.comyted.repository.IContactsRepository;
-import com.enterlib.app.CollectionAdapter;
-import com.enterlib.app.DataViewModel;
-import com.enterlib.app.IDataView;
+import com.enterlib.app.PresentUtils;
+import com.enterlib.data.ICollectionRepository;
+import com.enterlib.exceptions.InvalidOperationException;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 
-public class FragmentClientContacts extends SupportListFragment {
-
-	public static class ContactSummaryComparator implements Comparator<ClientContactSummary>{
-		public int Order = 1;// 1=Ascending -1=Descending
-		
-		@Override
-		public int compare(ClientContactSummary lhs, ClientContactSummary rhs) {
-			Assert.assertNotNull(lhs);
-			Assert.assertNotNull(lhs.nombrecontacto);
-			Assert.assertNotNull(rhs);
-			Assert.assertNotNull(rhs.nombrecontacto);
-			
-			return lhs.nombrecontacto.compareToIgnoreCase(rhs.nombrecontacto) * Order;
-		}
-	}
+public class FragmentClientContacts extends ListFragment<ClientContactSummary> {	
 	
-	CollectionAdapter<ClientContactSummary> adapter;
-	private ContactSummaryComparator comparator;
-		
-	@Override
-	public void onDataLoaded() {
-		
-		 ViewModelClientContacts viewModel = (ViewModelClientContacts) getViewModel();
-		 ClientContactSummary[] contacts = viewModel.getContacts();
-		 
-		 if(contacts == null || contacts.length ==0){
-			 adapter = null;
-			 setAdapter(null);
-			 return;
-		 }	 
-		 adapter = new AdapterClientContacts(getActivity(), contacts);
-		 setAdapter(adapter);
+	public FragmentClientContacts(){
+		setComparator(new DefaultComparator<ClientContactSummary>(){
+			@Override
+			public int compare(ClientContactSummary lhs, ClientContactSummary rhs) {				
+				return lhs.nombrecontacto.compareToIgnoreCase(rhs.nombrecontacto) * Order;
+			}
+		});		
 	}
-
-	@Override
-	protected void sortItems(int sortOrder) {
-		if(adapter == null)
-			return;
 		
-		if(comparator == null){
-			 comparator = new ContactSummaryComparator();
-		}
-		comparator.Order = sortOrder;
-		adapter.sort(comparator);		
-	}
-	
+	private int clientId;		
+		
 	@Override
-	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {		
 		inflater.inflate(R.menu.fragment_client_contacts, menu);
 		setMenu(menu);
 	}
@@ -82,39 +44,60 @@ public class FragmentClientContacts extends SupportListFragment {
 			return true;
 		}
 		
-		int id = item.getItemId();
-		DataViewModel vm = getViewModel();	
+		int id = item.getItemId();	
 		switch (id) {		
-			case R.id.add:
-				
+			case R.id.add:									
+				startActivityForResult(new Intent(getActivity(), ActivityEditContact.class)
+				.putExtra(Constants.CLIENT_ID, clientId), Constants.EDIT);
 				return true;
 		}
 		return false;
-	}
+	}	
 
 	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position,
-			long id) {
-		ClientContactSummary c = (ClientContactSummary) parent.getItemAtPosition(position);
-		Intent intent = new Intent(getActivity(), ActivityContact.class)
-		.putExtra(Constants.ID, c.id);
+	protected ICollectionRepository<ClientContactSummary> createRepository() {
+		clientId = getActivity().getIntent().getIntExtra(Constants.CLIENT_ID, 0);
+		Assert.assertTrue(clientId > 0);
 		
-		startActivityForResult(intent, Constants.EDIT);
+		return new ICollectionRepository<ClientContactSummary>() {
+			GetContactosClient client = new GetContactosClient();
+			@Override
+			public ClientContactSummary[] getItems() throws InvalidOperationException {
+				 return client.ObtenerContactosCliente(clientId);
+			}
+		};
 	}
-	
+
 	@Override
-	public void onActivityResult(int requestCode, int resultCode, Intent data) {		
-		if(resultCode == Constants.MODIFIED)
-			getViewModel().load();
+	protected ListAdapter<ClientContactSummary> createAdapter(
+			ClientContactSummary[] items) {
+		return new ListAdapter<ClientContactSummary>(getActivity(),R.layout.adapter_client_contacts, items) {			
+			@Override
+			protected void updateView(View view, ClientContactSummary item, int position) {
+				PresentUtils.setTextViewText(view, R.id.contact_nombrecontacto, item.nombrecontacto);
+				PresentUtils.setTextViewText(view, R.id.contact_puesto, item.puesto);
+				PresentUtils.setTextViewText(view, R.id.contact_departamento, item.departamento);
+				PresentUtils.setTextViewText(view, R.id.contact_telefono, item.telefono);
+				PresentUtils.setTextViewText(view, R.id.contact_fax, item.fax);
+				PresentUtils.setTextViewText(view, R.id.contact_email, item.email);				
+			}
+		};
 	}
 
 	@Override
-	protected DataViewModel createViewModel() {		
-		IContactsRepository contactRepository = new ContactsRepository();
-		Activity activity = getActivity();
-		int clientId = activity.getIntent().getIntExtra(Constants.CLIENT_ID, 0);
-		return new ViewModelClientContacts(this, contactRepository, clientId);
+	protected Intent getItemViewIntent(ClientContactSummary c) {
+		return new Intent(getActivity(), ActivityContact.class)
+					.putExtra(Constants.ID, c.id)
+					.putExtra(Constants.CLIENT_ID, clientId);		
 	}
 
+	@Override
+	protected String getNoItemsAlertMessage() {
+		return getString(R.string.el_cliente_seleccionado_no_posee_contactos);
+	}
 	
+	@Override
+	protected String getFilterHint() {		
+		return getString(R.string.client_search);
+	}
 }

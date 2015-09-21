@@ -5,14 +5,9 @@ import java.util.List;
 
 import com.comyted.Constants;
 import com.comyted.R;
-import com.comyted.R.id;
-import com.comyted.R.layout;
-import com.comyted.R.menu;
 import com.enterlib.DialogUtil;
-import com.enterlib.app.PresentUtils;
 import com.enterlib.threading.AsyncManager;
 import com.enterlib.threading.IAsyncInvocator;
-import com.enterlib.threading.IWorkPost;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -20,20 +15,14 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
+import android.widget.TextView;
 
 public class ActivityMap extends FragmentActivity {
 
@@ -50,7 +39,9 @@ public class ActivityMap extends FragmentActivity {
 		
 		addressString = getIntent().getStringExtra(Constants.ADDRESS);
 		geocoder = new Geocoder(this);
-		
+		TextView mapAdress =(TextView) findViewById(R.id.map_adress);
+		mapAdress.setText(addressString);
+				
 		AsyncManager.InvokeAsync(new IAsyncInvocator() {
 						
 			@Override
@@ -61,7 +52,7 @@ public class ActivityMap extends FragmentActivity {
 			@Override
 			public void OnAsyncOperationComplete() {
 				if(adresses == null || adresses.size() == 0){
-					DialogUtil.showErrorDialog(ActivityMap.this, "No se pudieron determinar las coordenadas");
+					DialogUtil.showErrorDialog(ActivityMap.this, getString(R.string.no_se_pudieron_determinar_las_coordenadas));
 					return;
 				}
 				

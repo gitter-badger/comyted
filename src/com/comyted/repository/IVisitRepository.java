@@ -1,8 +1,8 @@
 package com.comyted.repository;
 
-import com.comyted.models.ClientVisit;
+import com.comyted.models.ContactVisit;
 import com.enterlib.exceptions.InvalidOperationException;
 
 public interface IVisitRepository {	
-	ClientVisit[] getClientVisits(int clientId, int userId)throws InvalidOperationException;
+	ContactVisit[] getClientVisits(int clientId, int userId)throws InvalidOperationException;
 }

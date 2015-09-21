@@ -235,6 +235,7 @@ public class FragmentListClients extends android.support.v4.app.Fragment{
 				}
 							
 			});
+			mDialog.setFilterCriteria(R.string.client_search);
 			mDialog.show();
 		}
 	}

@@ -24,7 +24,7 @@
 	    android:orientation="vertical" >
 	
 	    <!-- nombreempresa -->
-		<TextView  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nombre:" android:drawableLeft="@drawable/required_text_icon" />
+		<TextView  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nombre:" android:drawableLeft="@drawable/required_text_icon" android:textStyle="bold" />
 	     <EditText
 	         android:id="@+id/client_nombreempresa"
 	         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
 	         android:maxLines="3"
 	         android:minLines="1"
 	         android:shadowDy="2.0"
-	          android:hint="@string/requerido"
+	         android:hint="@string/requerido"
 	         android:textAppearance="?android:attr/textAppearanceLarge" />
 	    
 	     <!-- Delimiter -->

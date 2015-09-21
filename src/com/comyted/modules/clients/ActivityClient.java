@@ -5,6 +5,7 @@ import java.util.Locale;
 import junit.framework.Assert;
 
 import com.comyted.Constants;
+import com.comyted.EmptyFragment;
 import com.comyted.SupportEmptyFragment;
 import com.comyted.MainApp;
 import com.comyted.R;
@@ -18,16 +19,17 @@ import com.comyted.repository.IClientRepository;
 import com.comyted.testing.repository.LocalJSONClientRepository;
 
 import android.app.ActionBar;
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentActivity;
+import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
-public class ActivityClient extends FragmentActivity implements ActionBar.TabListener {
+public class ActivityClient extends Activity implements 
+			ActionBar.TabListener {
 
 	public static int THEME = R.style.AppTheme;
 	
@@ -67,7 +69,7 @@ public class ActivityClient extends FragmentActivity implements ActionBar.TabLis
 
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the activity.
-		mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+		mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
 
 		// Set up the ViewPager with the sections adapter.
 		mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -124,20 +126,20 @@ public class ActivityClient extends FragmentActivity implements ActionBar.TabLis
     }      
         
 	  @Override
-	   	public void onTabSelected(ActionBar.Tab tab,
-	   			FragmentTransaction fragmentTransaction) {
-	   		// When the given tab is selected, switch to the corresponding page in
-	   		// the ViewPager.
-	   		mViewPager.setCurrentItem(tab.getPosition());
-	   	}
+   	public void onTabSelected(ActionBar.Tab tab,
+   			FragmentTransaction fragmentTransaction) {
+   		// When the given tab is selected, switch to the corresponding page in
+   		// the ViewPager.
+   		mViewPager.setCurrentItem(tab.getPosition());
+   	}
 
-	   	@Override
-	   	public void onTabUnselected(ActionBar.Tab tab,
-	   			FragmentTransaction fragmentTransaction) {   
-	   	}
+   	@Override
+   	public void onTabUnselected(ActionBar.Tab tab,
+   			FragmentTransaction fragmentTransaction) {   
+   	}
 
-	   	@Override
-	   	public void onTabReselected(ActionBar.Tab tab,
+   	@Override
+   	public void onTabReselected(ActionBar.Tab tab,
 	   			FragmentTransaction fragmentTransaction) {   		
 	   	}
 
@@ -159,9 +161,9 @@ public class ActivityClient extends FragmentActivity implements ActionBar.TabLis
 			case 1:
 				return new FragmentClientContacts();
 			case 2:
-				return new SupportEmptyFragment();
+				return new FragmentClientVisits();
 			case 3:
-				return new SupportEmptyFragment();		
+				return new FragmentClientOffers();		
 			}
 			return null;
 		}

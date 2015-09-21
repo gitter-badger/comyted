@@ -1,67 +1,62 @@
 package com.comyted.modules.offers;
 
-import java.util.Comparator;
-
 import com.comyted.Constants;
-import com.comyted.SupportListFragment;
+import com.comyted.R;
+import com.comyted.conectivity.GetOfertasClient;
+import com.comyted.generics.DefaultComparator;
+import com.comyted.generics.ListAdapter;
+import com.comyted.generics.ListFragment;
 import com.comyted.models.ClientOffert;
-import com.comyted.repository.IOffertRepository;
-import com.comyted.repository.OffertRepository;
-import com.enterlib.app.DataViewModel;
-import com.enterlib.app.IDataView;
+import com.enterlib.data.ICollectionRepository;
+import com.enterlib.exceptions.InvalidOperationException;
 
-import android.support.v4.app.FragmentActivity;
-import android.view.View;
-import android.widget.AdapterView;
+import android.content.Intent;
 
-public class FragmentClientOffers extends SupportListFragment {
-	
-	ClientOffertComparator comparator = new ClientOffertComparator();
-	AdapterClientOffers adapter;
-	ViewModelClientOffers viewModel;
-	
-	public static class ClientOffertComparator implements Comparator<ClientOffert>{
-		public int Order = 1;// 1=Ascending -1=Descending		
-		@Override
-		public int compare(ClientOffert lhs, ClientOffert rhs) {						
-			return lhs.fechapropuesta.compareTo(rhs.fechapropuesta) * Order;
-		}
-	}
-	@Override
-	public void onDataLoaded() {
-		ClientOffert[] items = viewModel.getOfferts();		 
-		 if(items == null || items.length ==0){
-			 adapter = null;
-			 setAdapter(null);
-			 return;
-		 }	 
-		 adapter = new AdapterClientOffers(getActivity(), items);
-		 setAdapter(adapter);				
-	}
-
-	@Override
-	protected void sortItems(int sortOrder) {
-		if(adapter == null)
-			return;
+public class FragmentClientOffers extends ListFragment<ClientOffert> {
 			
-		comparator.Order = sortOrder;
-		adapter.sort(comparator);
-	}
-
-	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position,
-			long id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected DataViewModel createViewModel() {		
-		IOffertRepository repository = new OffertRepository();
-		viewModel = new ViewModelClientOffers(this, repository, getActivity()
-				.getIntent()
-				.getIntExtra(Constants.CLIENT_ID, 0));
-		return viewModel;
+	private int clientId;
+	
+	public FragmentClientOffers() {
+		setComparator(new DefaultComparator<ClientOffert>(){
+			@Override
+			public int compare(ClientOffert lhs, ClientOffert rhs) {						
+				return lhs.fechapropuesta.compareTo(rhs.fechapropuesta) * Order;
+			}
+		});		
 	}
 	
+
+	@Override
+	protected ICollectionRepository<ClientOffert> createRepository() {
+		clientId = getActivity() .getIntent().getIntExtra(Constants.CLIENT_ID, 0);
+		
+		return new ICollectionRepository<ClientOffert>() {
+			GetOfertasClient client = new GetOfertasClient();
+			@Override
+			public ClientOffert[] getItems() throws InvalidOperationException {
+				return client.ObtenerOfertasCliente(clientId);
+			}
+		};
+	}
+
+	@Override
+	protected ListAdapter<ClientOffert> createAdapter(ClientOffert[] items) {
+		return new AdapterClientOffers(getActivity(), items);
+	}
+
+	@Override
+	protected Intent getItemViewIntent(ClientOffert c) {
+		// TODO Auto-generated method stub
+		return null;
+	}	
+	
+	@Override
+	protected String getNoItemsAlertMessage() {
+		return getString(R.string.el_cliente_seleccionado_no_posee_ofertas);
+	}
+	
+	@Override
+	protected String getFilterHint() {	
+		return getString(R.string.buscar_por_nombre_de_proyecto);
+	}
 }

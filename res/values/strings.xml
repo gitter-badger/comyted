@@ -370,5 +370,23 @@
     <string name="title_activity_activity_map">Mapa</string>
     <string name="title_activity_activity_contact">ActivityContact</string>
     <string name="crear">Crear</string>
+    <string name="salvado_">salvado...</string>
+    <string name="entero_positivo">Número entero positivo</string>
+    <string name="no_se_pudo_salvar">No se pudo salvar</string>
+    <string name="no_hay_datos">No hay datos</string>
+    <string name="el_cliente_seleccionado_no_posee_contactos">El cliente seleccionado no posee contactos</string>
+    <string name="el_cliente_seleccionado_no_posee_ofertas">El cliente seleccionado no posee ofertas</string>
+    <string name="vd_no_ha_realizado_visitas_al_cliente_seleccionado">Vd no ha realizado visitas al cliente seleccionado</string>
+    <string name="client_search">Buscar por Nombre</string>
+    <string name="buscar_por_responsable">Buscar por Responsable</string>
+    <string name="buscar_por_nombre_de_proyecto">Buscar por Nombre de Proyecto</string>
+    <string name="error_configuracion_de_email">Establesca la \'Configuracion de Email\' en la sección de configuración</string>
+    <string name="vd_no_ha_realizdo_visistas_al_contacto_seleccionado">Vd no ha realizdo visistas al contacto seleccionado</string>
+    <string name="contacto_no_posee_campanas">El contacto seleccionado no posee campañas</string>
+    <string name="buscar_por_nombre">Buscar por Nombre</string>
+    <string name="no_se_pudieron_determinar_las_coordenadas">No se pudieron determinar las coordenadas</string>
+    <string name="buscar_por_cliente">Buscar por cliente</string>
+    <string name="editar_contacto">Editar Contacto</string>
+    <string name="nuevo_contacto">Nuevo Contacto</string>
 
 </resources>
