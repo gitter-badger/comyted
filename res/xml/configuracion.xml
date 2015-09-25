@@ -23,10 +23,29 @@
             android:title="@string/lblemailconfig"
             android:summary="@string/lblemailconfigdesc"
             android:enabled="true">
-            <EditTextPreference android:dialogTitle="@string/lblemailconfiguser" android:key="CONST_EMAIL_USER" android:title="@string/lblemailconfigusertitle" android:summary="@string/lblemailconfigusersummary" />
-            <EditTextPreference android:dialogTitle="@string/lblemailconfigpassword" android:key="CONST_EMAIL_PASSWORD" style="@style/passwordstyle" android:title="@string/lblemailconfigpasswordtitle" android:summary="@string/lblemailconfigpasswordsummary"/>
-            <EditTextPreference android:dialogTitle="@string/lblemailconfigsmtp" android:key="CONST_EMAIL_SMTP" android:title="@string/lblemailconfigsmtptitle" android:summary="@string/lblemailconfigsmtpsummary" />
-            <EditTextPreference android:dialogTitle="@string/lblemailconfigport" android:key="CONST_EMAIL_PORT" android:title="@string/lblemailconfigporttitle" android:summary="@string/lblemailconfigportsummary" />      
+            <EditTextPreference android:dialogTitle="@string/lblemailconfiguser" 
+                android:key="CONST_EMAIL_USER" 
+                android:title="@string/lblemailconfigusertitle" 
+                android:summary="@string/lblemailconfigusersummary"
+                android:defaultValue="ansel.castro" />
+            <EditTextPreference android:dialogTitle="@string/lblemailconfigpassword" 
+                android:key="CONST_EMAIL_PASSWORD" 
+                style="@style/passwordstyle" 
+                android:title="@string/lblemailconfigpasswordtitle" 
+                android:summary="@string/lblemailconfigpasswordsummary"
+                android:defaultValue="P1romon1o" />
+            <EditTextPreference 
+                android:dialogTitle="@string/lblemailconfigsmtp" 
+                android:key="CONST_EMAIL_SMTP"
+                 android:title="@string/lblemailconfigsmtptitle" 
+                 android:summary="@string/lblemailconfigsmtpsummary"
+                  android:defaultValue="mail.hab.desoft.cu" />
+            <EditTextPreference 
+                android:dialogTitle="@string/lblemailconfigport" 
+                android:key="CONST_EMAIL_PORT" 
+                android:title="@string/lblemailconfigporttitle" 
+                android:summary="@string/lblemailconfigportsummary"
+                android:defaultValue="25" />      
         </PreferenceScreen>
                
         <Preference 

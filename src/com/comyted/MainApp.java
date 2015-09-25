@@ -3,6 +3,9 @@
  */
 package com.comyted;
 
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
+
 import android.app.Activity;
 import android.app.Application;
 import android.app.ProgressDialog;
@@ -44,6 +47,22 @@ public class MainApp extends Application
 		
 		instance = this;		
 		
+		if(PROXY){
+			System.setProperty("http.proxyHost", "10.0.2.2");
+			System.setProperty("http.proxyPort", "4141");
+			System.setProperty("http.proxyUser", "ansel.castro");
+			System.setProperty("http.proxyPassword", "P1romon1o");
+			System.setProperty("http.nonProxyHosts", "10.0.2.2|*.hab.desoft.cu");
+			
+			Authenticator authenticator = new Authenticator() {
+
+		        public PasswordAuthentication getPasswordAuthentication() {
+		            return (new PasswordAuthentication("ansel.castro",
+		                    "P1romon1o".toCharArray()));
+		        }
+		    };
+		    Authenticator.setDefault(authenticator);
+		}
 	}
 	
 	//***** properties ********************

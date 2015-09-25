@@ -7,12 +7,14 @@ import java.util.List;
 import android.graphics.Bitmap;
 import android.location.Address;
 import android.location.Geocoder;
+
 import com.comyted.conectivity.GetClientesClient;
 import com.comyted.models.AppUser;
 import com.comyted.models.Client;
 import com.comyted.repository.ClientRepository;
 import com.comyted.repository.IClientRepository;
 import com.enterlib.app.DataViewModel;
+import com.enterlib.conetivity.HttpProxy;
 import com.enterlib.conetivity.RestClient;
 import com.enterlib.threading.AsyncNotifyTask;
 import com.enterlib.threading.IAsyncCallback;
@@ -86,8 +88,8 @@ public class ViewModelClient extends DataViewModel implements IAsyncCallback {
 				
 				String url = "http://maps.googleapis.com/maps/api/staticmap?size=320x240&markers=size:mid|color:red|" 
 								+ URLEncoder.encode(client.direccion, "UTF-8") + "&zoom=15&sensor=false";
-				
-				adressMap = RestClient.downloadImage2(url);
+								
+				adressMap = RestClient.downloadImage(url);
 				
 			}
 		}.run();

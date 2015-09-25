@@ -53,18 +53,7 @@ public class FragmentContact extends RefreshableFragment
 		 lbEmail.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
-				Contact entity =viewModel.getEntity();
-				if(entity == null){
-					PresentUtils.showMessage(getActivity(), "Espere a que se cargen los datos");
-					return;
-				}
-				
-				MailMessage message=new MailMessage();
-				message.Sender = MainApp.getCurrentUser().email;
-				message.Receiver =entity.email;
-				
-				MailDialogFragment frag = MailDialogFragment.newInstance(message);
-				frag.show(getFragmentManager(), "com.comyted.MailDialogFragment");
+				sendMail();
 			}
 		});		
 		 return rootView;
@@ -112,7 +101,7 @@ public class FragmentContact extends RefreshableFragment
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) 
 	{		
-		inflater.inflate(R.menu.fragment_sheet, menu);		
+		inflater.inflate(R.menu.fragment_contact, menu);		
 	}	
 
 	
@@ -128,7 +117,13 @@ public class FragmentContact extends RefreshableFragment
 					 			.putExtra(Constants.ID, c.id)
 					 			.putExtra(Constants.CLIENT_ID, getActivity().getIntent().getIntExtra(Constants.CLIENT_ID, 0));			
 			startActivityForResult(intent, Constants.EDIT);
-			return true;		
+			return true;
+		case R.id.call:
+			callContact();
+			return true;
+		case R.id.send_mail:
+			sendMail();
+			return true;
 		default:
 			return false;
 		}
@@ -136,9 +131,13 @@ public class FragmentContact extends RefreshableFragment
 
 	@Override
 	public void onClick(View v) {
+		callContact();
+	}
+	
+	private void callContact(){
 		String phoneNumber= getViewText(R.id.contact_telefono);
 		if(StringUtils.isNullOrWhitespace(phoneNumber)){
-			PresentUtils.showMessage(getActivity(), "El contacto no tiene teléfono");
+			PresentUtils.showMessage(getActivity(), getActivity().getString(R.string.el_contacto_no_tiene_tel_fono));
 			return;
 		}
 		
@@ -146,7 +145,22 @@ public class FragmentContact extends RefreshableFragment
 								Uri.parse("tel:+"+ phoneNumber)); 
 		startActivity(i);
 	}
-	
+
+
+	private void sendMail() {
+		Contact entity =viewModel.getEntity();
+		if(entity == null){
+			PresentUtils.showMessage(getActivity(), getActivity().getString(R.string.espere_a_que_se_cargen_los_datos));
+			return;
+		}
+		
+		MailMessage message=new MailMessage();
+		message.Sender = MainApp.getCurrentUser().email;
+		message.Receiver =entity.email;
+		
+		MailDialogFragment frag = MailDialogFragment.newInstance(message);
+		frag.show(getFragmentManager(), "com.comyted.MailDialogFragment");
+	}
 
 
 }

@@ -129,11 +129,11 @@ public class ActivityContact extends Activity implements ActionBar.TabListener {
 			Locale l = Locale.getDefault();
 			switch (position) {
 			case 0:
-				return "Datos";
+				return getString(R.string.datos);
 			case 1:
-				return "Campañas";
+				return getString(R.string.campanas);
 			case 2:
-				return "Visistas";
+				return getString(R.string.visitas);
 			}
 			return null;
 		}

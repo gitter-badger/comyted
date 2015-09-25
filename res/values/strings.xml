@@ -388,5 +388,12 @@
     <string name="buscar_por_cliente">Buscar por cliente</string>
     <string name="editar_contacto">Editar Contacto</string>
     <string name="nuevo_contacto">Nuevo Contacto</string>
+    <string name="datos">Datos</string>
+    <string name="campanas">Campañas</string>
+    <string name="visitas">Visitas</string>
+    <string name="el_contacto_no_tiene_tel_fono">El contacto no tiene teléfono</string>
+    <string name="espere_a_que_se_cargen_los_datos">Espere a que se cargen los datos</string>
+    <string name="llamar">LLamar</string>
+    <string name="enviar_email">Enviar Email</string>
 
 </resources>

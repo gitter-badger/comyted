@@ -98,7 +98,7 @@ public class MapView extends FrameLayout
 
 			@Override
 			protected void doInBackground() throws Exception {												
-				adressMap = RestClient.downloadImage2(url);
+				adressMap = RestClient.downloadImage(url);
 				
 			}
 		}.run();
