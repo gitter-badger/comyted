@@ -23,8 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableBottom="@color/gray"
-        android:shadowDy="2.0"
-        android:text="Jesus lopez"
+        android:shadowDy="2.0"    
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <!-- Delimiter -->
@@ -47,7 +46,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contacto Nº: "
+            android:text="@string/contacto_n_"
             android:textStyle="bold" />
 
         <TextView
@@ -61,14 +60,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/default_margin"
-            android:text="Cliente: "
+            android:text="@string/cliente_"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/contact_nombrecliente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Almazan Corporation,SL." />
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -81,14 +80,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Puesto: "
+            android:text="@string/puesto_"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/contact_puesto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jefe de Compras" />
+           />
     </LinearLayout>
 
     <LinearLayout
@@ -102,15 +101,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Departamento: "
+            android:text="@string/departamento_"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/contact_departamento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="left"
-            android:text="Comercial" />
+            android:gravity="left" />
     </LinearLayout>
     <!-- Delimiter -->
 
@@ -128,7 +126,6 @@
         android:orientation="vertical" >
 
         <!-- Direccion -->
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -142,7 +139,6 @@
             android:layout_height="wrap_content" />
 
         <!-- Ciudad -->
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -215,12 +211,13 @@
             android:orientation="vertical" >
 
             <!-- Telefono -->
-            <TextView
+            <TextView
                 android:id="@+id/lbContact_telefono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:drawableRight="@drawable/ic_action_phone_little"
+                android:drawableRight="@drawable/ic_action_phone_start"
+                android:gravity="center_vertical"
                 android:text="@string/telefono_"
                 android:textStyle="bold" />
 
@@ -228,7 +225,7 @@
                 android:id="@+id/contact_telefono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="9542345879" />
+                 />
         </LinearLayout>
 
         <LinearLayout
@@ -238,11 +235,11 @@
             android:orientation="vertical" >
 
             <!-- FAX -->
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/ic_action_paste_little"
+                android:drawableRight="@drawable/ic_action_news"
+                 android:gravity="center_vertical"
                 android:text="@string/fax_"
                 android:textStyle="bold" />
 
@@ -250,7 +247,7 @@
                 android:id="@+id/contact_fax"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="9542345879" />
+                 />
         </LinearLayout>
 
         <LinearLayout
@@ -260,39 +257,60 @@
             android:orientation="vertical" >
 
             <!-- Email -->
-
             <TextView
+                android:id="@+id/lb_contact_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/stat_notify_email_generic"
-                android:text="@string/email_"
-                android:textStyle="bold" />
+                android:drawableRight="@drawable/ic_action_mail"
+                android:text="@string/email_"               
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:clickable="true" />
 
             <TextView
                 android:id="@+id/contact_email"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:text="jose@gmail.com" />
+                android:layout_height="wrap_content"                
+                />
         </LinearLayout>
     </LinearLayout>
 
     <!-- Observaciones -->
-
-    <TextView
+<LinearLayout  android:layout_width="match_parent" 
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/default_margin" android:orientation="vertical">
+        
+    <TextView       
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Observaciones:"
+        android:text="@string/observaciones_"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/contact_observations"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dip"
         android:layout_weight="0.31" />
 
-    <com.comyted.MapView  android:id="@+id/framelayout" android:layout_width="match_parent"
-        				  android:layout_height="164dp" />
+<!--      Delimiter -->
+
+<!--     <View -->
+<!--         android:layout_width="fill_parent" -->
+<!--         android:layout_height="4.0dip" -->
+<!--         android:layout_marginLeft="5.0dip" -->
+<!--         android:background="@drawable/loginbar" /> -->
+        
+    <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" 
+        android:orientation="vertical" 
+        android:background="@drawable/gray_rectangle">
+    <com.comyted.MapView  android:id="@+id/framelayout"
+        android:layout_marginTop="5dp" 
+        android:layout_width="match_parent"
+        android:layout_height="164dp"        
+         />
+    
+    </LinearLayout>
+    
 <!--     <FrameLayout -->
 <!--         android:id="@+id/framelayout" -->
 <!--         android:layout_width="match_parent" -->
@@ -314,6 +332,8 @@
 <!--             android:scaleType="fitXY" -->
 <!--             android:visibility="visible" /> -->
 <!--     </FrameLayout> -->
+
+	</LinearLayout>
 </LinearLayout>
 
 </ScrollView>

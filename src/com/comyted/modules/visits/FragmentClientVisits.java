@@ -3,6 +3,7 @@ package com.comyted.modules.visits;
 import com.comyted.Constants;
 import com.comyted.MainApp;
 import com.comyted.R;
+import com.comyted.ListFragment.MenuValue;
 import com.comyted.conectivity.GetVisitasClient;
 import com.comyted.generics.DefaultComparator;
 import com.comyted.generics.ListAdapter;
@@ -12,6 +13,11 @@ import com.enterlib.data.ICollectionRepository;
 import com.enterlib.exceptions.InvalidOperationException;
 
 import android.content.Intent;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.View;
+import android.view.ContextMenu.ContextMenuInfo;
 
 public class FragmentClientVisits extends ListFragment<ContactVisit> {
 		
@@ -58,5 +64,19 @@ public class FragmentClientVisits extends ListFragment<ContactVisit> {
 	@Override
 	protected String getFilterHint() {		
 		return getString(R.string.buscar_por_responsable);
+	}
+	
+   @Override
+   public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {	
+	   inflater.inflate(R.menu.list_visits, menu);
+	   setMenu(menu);
+   }
+	
+	@Override
+	protected MenuValue getMenuValue(int sortOrder) {
+		return sortOrder == 0?  new MenuValue(R.drawable.ic_action_sort_1, R.string.ascendent):
+				sortOrder == 1 ? 
+				new MenuValue(R.drawable.ic_menu_download,R.string.ascendent):
+				new MenuValue(R.drawable.ic_menu_upload, R.string.descendent);
 	}
 }

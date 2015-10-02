@@ -92,7 +92,7 @@
             android:id="@+id/contact_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/stat_notify_email_generic"
+            android:drawableLeft="@drawable/ic_action_mail_little"
             android:drawablePadding="5dp"
             android:text="info@ingenierosag.com" />
     </LinearLayout>

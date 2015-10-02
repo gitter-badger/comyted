@@ -71,10 +71,11 @@ public abstract class ListFragment extends RefreshableFragment
 		listView.refreshDrawableState();
 		
 		if(menu!=null){
-			MenuItem menuItem = menu.findItem(R.id.sort_az);
+			MenuItem menuItem = menu.findItem(R.id.sort_az);			
 			if(menuItem!=null){
-				menuItem.setIcon(R.drawable.ic_menu_sort_alphabetically);
-				menuItem.setTitle(R.string.a_z);
+				MenuValue v = getMenuValue(0);
+				menuItem.setIcon(v.iconRes);
+				menuItem.setTitle(v.titleRes);
 			}
 		}
 	}
@@ -178,16 +179,16 @@ public abstract class ListFragment extends RefreshableFragment
 	}
 	
 	protected MenuValue getMenuValue(int sortOrder){		
-		return sortOrder == 1 ? 
-				new MenuValue(R.drawable.ic_menu_download,R.string.a_z):
-				new MenuValue(R.drawable.ic_menu_upload, R.string.z_a);
+		return sortOrder == 0?  new MenuValue(R.drawable.ic_menu_sort_alphabetically, R.string.a_z) :
+			   sortOrder == 1 ? new MenuValue(R.drawable.ic_menu_download,R.string.a_z):
+			                    new MenuValue(R.drawable.ic_menu_upload, R.string.z_a);
 	}
 	
 	protected abstract void sortItems(int sortOrder);
 	
 	public abstract void onItemClick(AdapterView<?> parent, View view, int position, long id);
 	
-	class MenuValue{
+	public class MenuValue{
 		public MenuValue(int iconRes, int titleRes) {
 			this.iconRes = iconRes;
 			this.titleRes = titleRes;

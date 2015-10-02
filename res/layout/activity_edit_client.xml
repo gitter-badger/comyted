@@ -10,7 +10,7 @@
 	<ScrollView  
 	         	 android:clipChildren="true" 
 	         	 android:layout_width="match_parent" 
-	         	 android:layout_height="match_parent" 	         	 
+	         	 android:layout_height="fill_parent" 	         	 
 	         	 android:fillViewport="true"  
 	         	 android:layout_above="@+id/footerbar">
 	
@@ -24,7 +24,7 @@
 	    android:orientation="vertical" >
 	
 	    <!-- nombreempresa -->
-		<TextView  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nombre:" android:drawableLeft="@drawable/required_text_icon" android:textStyle="bold" />
+		<TextView  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/nombre_" android:drawableLeft="@drawable/required_text_icon" android:textStyle="bold" />
 	     <EditText
 	         android:id="@+id/client_nombreempresa"
 	         android:layout_width="match_parent"
@@ -40,24 +40,36 @@
 	     <View android:background="@drawable/loginbar" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginLeft="5.0dip" />
 	     
 	    <!-- Seccion 1 -->
-	       <TableLayout 	     
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:stretchColumns="1">		                  	  	         	
-		        <TableRow>	            	           
-		             <!-- Codigo -->
-		              <TextView android:gravity="right" android:textStyle="bold" android:text="@string/codigo_" android:layout_marginLeft="10dp"  android:drawableLeft="@drawable/required_text_icon"/>
-		              <EditText android:id="@+id/client_codigo" android:gravity="left" android:inputType="text" android:layout_height="wrap_content" android:layout_width="wrap_content"  android:hint="@string/requerido"/>
-		        </TableRow>
+<!-- 	       <TableLayout 	      -->
+<!-- 		        android:layout_width="match_parent" -->
+<!-- 		        android:layout_height="wrap_content" -->
+<!-- 		        android:stretchColumns="1">		                  	  	         	 -->
+<!-- 		        <TableRow>	            	            -->
+<!-- 		             Codigo -->
+<!-- 		              <TextView android:gravity="right" android:textStyle="bold" android:text="@string/codigo_" android:layout_marginLeft="10dp"  android:drawableLeft="@drawable/required_text_icon"/> -->
+<!-- 		              <EditText android:id="@+id/client_codigo" android:gravity="left" android:inputType="text" android:layout_height="wrap_content" android:layout_width="wrap_content"  android:hint="@string/requerido"/> -->
+<!-- 		        </TableRow> -->
 		        
-		        <TableRow>
-		            <!-- C.I.F -->
-		             <TextView  android:text="@string/c_i_f_"  android:gravity="right" android:textStyle="bold"  android:drawableLeft="@drawable/required_text_icon" android:layout_marginLeft="10dp"/>
-		             <EditText android:id="@+id/client_cif"  android:gravity="left" android:layout_height="wrap_content" android:layout_width="wrap_content" android:inputType="text"  android:hint="@string/requerido"/>  
-		        </TableRow>
+<!-- 		        <TableRow> -->
+<!-- 		            C.I.F -->
+<!-- 		             <TextView  android:text="@string/c_i_f_"  android:gravity="right" android:textStyle="bold"  android:drawableLeft="@drawable/required_text_icon" android:layout_marginLeft="10dp"/> -->
+<!-- 		             <EditText android:id="@+id/client_cif"  android:gravity="left" android:layout_height="wrap_content" android:layout_width="wrap_content" android:inputType="text"  android:hint="@string/requerido"/>   -->
+<!-- 		        </TableRow> -->
 		        
-		    </TableLayout>
+<!-- 		    </TableLayout> -->
 		    
+		   <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" >
+			          <!-- Codigo -->
+		              <TextView android:textStyle="bold" android:text="@string/codigo_" android:drawableLeft="@drawable/required_text_icon" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+		              <EditText android:id="@+id/client_codigo" android:inputType="text" android:layout_height="wrap_content" android:layout_width="fill_parent"  android:hint="@string/requerido" />   
+		   </LinearLayout> 
+		   
+		   <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" >
+			          <!-- C.I.F -->
+		                 <TextView  android:text="@string/c_i_f_"  android:textStyle="bold"  android:drawableLeft="@drawable/required_text_icon" android:layout_width="wrap_content" android:layout_height="wrap_content"/> 
+ 	 		             <EditText android:id="@+id/client_cif"  android:layout_height="wrap_content" android:layout_width="fill_parent" android:inputType="text"  android:hint="@string/requerido"/>
+		   </LinearLayout> 
+	       
 	      <!-- Delimiter -->
 	     <View android:background="@drawable/loginbar" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginLeft="5.0dip" />
 	    
@@ -100,19 +112,30 @@
 				    android:drawableRight="@drawable/ic_action_phone_little"
 				    android:drawableLeft="@drawable/required_text_icon"
 				    android:textStyle="bold" 
+				    android:gravity="center_vertical"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content" /> 
 	            <EditText android:inputType="phone" android:id="@+id/client_telefono"  android:layout_height="wrap_content" android:layout_width="match_parent"  android:hint="@string/requerido" /> 
 					     
 		     <!-- FAX -->
-	         <TextView  android:text="@string/fax_" android:drawableRight="@drawable/ic_action_paste_little"  
-	             android:drawableLeft="@drawable/required_text_icon" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+	         <TextView  android:text="@string/fax_" 
+	             android:drawableRight="@drawable/ic_action_news_little" 
+	             android:gravity="center_vertical"  
+	             android:drawableLeft="@drawable/required_text_icon" 
+	             android:textStyle="bold" 
+	             android:layout_width="wrap_content" 
+	             android:layout_height="wrap_content" />
 		     <EditText android:inputType="phone" android:id="@+id/client_fax"  android:layout_height="wrap_content" android:layout_width="match_parent"  android:hint="@string/requerido"/>
 		     
 		     <!-- Email -->
-		     <TextView  android:text="@string/email_" android:drawableRight="@drawable/stat_notify_email_generic"  android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" 	         		
-	            		android:drawablePadding="5dp"
-	            		 android:drawableLeft="@drawable/required_text_icon" />
+		     <TextView android:gravity="center_vertical" 
+		          android:text="@string/email_" 
+		          android:drawableRight="@drawable/ic_action_mail_little" 
+		          android:textStyle="bold" 
+		          android:layout_width="wrap_content" 
+		          android:layout_height="wrap_content" 	         		
+	              android:drawablePadding="5dp"
+	              android:drawableLeft="@drawable/required_text_icon" />
 		     <EditText android:inputType="textEmailAddress" android:id="@+id/client_email"  android:layout_height="wrap_content" android:layout_width="match_parent"  android:hint="@string/requerido"/>
 		     
 	     </LinearLayout>

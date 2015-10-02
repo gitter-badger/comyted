@@ -22,8 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableBottom="@color/gray"
-                android:shadowDy="2.0"
-                android:text="Ingenieros AG"
+                android:shadowDy="2.0"                
                 android:textAppearance="?android:attr/textAppearanceLarge" />
     
      <!-- Delimiter -->
@@ -35,15 +34,15 @@
          <TextView
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"             
-             android:text="@string/cliente_n_"
+             android:text="@string/cliente_n_"             
              android:textStyle="bold" />
-         <TextView android:id="@+id/client_id" android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+         <TextView android:id="@+id/client_id" android:layout_height="wrap_content" android:layout_width="wrap_content" />
 	              
           <!-- Codigo -->
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:layout_marginLeft="10dp"
+               android:layout_marginLeft="@dimen/default_margin"
                android:text="@string/codigo_"
                android:textStyle="bold" />
            <TextView android:id="@+id/client_codigo" android:layout_height="wrap_content" android:layout_width="wrap_content" />        
@@ -86,36 +85,91 @@
      <View android:background="@drawable/loginbar" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginLeft="5.0dip" />
      
      <!-- Section 3 -->
-     <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
-         <!-- Telefono -->         		     	 
-		<TextView
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:drawableRight="@drawable/ic_action_phone_little"
-			    android:text="@string/telefono_"
-			    android:textStyle="bold"
-			    android:id="@+id/lbCliente_telefono"
-			    android:clickable="true" />		
-            <TextView android:id="@+id/client_telefono"  android:layout_height="wrap_content" android:layout_width="wrap_content" /> 
+     <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+         <!-- Telefono -->
+          <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >            
+               <TextView
+	                android:id="@+id/lbContact_telefono"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:clickable="true"
+	                android:drawableRight="@drawable/ic_action_phone_start"
+	                android:gravity="center_vertical"
+	                android:text="@string/telefono_"
+	                android:textStyle="bold" />
+              <TextView android:id="@+id/client_telefono"  android:layout_height="wrap_content" android:layout_width="wrap_content" />
+              
+         </LinearLayout>
+         
+         <!-- FAX -->
+          <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+             android:layout_marginLeft="@dimen/contact_session3_margin" >
+           	 <TextView
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:drawableRight="@drawable/ic_action_news"
+		                 android:gravity="center_vertical"
+		                android:text="@string/fax_"
+		                android:textStyle="bold" />
+               <TextView android:id="@+id/client_fax"  android:layout_height="wrap_content" android:layout_width="wrap_content" />
+          </LinearLayout>
+         
+         <!-- EMAIL -->
+          <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/contact_session3_margin" >
+            <TextView
+                android:id="@+id/lb_contact_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_action_mail"
+                android:text="@string/email_"               
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:clickable="true" />
+            <TextView android:id="@+id/client_email"  android:layout_height="wrap_content" android:layout_width="match_parent" android:clickable="true" />
+              
+          </LinearLayout>
+         
+<!--          Telefono         		     	  -->
+<!-- 		<TextView -->
+<!-- 			    android:layout_width="wrap_content" -->
+<!-- 			    android:layout_height="wrap_content" -->
+<!-- 			    android:drawableRight="@drawable/ic_action_phone_little" -->
+<!-- 			    android:text="@string/telefono_" -->
+<!-- 			    android:textStyle="bold" -->
+<!-- 			    android:id="@+id/lbCliente_telefono" -->
+<!-- 			    android:gravity="center_vertical" -->
+<!-- 			    android:clickable="true" />		 -->
+<!--             <TextView android:id="@+id/client_telefono"  android:layout_height="wrap_content" android:layout_width="wrap_content" />  -->
 				     
-	     <!-- FAX -->
-         <TextView
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:drawableRight="@drawable/ic_action_paste_little"
-             android:text="@string/fax_"
-             android:textStyle="bold" />
-	     <TextView android:id="@+id/client_fax"  android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="9542345879"/>	     
+<!-- 	     FAX -->
+<!--          <TextView -->
+<!--              android:layout_width="wrap_content" -->
+<!--              android:layout_height="wrap_content" -->
+<!--              android:drawableRight="@drawable/ic_action_news_little" -->
+<!--              android:gravity="center_vertical" -->
+<!--              android:text="@string/fax_" -->
+<!--              android:textStyle="bold" /> -->
+<!-- 	     <TextView android:id="@+id/client_fax"  android:layout_height="wrap_content" android:layout_width="wrap_content" />	      -->
 	     
-	     <!-- Email -->
-	     <TextView
-	          android:layout_width="wrap_content"
-	          android:layout_height="wrap_content"
-	          android:drawablePadding="5dp"
-	          android:drawableRight="@drawable/stat_notify_email_generic"
-	          android:text="@string/email_"
-	          android:textStyle="bold" />
-	     <TextView android:id="@+id/client_email"  android:layout_height="wrap_content" android:layout_width="match_parent" android:clickable="true" />
+<!-- 	     Email -->
+<!-- 	     <TextView -->
+<!-- 	          android:layout_width="wrap_content" -->
+<!-- 	          android:layout_height="wrap_content"	           -->
+<!-- 	          android:drawableRight="@drawable/ic_action_mail_little" -->
+<!-- 	          android:text="@string/email_" -->
+<!-- 	          android:gravity="center_vertical" -->
+<!-- 	          android:textStyle="bold" /> -->
+<!-- 	     <TextView android:id="@+id/client_email"  android:layout_height="wrap_content" android:layout_width="match_parent" android:clickable="true" /> -->
 	     
      </LinearLayout>
      
@@ -135,7 +189,8 @@
 	<FrameLayout
 	    android:id="@+id/framelayout"
 	    android:layout_width="match_parent"
-	    android:layout_height="164dp" >
+	    android:layout_height="164dp" 
+	    android:background="@drawable/gray_rectangle" >
 	    
 	    <ProgressBar
 	        android:id="@+id/googleMapProgressBar"
@@ -144,12 +199,12 @@
 	        android:indeterminate="true"
 	        android:visibility="invisible" />
 	    	    
-	    <ImageView
+	    <ImageView	       
 	        android:id="@+id/googleMapImage"
 	        android:layout_width="fill_parent"
 	        android:layout_height="fill_parent"
 	        android:adjustViewBounds="true"
-	        android:contentDescription="Mapa de Google"
+	        android:contentDescription="@string/mapa_de_google"
 	        android:scaleType="fitXY"
 	        android:visibility="visible" />
 	    

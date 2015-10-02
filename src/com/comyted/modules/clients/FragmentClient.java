@@ -9,6 +9,7 @@ import com.comyted.R;
 import com.comyted.Utils;
 import com.comyted.activities.ActivityMap;
 import com.comyted.models.Client;
+import com.comyted.models.Contact;
 import com.comyted.models.MailMessage;
 import com.enterlib.StringUtils;
 import com.enterlib.app.DefaultDataView;
@@ -32,7 +33,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-public class FragmentClient extends Fragment implements OnClickListener {
+public class FragmentClient extends Fragment {
 
 	private ViewGroup rootView;	
 	private ViewModelClient vm;
@@ -49,25 +50,20 @@ public class FragmentClient extends Fragment implements OnClickListener {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) 
 	{					
 		 rootView = (ViewGroup)inflater.inflate(R.layout.fragment_client, container, false);	
-		 TextView lbPhone = (TextView) rootView.findViewById(R.id.lbCliente_telefono);
-		 lbPhone.setOnClickListener(this);
-		 TextView lbEmail = (TextView) rootView.findViewById(R.id.client_email);
+		 TextView lbPhone = (TextView) rootView.findViewById(R.id.lbContact_telefono);
+		 lbPhone.setOnClickListener(new OnClickListener() {			
+			@Override
+			public void onClick(View v) {
+				callContact();
+				
+			}
+		});
 		 
+		 TextView lbEmail = (TextView) rootView.findViewById(R.id.lb_contact_email);		 
 		 lbEmail.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
-				Client client = vm.getClient();
-				if(client == null){
-					PresentUtils.showMessage(getActivity(), "Espera a que se cargen los datos");
-					return;
-				}
-				
-				MailMessage message=new MailMessage();
-				message.Sender = MainApp.getCurrentUser().email;
-				message.Receiver =client.email;
-				
-				MailDialogFragment frag = MailDialogFragment.newInstance(message);
-				frag.show(getFragmentManager(), "com.comyted.MailDialogFragment");
+				sendMail();
 			}
 		});
 		 
@@ -79,11 +75,13 @@ public class FragmentClient extends Fragment implements OnClickListener {
 			public void onClick(View v) {
 				Client client = vm.getClient();
 				if(client == null){
-					PresentUtils.showMessage(getActivity(), "No hay ningun cliente cargado");
+					PresentUtils.showMessage(getActivity(), getActivity().getString(
+							R.string.no_se_ha_cargado_ningun_cliente));
 					return;
 				}
 				if(StringUtils.isNullOrWhitespace(client.direccion)){
-					PresentUtils.showMessage(getActivity(), "El cliente no posee dirección");
+					PresentUtils.showMessage(getActivity(), getActivity().getString(
+							R.string.el_cliente_no_posee_direcci_n));
 					return;
 				}
 				
@@ -140,7 +138,7 @@ public class FragmentClient extends Fragment implements OnClickListener {
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) 
 	{		
-		inflater.inflate(R.menu.fragment_sheet, menu);		
+		inflater.inflate(R.menu.fragment_client, menu);		
 	}
 	
 	@Override
@@ -153,6 +151,12 @@ public class FragmentClient extends Fragment implements OnClickListener {
 		case R.id.refresh:			
 			  vm.load();
 			 return true;
+		case R.id.call:
+			callContact();
+			return true;
+		case R.id.send_mail:
+			sendMail();
+			return true;
 		default:
 			return false;
 		}
@@ -180,19 +184,7 @@ public class FragmentClient extends Fragment implements OnClickListener {
 			getActivity().setResult(resultCode);
 			vm.load();
 		}
-	}
-	
-	public void onClick(View view){		
-		String phoneNumber= getViewText(R.id.client_telefono);
-		if(StringUtils.isNullOrWhitespace(phoneNumber)){
-			PresentUtils.showMessage(getActivity(), "El cliente no tiene teléfono");
-			return;
-		}
-		
-		Intent i = new Intent(android.content.Intent.ACTION_DIAL, 
-								Uri.parse("tel:+"+ phoneNumber)); 
-		startActivity(i);
-	}
+	}	
 	
 	private String getViewText(int id){
 		TextView tv = (TextView) rootView.findViewById(id);
@@ -202,6 +194,38 @@ public class FragmentClient extends Fragment implements OnClickListener {
 	private void setText(int id, String text){
 		PresentUtils.setTextViewText(rootView, id, text);
 	}
+	
+	private void callContact(){
+		//String phoneNumber= getViewText(R.id.client_telefono);
+		Client client = vm.getClient();
+		String phoneNumber = client.telefono;
+		if(StringUtils.isNullOrWhitespace(phoneNumber)){
+			PresentUtils.showMessage(getActivity(), "El cliente no tiene teléfono");
+			return;
+		}
+		
+		Intent i = new Intent(android.content.Intent.ACTION_DIAL, 
+								Uri.parse("tel:+"+ phoneNumber)); 
+		startActivity(i);
+	}
+
+
+	private void sendMail() {
+		Client client = vm.getClient();
+		if(client == null){
+			PresentUtils.showMessage(getActivity(), getActivity().getString(
+					R.string.espere_mientras_se_cargan_los_datos));
+			return;
+		}
+		
+		MailMessage message=new MailMessage();
+		message.Sender = MainApp.getCurrentUser().email;
+		message.Receiver =client.email;
+		
+		MailDialogFragment frag = MailDialogFragment.newInstance(message);
+		frag.show(getFragmentManager(), "com.comyted.MailDialogFragment");
+	}
+
 	
 	class DataView extends DefaultDataView<Activity> implements IClientView{
 

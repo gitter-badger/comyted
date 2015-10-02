@@ -38,43 +38,40 @@
             android:layout_height="wrap_content"
             android:text="Ave San Francisco Javier No 9 41018 SEVILLA ESPANA" />
 
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
             <!-- Telefono -->
-
             <TextView
                 android:id="@+id/client_telefono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
+                android:gravity="center_vertical"
                 android:drawableStart="@drawable/ic_action_phone_little"
                 android:text="931234567" />
 
             <!-- FAX -->
-
             <TextView
                 android:id="@+id/client_fax"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/client_telefono"
-                android:layout_marginLeft="5dip"
-                android:layout_toRightOf="@+id/client_telefono"
-                android:drawableLeft="@drawable/ic_action_paste_little"
+                android:layout_height="wrap_content"  
+                android:gravity="center_vertical"              
+                android:layout_marginLeft="5dip"                
+                android:drawableLeft="@drawable/ic_action_news_little"
                 android:text="9312345689" />
-
+            
+		    <!-- Email -->
             <TextView
                 android:id="@+id/client_email"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/client_telefono"
-                android:layout_toRightOf="@+id/client_fax"
+                android:layout_height="wrap_content"              
                 android:layout_marginLeft="5dip"
-                android:drawableLeft="@drawable/stat_notify_email_generic"              
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_action_mail_little"              
                 android:text="info@ingenierosag.com" />
-
-        </RelativeLayout>
+        </LinearLayout>
 
         <!-- Email -->
     </LinearLayout>

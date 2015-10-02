@@ -352,21 +352,23 @@
     <string name="title_section3">Section 3</string>
     <string name="a_z">A - Z</string>
     <string name="z_a">Z - A</string>
+    <string name="ascendent">Ascendente</string>
+    <string name="descendent">Descendente</string>
     <string name="list_client_buscar">Buscar...</string>
-    <string name="c_i_f_">C.I.F:</string>
-    <string name="direccion_">Dirección:</string>
-    <string name="ciudad_">Ciudad:</string>
-    <string name="provincia_">Provincia:</string>
-    <string name="codigo_postal_">Código Postal:</string>
+    <string name="c_i_f_">"C.I.F: "</string>
+    <string name="direccion_">"Dirección: "</string>
+    <string name="ciudad_">"Ciudad: "</string>
+    <string name="provincia_">"Provincia: "</string>
+    <string name="codigo_postal_">"Código Postal: "</string>
     <string name="pais_">País:</string>
-    <string name="telefono_">Teléfono:</string>
+    <string name="telefono_">"Teléfono:"</string>
     <string name="fax_">FAX:</string>
     <string name="cliente_salvado">Cliente salvado</string>
     <string name="noti_errores_validacion">Hay errores de validación.\nComplete correctamente los campos y salve nuevamente.</string>
-    <string name="codigo_">Código:</string>
-    <string name="nombre_de_empresa_">Nombre de empresa:</string>
+    <string name="codigo_">"Código: "</string>
+    <string name="nombre_de_empresa_">"Nombre de empresa: "</string>
     <string name="email_">Email:</string>
-    <string name="cliente_n_">Cliente Nº:</string>
+    <string name="cliente_n_">"Cliente Nº: "</string>
     <string name="title_activity_activity_map">Mapa</string>
     <string name="title_activity_activity_contact">ActivityContact</string>
     <string name="crear">Crear</string>
@@ -393,7 +395,18 @@
     <string name="visitas">Visitas</string>
     <string name="el_contacto_no_tiene_tel_fono">El contacto no tiene teléfono</string>
     <string name="espere_a_que_se_cargen_los_datos">Espere a que se cargen los datos</string>
-    <string name="llamar">LLamar</string>
+    <string name="llamar">Llamar</string>
     <string name="enviar_email">Enviar Email</string>
+    <string name="cliente_">"Cliente: "</string>
+    <string name="contacto_n_">"Contacto Nº: "</string>
+    <string name="puesto_">""Puesto: "</string>
+    <string name="departamento_">"Departamento: "</string>
+    <string name="observaciones_">"Observaciones: "</string>
+    <string name="mapa_de_google">Mapa de Google</string>
+    <string name="nombre_">Nombre:</string>
+    <string name="ordenar_ascendente">Ordenar Ascendente</string>
+    <string name="espere_mientras_se_cargan_los_datos">Espere mientras se cargan los datos</string>
+    <string name="no_se_ha_cargado_ningun_cliente">No se ha cargado ningun cliente</string>
+    <string name="el_cliente_no_posee_direcci_n">El cliente no posee dirección</string>
 
 </resources>

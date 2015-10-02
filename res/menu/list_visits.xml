@@ -8,8 +8,8 @@
         android:showAsAction="ifRoom" />
     
     <item android:id="@+id/sort_az" 
-        android:title="@string/a_z" 
-        android:icon="@drawable/ic_menu_sort_alphabetically"
+        android:title="@string/ordenar_ascendente" 
+        android:icon="@drawable/ic_action_sort_1"
          android:orderInCategory="100" 
         android:showAsAction="ifRoom" />   
     
@@ -20,4 +20,3 @@
         android:showAsAction="ifRoom"
          />   
 </menu>
-

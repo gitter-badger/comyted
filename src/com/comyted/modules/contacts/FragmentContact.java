@@ -48,7 +48,7 @@ public class FragmentContact extends RefreshableFragment
 		 rootView = (ViewGroup)inflater.inflate(R.layout.fragment_contact, container, false);
 		 TextView lbPhone = (TextView) rootView.findViewById(R.id.lbContact_telefono);
 		 lbPhone.setOnClickListener(this);
-		 TextView lbEmail = (TextView) rootView.findViewById(R.id.contact_email);
+		 TextView lbEmail = (TextView) rootView.findViewById(R.id.lb_contact_email);
 		 
 		 lbEmail.setOnClickListener(new OnClickListener() {			
 			@Override

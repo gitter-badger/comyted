@@ -45,9 +45,10 @@
             android:layout_height="wrap_content"
             android:text="Comercial" />
         
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
 
             <!-- Telefono -->
 
@@ -55,32 +56,31 @@
                 android:id="@+id/contact_telefono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:drawableStart="@drawable/ic_action_phone_little"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_action_phone_little"
                 android:text="931234567" />
 
             <!-- FAX -->
-
             <TextView
                 android:id="@+id/contact_fax"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/contact_telefono"
+                android:layout_height="wrap_content"              
                 android:layout_marginLeft="5dip"
-                android:layout_toRightOf="@+id/contact_telefono"
-                android:drawableLeft="@drawable/ic_action_paste_little"
+                android:gravity="center_vertical"                
+                android:drawableLeft="@drawable/ic_action_news_little"
                 android:text="9312345689" />
-        </RelativeLayout>
+        </LinearLayout>
 
         <!-- Email -->
-
         <TextView
+            android:layout_marginTop="-10dp"
             android:id="@+id/contact_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/stat_notify_email_generic"
-            android:drawablePadding="5dp"
+            android:drawableLeft="@drawable/ic_action_mail_little"
+            android:gravity="center_vertical"
             android:text="info@ingenierosag.com" />
+
     </LinearLayout>
 
    
