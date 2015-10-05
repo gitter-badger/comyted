@@ -418,5 +418,9 @@
     <string name="tipo_">Tipo:</string>
     <string name="estado_">Estado:</string>
     <string name="icono_ofertas">Icono Ofertas</string>
+    <string name="listado_de_visitas">Listado de Visitas</string>
+    <string name="listado_de_contactos">Listado de Contactos</string>
+    <string name="no_hay_ofertas">No hay ofertas</string>
+    <string name="no_hay_campanas">No hay campañas</string>
 
 </resources>

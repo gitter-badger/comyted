@@ -11,10 +11,13 @@ import android.widget.Toast;
 import com.comyted.MainApp;
 import com.comyted.R;
 import com.comyted.models.AppUser;
+import com.comyted.modules.campaings.ActivityListCampaings;
 import com.comyted.modules.clients.ActivityListClients;
 import com.comyted.modules.contacts.ActivityListContacts;
+import com.comyted.modules.offers.ActivityListOffers;
 import com.comyted.modules.orders.ActivityListOrders;
 import com.comyted.modules.sheets.ActivityListSheets;
+import com.comyted.modules.visits.ActivityListVisits;
 
 
 public class DashboardActivity extends FragmentActivity implements View.OnClickListener {
@@ -84,7 +87,16 @@ public class DashboardActivity extends FragmentActivity implements View.OnClickL
 			break;
 		case R.id.btn_contactos:
 			i = new Intent(getApplicationContext(), ActivityListContacts.class);
-			break;			
+			break;
+		case R.id.btn_visitas:
+			i = new Intent(getApplicationContext(), ActivityListVisits.class);
+			break;
+		case R.id.btn_ofertas:
+			i = new Intent(getApplicationContext(), ActivityListOffers.class);
+			break;
+		case R.id.btn_campaing:
+			i = new Intent(getApplicationContext(), ActivityListCampaings.class);
+			break;
 		default:
 			break;
 		}

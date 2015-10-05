@@ -184,6 +184,37 @@
             android:name="com.comyted.modules.contacts.ActivityEditContact"
             android:label="Editar Contacto">              
         </activity>
+       
+        <!-- Visitas -->
+        <activity
+            android:name="com.comyted.modules.visits.ActivityListVisits"
+            android:label="@string/listado_de_visitas"
+            android:parentActivityName="com.comyted.activities.DashboardActivity" >
+              <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.comyted.activities.DashboardActivity" />
+        </activity>
+        
+        <!-- Ofertas -->
+        <activity
+            android:name="com.comyted.modules.offers.ActivityListOffers"
+            android:label="Listado de Ofertas"
+            android:parentActivityName="com.comyted.activities.DashboardActivity" >
+              <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.comyted.activities.DashboardActivity" />
+        </activity>
+        
+        <!-- Campañas -->
+         <activity
+            android:name="com.comyted.modules.campaings.ActivityListCampaings"
+            android:label="Listado de Campañas"
+            android:parentActivityName="com.comyted.activities.DashboardActivity" >
+              <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.comyted.activities.DashboardActivity" />
+        </activity>
+         
     </application>
 
 </manifest>

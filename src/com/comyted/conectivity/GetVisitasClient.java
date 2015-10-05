@@ -21,5 +21,15 @@ public class GetVisitasClient extends AppServiceClient {
 				 new RequestParameter("cod_contacto", cod_contacto),
 				 new RequestParameter("cod_usuario", cod_usuario));
 	}
+	
+	public ContactVisit[] ObtenerVisitas(int cod_usuario) throws InvalidOperationException{
+		return get(ContactVisit[].class, "ObtenerVisitas", 				 
+				 new RequestParameter("cod_usuario", cod_usuario));
+	}
+	
+	public ContactVisit[] ObtenerVisitasOferta(int cod_oferta) throws InvalidOperationException{
+		return get(ContactVisit[].class, "ObtenerVisitasOferta", 				 
+				 new RequestParameter("cod_oferta", cod_oferta));
+	}
 		
 }

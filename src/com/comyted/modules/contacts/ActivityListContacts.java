@@ -22,7 +22,7 @@ public class ActivityListContacts extends Activity {
 		}
 		
 		 // Title & SubTitle options,
-        getActionBar().setTitle("Listado de Contactos");
+        getActionBar().setTitle(R.string.listado_de_contactos);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 	}	
 

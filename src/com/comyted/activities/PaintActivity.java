@@ -467,9 +467,11 @@ public class PaintActivity extends Activity {
 			c.drawColor(Color.BLACK);
 			painter.setColor(Color.WHITE);
 			c.drawRect(border, painter);
-			c.drawBitmap(bmp, srcRect, destRect, painter);							
+			c.drawBitmap(bmp, srcRect, destRect, painter);
+			
 			//present to view
 			holder.unlockCanvasAndPost(c);
+					
 		}
 		
 		public void drawCircle(float x, float y ,float radius){			
