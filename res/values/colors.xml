@@ -7,4 +7,10 @@
 <!--     <color name = "hint" >#f4a77c</color> -->
 	<color name = "hint" >#b4b4b4</color>
 	<color name="task_abierta">#ebfa44</color>
+	<color name="aceptada">#03fc67</color>	
+	<color name="aplazada">#ff9933</color>	
+	<color name="bloqueada">#ff66ff</color>
+	<color name="denegada">#c0504d</color>	
+	<color name="en_espera">#4f81bd</color>	
+	<color name="presentada">#fcfc03</color>
 </resources>
