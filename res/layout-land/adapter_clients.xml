@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent" >
 
     <!-- Icono -->
@@ -10,15 +10,16 @@
         android:layout_width="@dimen/logo_image_size"
         android:layout_height="@dimen/logo_image_size"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"       
+        android:layout_alignParentTop="true"
         android:src="@drawable/clientes" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/imageCliente"
+        android:baselineAligned="true"
         android:orientation="vertical" >
 
         <!-- Nombre Empresa -->
@@ -38,40 +39,40 @@
             android:layout_height="wrap_content"
             android:text="Ave San Francisco Javier No 9 41018 SEVILLA ESPANA" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+        <GridLayout
+            android:id="@+id/GridLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"           
+            android:orientation="horizontal" >
 
             <!-- Telefono -->
             <TextView
-                android:id="@+id/client_telefono"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
+                android:id="@+id/client_telefono"              
                 android:drawableStart="@drawable/ic_action_phone_little"
+                android:gravity="center_vertical"
                 android:text="931234567" />
 
             <!-- FAX -->
             <TextView
-                android:id="@+id/client_fax"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"  
-                android:gravity="center_vertical"              
-                android:layout_marginLeft="5dip"                
-                android:drawableLeft="@drawable/ic_action_news_little"
-                android:text="9312345689" />
-            
-		    <!-- Email -->
-            <TextView
-                android:id="@+id/client_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"              
+                android:id="@+id/client_fax"                
                 android:layout_marginLeft="5dip"
+                android:drawableLeft="@drawable/ic_action_news_little"
                 android:gravity="center_vertical"
-                android:drawableLeft="@drawable/ic_action_mail_little"              
+                android:text="9312345689" />
+
+            <!-- Email -->
+            <TextView
+                android:id="@+id/client_email"                
+                android:layout_marginLeft="5dip"
+                android:drawableLeft="@drawable/ic_action_mail_little"
+                android:gravity="center_vertical"
                 android:text="info@ingenierosag.com" />
-        </LinearLayout>
+
+<!--             <Space -->
+<!--                 android:layout_column="3" -->
+<!--                 android:layout_gravity="fill_vertical" -->
+<!--                 android:layout_row="1" /> -->
+        </GridLayout>
 
         <!-- Email -->
     </LinearLayout>

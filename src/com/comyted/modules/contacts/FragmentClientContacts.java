@@ -9,7 +9,7 @@ import com.comyted.generics.DefaultComparator;
 import com.comyted.generics.ListAdapter;
 import com.comyted.generics.ListFragment;
 import com.comyted.models.ClientContactSummary;
-import com.enterlib.app.PresentUtils;
+import com.enterlib.app.UIUtils;
 import com.enterlib.data.ICollectionRepository;
 import com.enterlib.exceptions.InvalidOperationException;
 
@@ -74,12 +74,12 @@ public class FragmentClientContacts extends ListFragment<ClientContactSummary> {
 		return new ListAdapter<ClientContactSummary>(getActivity(),R.layout.adapter_client_contacts, items) {			
 			@Override
 			protected void updateView(View view, ClientContactSummary item, int position) {
-				PresentUtils.setTextViewText(view, R.id.contact_nombrecontacto, item.nombrecontacto);
-				PresentUtils.setTextViewText(view, R.id.contact_puesto, item.puesto);
-				PresentUtils.setTextViewText(view, R.id.contact_departamento, item.departamento);
-				PresentUtils.setTextViewText(view, R.id.contact_telefono, item.telefono);
-				PresentUtils.setTextViewText(view, R.id.contact_fax, item.fax);
-				PresentUtils.setTextViewText(view, R.id.contact_email, item.email);				
+				UIUtils.setTextViewTextOrCollapse(view, R.id.contact_nombrecontacto, item.nombrecontacto);
+				UIUtils.setTextViewTextOrCollapse(view, R.id.contact_puesto, item.puesto);
+				UIUtils.setTextViewTextOrCollapse(view, R.id.contact_departamento, item.departamento);
+				UIUtils.setTextViewTextOrCollapse(view, R.id.contact_telefono, item.telefono);
+				UIUtils.setTextViewTextOrCollapse(view, R.id.contact_fax, item.fax);
+				UIUtils.setTextViewTextOrCollapse(view, R.id.contact_email, item.email);				
 			}
 		};
 	}

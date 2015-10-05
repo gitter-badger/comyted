@@ -21,51 +21,33 @@
         android:orientation="vertical" >
 
         <!-- Fecha Visita -->
-        <TextView
-            android:layout_gravity="center_vertical"
-            android:id="@+id/visit_fecha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fecha : 02/02/2015"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+        <TextView android:id="@+id/visit_fecha" style="@style/HeaderItemText" android:text="Fecha : 02/02/2015" />
+                          
+     <!-- Fecha limite -->
+     	<LinearLayout style="@style/HorizontalLinearLayout">
+	        <TextView style="@style/labelAdapter" android:text="Fecha Limite:"  />
+	        <TextView android:id="@+id/visit_fecha_limite" style="@style/ContentText" android:text="05/02/2015" />
+       	</LinearLayout>
+       	      
         
-        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">           
-	     	<!-- Fecha Alta -->	       
-	        <TextView
-	            android:id="@+id/visit_fecha_limite"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:text="Fecha Limite 05/02/2015"
-	            android:layout_alignParentLeft="true"	  	            
-	            />
-	        <!-- Fecha limite -->
-
-	          <TextView
-	              android:id="@+id/visit_fecha_alta"
-	              android:layout_width="wrap_content"
-	              android:layout_height="wrap_content"
-	              android:layout_alignParentTop="true"
-	              android:layout_marginLeft="32dp"
-	              android:layout_toRightOf="@+id/visit_fecha_limite"
-	              android:text="Fecha Alta: 01/01/2015" />
-	              
-        </RelativeLayout>
+        <!-- Fecha Alta -->	 
+        <LinearLayout style="@style/HorizontalLinearLayout">
+	        <TextView style="@style/labelAdapter" android:text="Fecha Alta:"  />
+	        <TextView android:id="@+id/visit_fecha_alta" style="@style/ContentText" android:text="05/02/2015" />
+       	</LinearLayout>
+              
         
         <!-- Responsable -->      
-        
-        <TextView
-            android:id="@+id/visit_responsable"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Responsable: Ramon Galiano" />
+         <LinearLayout style="@style/HorizontalLinearLayout">
+	        <TextView style="@style/labelAdapter" android:text="Responsable:"  />
+	        <TextView android:id="@+id/visit_responsable" style="@style/ContentText" android:text="Ramon Galiano" />
+       	</LinearLayout>                   
 
         <!-- Estado -->
-
-        <TextView
-            android:id="@+id/visit_estado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Estado: Primera Fase" />
+         <LinearLayout style="@style/HorizontalLinearLayout">
+	        <TextView style="@style/labelAdapter" android:text="Estado:"  />
+	        <TextView android:id="@+id/visit_estado" style="@style/ContentText" android:text="Primera Fase" />
+       	</LinearLayout>            
                      
     </LinearLayout>
    

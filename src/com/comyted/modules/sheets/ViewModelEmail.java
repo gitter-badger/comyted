@@ -8,8 +8,8 @@ import com.comyted.repository.PeticionariosRepository;
 import com.comyted.repository.SheetsRepository;
 import com.comyted.repository.UserRepository;
 import com.enterlib.exceptions.InvalidOperationException;
-import com.enterlib.app.EditViewModel;
-import com.enterlib.app.IEditView;
+import com.enterlib.mvvm.EditViewModel;
+import com.enterlib.mvvm.IEditView;
 
 public class ViewModelEmail extends EditViewModel {
 

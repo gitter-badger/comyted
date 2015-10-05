@@ -2,8 +2,8 @@ package com.comyted;
 
 import android.view.MenuItem;
 
-import com.enterlib.app.DataViewModel;
-import com.enterlib.app.SupportFragmentView;
+import com.enterlib.mvvm.DataViewModel;
+import com.enterlib.mvvm.SupportFragmentView;
 
 public abstract class SupportRefreshableFragment extends SupportFragmentView {
 

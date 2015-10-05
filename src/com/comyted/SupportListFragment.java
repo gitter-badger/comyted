@@ -11,8 +11,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
-import com.enterlib.app.DataViewModel;
 import com.enterlib.app.IFilterableAdapter;
+import com.enterlib.mvvm.DataViewModel;
 import com.enterlib.widgets.FilterDialog;
 
 public abstract class SupportListFragment extends SupportRefreshableFragment

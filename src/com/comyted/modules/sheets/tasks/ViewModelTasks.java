@@ -5,8 +5,8 @@ import com.comyted.models.SheetDetails;
 import com.comyted.models.TaskDetails;
 import com.comyted.repository.ISheetTaskRepository;
 import com.comyted.repository.SheetTaskRepository;
-import com.enterlib.app.DataViewModel;
-import com.enterlib.app.IDataView;
+import com.enterlib.mvvm.DataViewModel;
+import com.enterlib.mvvm.IDataView;
 
 public class ViewModelTasks extends DataViewModel {
 	

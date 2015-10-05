@@ -13,9 +13,9 @@ import com.comyted.models.AppUser;
 import com.comyted.models.Client;
 import com.comyted.repository.ClientRepository;
 import com.comyted.repository.IClientRepository;
-import com.enterlib.app.DataViewModel;
 import com.enterlib.conetivity.HttpProxy;
 import com.enterlib.conetivity.RestClient;
+import com.enterlib.mvvm.DataViewModel;
 import com.enterlib.threading.AsyncNotifyTask;
 import com.enterlib.threading.IAsyncCallback;
 

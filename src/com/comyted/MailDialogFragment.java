@@ -3,13 +3,13 @@ package com.comyted;
 import java.util.Properties;
 
 import com.comyted.models.MailMessage;
-import com.enterlib.app.DefaultEditView;
-import com.enterlib.app.EditViewModel;
-import com.enterlib.app.PresentUtils;
+import com.enterlib.app.UIUtils;
 import com.enterlib.exceptions.ConversionFailException;
 import com.enterlib.exceptions.InvalidOperationException;
 import com.enterlib.fields.Form;
 import com.enterlib.fields.TextViewField;
+import com.enterlib.mvvm.DefaultEditView;
+import com.enterlib.mvvm.EditViewModel;
 import com.enterlib.validations.ErrorInfo;
 import com.enterlib.validations.validators.RegExValueValidator;
 
@@ -161,7 +161,7 @@ public class MailDialogFragment extends DialogFragment {
 			super.onSaved(info);
 			
 			if(info == null || !info.containsErrors()){
-				 PresentUtils.showMessage(getActivity(), getString(R.string.email_enviado_correctamente));
+				 UIUtils.showMessage(getActivity(), getString(R.string.email_enviado_correctamente));
 				 dismiss();
 			}
 		}

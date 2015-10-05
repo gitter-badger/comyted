@@ -2,8 +2,8 @@ package com.comyted.modules.contacts;
 
 import com.comyted.models.ClientContactSummary;
 import com.comyted.repository.IContactsRepository;
-import com.enterlib.app.DataViewModel;
-import com.enterlib.app.IDataView;
+import com.enterlib.mvvm.DataViewModel;
+import com.enterlib.mvvm.IDataView;
 
 public class ViewModelClientContacts extends DataViewModel{
 

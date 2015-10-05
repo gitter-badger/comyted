@@ -25,9 +25,9 @@ import com.comyted.models.MailMessage;
 import com.comyted.modules.clients.ActivityEditClient;
 import com.comyted.repository.ContactsRepository;
 import com.enterlib.StringUtils;
-import com.enterlib.app.DataViewModel;
-import com.enterlib.app.PresentUtils;
-import com.enterlib.app.RepositoryViewModel;
+import com.enterlib.app.UIUtils;
+import com.enterlib.mvvm.DataViewModel;
+import com.enterlib.mvvm.RepositoryViewModel;
 
 public class FragmentContact extends RefreshableFragment 
 							 implements OnClickListener {
@@ -63,7 +63,7 @@ public class FragmentContact extends RefreshableFragment
 	public void onDataLoaded() {
 		Contact c = viewModel.getEntity();	
 		if(c == null){
-			PresentUtils.showMessage(getActivity(), "no hay cliente");
+			UIUtils.showMessage(getActivity(), "no hay cliente");
 			return;
 		}
 		getActivity().setTitle(c.nombrecontacto);
@@ -137,7 +137,7 @@ public class FragmentContact extends RefreshableFragment
 	private void callContact(){
 		String phoneNumber= getViewText(R.id.contact_telefono);
 		if(StringUtils.isNullOrWhitespace(phoneNumber)){
-			PresentUtils.showMessage(getActivity(), getActivity().getString(R.string.el_contacto_no_tiene_tel_fono));
+			UIUtils.showMessage(getActivity(), getActivity().getString(R.string.el_contacto_no_tiene_tel_fono));
 			return;
 		}
 		
@@ -150,7 +150,7 @@ public class FragmentContact extends RefreshableFragment
 	private void sendMail() {
 		Contact entity =viewModel.getEntity();
 		if(entity == null){
-			PresentUtils.showMessage(getActivity(), getActivity().getString(R.string.espere_a_que_se_cargen_los_datos));
+			UIUtils.showMessage(getActivity(), getActivity().getString(R.string.espere_a_que_se_cargen_los_datos));
 			return;
 		}
 		

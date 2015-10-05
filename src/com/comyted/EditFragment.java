@@ -9,12 +9,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.enterlib.DialogUtil;
-import com.enterlib.app.DataViewModel;
-import com.enterlib.app.EditViewModel;
-import com.enterlib.app.IEditView;
-import com.enterlib.app.PresentUtils;
+import com.enterlib.app.UIUtils;
 import com.enterlib.exceptions.InvalidOperationException;
 import com.enterlib.fields.Form;
+import com.enterlib.mvvm.DataViewModel;
+import com.enterlib.mvvm.EditViewModel;
+import com.enterlib.mvvm.IEditView;
 import com.enterlib.validations.ErrorInfo;
 
 public abstract class EditFragment extends RefreshableFragment
@@ -106,7 +106,7 @@ public abstract class EditFragment extends RefreshableFragment
 	{
 		Object data = getData();
 		if(data == null){
-			PresentUtils.showMessage(getActivity(), "no hay datos");
+			UIUtils.showMessage(getActivity(), "no hay datos");
 			return;
 		}
 		
@@ -132,7 +132,7 @@ public abstract class EditFragment extends RefreshableFragment
 	@Override
 	public void onSaved(ErrorInfo info) {
 		if(info == null || !info.containsErrors()){
-			PresentUtils.showMessage(getActivity(), getActivity().getString(R.string.salvado_));
+			UIUtils.showMessage(getActivity(), getActivity().getString(R.string.salvado_));
 			try {
 				//esperar un segundo para mostrar el mensaje
 				Thread.sleep(1000);

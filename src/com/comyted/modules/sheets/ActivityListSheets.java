@@ -23,7 +23,8 @@ public class ActivityListSheets extends FragmentActivity {
         }
        
         // Title & SubTitle options,
-        getActionBar().setTitle(R.string.hojas_de_trabajo);				               				
+        getActionBar().setTitle(R.string.hojas_de_trabajo);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
     }   
     
     @Override

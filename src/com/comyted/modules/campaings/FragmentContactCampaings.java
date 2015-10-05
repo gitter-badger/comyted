@@ -11,7 +11,7 @@ import com.comyted.generics.DefaultComparator;
 import com.comyted.generics.ListAdapter;
 import com.comyted.generics.ListFragment;
 import com.comyted.models.ContactCampaing;
-import com.enterlib.app.PresentUtils;
+import com.enterlib.app.UIUtils;
 import com.enterlib.data.ICollectionRepository;
 import com.enterlib.exceptions.InvalidOperationException;
 
@@ -39,10 +39,10 @@ public class FragmentContactCampaings extends ListFragment<ContactCampaing> {
 		return new ListAdapter<ContactCampaing>(getActivity(),R.layout.adapter_contact_campaings,items) {			
 			@Override
 			protected void updateView(View view, ContactCampaing item, int position) {
-				PresentUtils.setTextViewText(view,R.id.campaing_nombrecampana, item.nombrecampana);
-				PresentUtils.setTextViewText(view,"Inicio: ",R.id.campaing_fecha_ini, item.fechaini);
-				PresentUtils.setTextViewText(view,"Fin: ",R.id.campaing_fecha_fin, item.fechafin);
-				PresentUtils.setTextViewText(view,"Tipo de Campaña: ",R.id.campaing_tipocampana, item.tipocampana);
+				UIUtils.setTextViewText(view,R.id.campaing_nombrecampana, item.nombrecampana);
+				UIUtils.setTextViewText(view,"Inicio: ",R.id.campaing_fecha_ini, item.fechaini);
+				UIUtils.setTextViewText(view,"Fin: ",R.id.campaing_fecha_fin, item.fechafin);
+				UIUtils.setTextViewText(view,"Tipo de Campaña: ",R.id.campaing_tipocampana, item.tipocampana);
 			}
 		};
 	}

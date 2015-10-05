@@ -20,7 +20,7 @@ import com.enterlib.DialogUtil;
 import com.enterlib.converters.Converters;
 import com.enterlib.fields.Form;
 import com.enterlib.fields.TextViewField;
-import com.enterlib.app.DefaultEditView;
+import com.enterlib.mvvm.DefaultEditView;
 import com.enterlib.validations.ErrorInfo;
 import com.enterlib.validations.validators.RegExValueValidator;
 

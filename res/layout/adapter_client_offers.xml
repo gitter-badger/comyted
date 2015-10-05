@@ -5,11 +5,9 @@
 
     <!-- Icono -->
  	<ImageView
+ 	    android:contentDescription="@string/icono_ofertas"
         android:id="@+id/image"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        style="@style/itemImage"
         android:src="@drawable/ofertas" />
  
     <LinearLayout
@@ -24,9 +22,8 @@
 	        <!-- Codigo -->
 	        <TextView
 	            android:id="@+id/oferta_codoferta"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:text="1"
+	            style="@style/HeaderItemText"
+	            android:text="@string/sample_1"
 	            android:textAppearance="?android:attr/textAppearanceMedium" />
 	        
 	        <TextView	            
@@ -40,50 +37,39 @@
 	        <!-- Descripcion -->
 	        <TextView	            
 	            android:id="@+id/oferta_descripcion"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:text="Proyecto de Mantenimiento"
-	            android:textAppearance="?android:attr/textAppearanceMedium" />
+	            style="@style/HeaderItemTextMedium"
+	            android:text="@string/sample_offert_description"/>
 	        </LinearLayout>
 	        
-        <!-- Contacto -->        
-        <TextView
-            android:id="@+id/oferta_contacto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Contacto: Jesus Lopez Perez" />
+        <!-- Contacto -->
+        <LinearLayout style="@style/HorizontalLinearLayout">
+	        <TextView style="@style/labelAdapter" android:text="@string/contacto_"  />
+	        <TextView android:id="@+id/oferta_contacto" style="@style/ContentText" />
+       	</LinearLayout>  
         
-	    <!-- Fecha Propuesta --> 		     	
-        <TextView
-            android:id="@+id/oferta_fecha_propuesta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fecha: 01/01/2015"
-            android:layout_alignParentLeft="true"
-             />	                        
-
-         <!-- Responsable -->        
-        <TextView
-            android:id="@+id/oferta_responsable"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Responsable: Jesus Lopez Perez" />
+	    <!-- Fecha Propuesta --> 
+	     <LinearLayout style="@style/HorizontalLinearLayout">
+	        <TextView style="@style/labelAdapter" android:text="@string/fecha_"  />
+	        <TextView android:id="@+id/oferta_fecha_propuesta" style="@style/ContentText" />
+       	</LinearLayout>  		     	
+       
+         <!-- Responsable -->   
+         <LinearLayout style="@style/HorizontalLinearLayout">
+	        <TextView style="@style/labelAdapter" android:text="@string/responsable_"  />
+	        <TextView android:id="@+id/oferta_responsable" style="@style/ContentText" android:ellipsize="end" android:singleLine="true" />
+       	 </LinearLayout>  	           
         
           <!-- Tipo -->
-        <TextView
-            android:id="@+id/oferta_tipo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tipo: Oferta de Mantenimiento" />
+         <LinearLayout style="@style/HorizontalLinearLayout">
+	        <TextView style="@style/labelAdapter" android:text="@string/tipo_"  />
+	        <TextView android:id="@+id/oferta_tipo" style="@style/ContentText" />
+       	 </LinearLayout>  	       
         
         <!-- Estado -->
-        <TextView
-            android:id="@+id/oferta_estado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Estado: Aprobada" />
-        
-      
+         <LinearLayout style="@style/HorizontalLinearLayout">
+	        <TextView style="@style/labelAdapter" android:text="@string/estado_"  />
+	        <TextView android:id="@+id/oferta_estado" style="@style/ContentText" />
+       	 </LinearLayout>  	                          
     </LinearLayout>
 
    

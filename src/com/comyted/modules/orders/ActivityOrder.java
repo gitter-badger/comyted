@@ -40,6 +40,7 @@ public class ActivityOrder extends FragmentActivity
         
         final ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		actionBar.setDisplayHomeAsUpEnabled(true);
 
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the activity.
@@ -80,6 +81,8 @@ public class ActivityOrder extends FragmentActivity
 	        Log.e("Error en ejecución de opciones", "Fallo en Opciones", e);}
  
     }
+    
+   
     
     @Override
    	public void onTabSelected(ActionBar.Tab tab,

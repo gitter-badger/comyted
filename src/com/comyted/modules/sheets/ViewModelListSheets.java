@@ -2,8 +2,8 @@ package com.comyted.modules.sheets;
 
 import com.comyted.models.SheetSumary;
 import com.comyted.repository.ISheetsRepository;
-import com.enterlib.app.DataViewModel;
-import com.enterlib.app.IDataView;
+import com.enterlib.mvvm.DataViewModel;
+import com.enterlib.mvvm.IDataView;
 
 public class ViewModelListSheets extends DataViewModel{
 	

@@ -22,13 +22,7 @@
         android:orientation="vertical" >
 
         <!-- Nombre Empresa -->
-
-        <TextView
-            android:id="@+id/client_nombreempresa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ingenieros AG"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+        <TextView android:id="@+id/client_nombreempresa" style="@style/HeaderItemText" android:text="Ingenieros AG" />
 
         <!-- Direccion -->
 

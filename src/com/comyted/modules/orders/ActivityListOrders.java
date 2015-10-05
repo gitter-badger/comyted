@@ -40,7 +40,7 @@ import com.comyted.MainApp;
 import com.comyted.Utils;
 import com.comyted.models.AppUser;
 import com.comyted.models.OrderSumary;
-import com.enterlib.app.DefaultDataView;
+import com.enterlib.mvvm.DefaultDataView;
 
 public class ActivityListOrders extends FragmentActivity 
 			implements ActionBar.TabListener {
@@ -64,14 +64,16 @@ public class ActivityListOrders extends FragmentActivity
         if(user == null)
         	finish();
         
-        //Title        
-        getActionBar().setTitle(R.string.ordenes_de_trabajo);
-        
+        //Title
+        final ActionBar actionBar = getActionBar();
+        actionBar.setTitle(R.string.ordenes_de_trabajo);
+        actionBar.setDisplayHomeAsUpEnabled(true);     
+  		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+      		
         dataView = new DataView(this);
         viewModel = new ViewModelListOrders(user, dataView); 
         
-        final ActionBar actionBar = getActionBar();
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+      
 
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the activity.
@@ -104,7 +106,9 @@ public class ActivityListOrders extends FragmentActivity
 		}                  		                        		         
          
     } 
+        
     
+    		
     @Override
    	public void onTabSelected(ActionBar.Tab tab,
    			FragmentTransaction fragmentTransaction) {

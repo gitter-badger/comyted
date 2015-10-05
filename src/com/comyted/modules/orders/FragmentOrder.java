@@ -15,7 +15,7 @@ import com.comyted.Constants;
 import com.comyted.R;
 import com.comyted.Utils;
 import com.comyted.models.Order;
-import com.enterlib.app.DefaultDataView;
+import com.enterlib.mvvm.DefaultDataView;
 
 public class FragmentOrder extends Fragment {
 	
@@ -95,6 +95,8 @@ public class FragmentOrder extends Fragment {
 			Utils.showErrorDialogAndFinish(getActivity(), getString(R.string.respuesta_invalida));
 			return;
 		}
+		
+		getActivity().getActionBar().setTitle(order.titulo);
 		
 		Utils.setTextViewText(rootView, R.id.title, order.titulo);
 		

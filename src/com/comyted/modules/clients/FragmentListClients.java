@@ -25,7 +25,7 @@ import com.comyted.models.ClientSummary;
 import com.comyted.repository.ClientRepository;
 import com.comyted.repository.IClientRepository;
 import com.comyted.testing.repository.LocalJSONClientRepository;
-import com.enterlib.app.DefaultDataView;
+import com.enterlib.mvvm.DefaultDataView;
 import com.enterlib.widgets.FilterDialog;
 
 public class FragmentListClients extends android.support.v4.app.Fragment{

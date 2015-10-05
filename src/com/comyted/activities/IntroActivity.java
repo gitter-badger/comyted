@@ -48,6 +48,7 @@ public class IntroActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_intro);
 		
+		FooterFragment.GO_HOME = false;
 		//getPreferences(Activity.MODE_PRIVATE);
 		
 		// Ocultamos ActionBar

@@ -36,7 +36,7 @@ import com.enterlib.fields.FilterableSpinnerField;
 import com.enterlib.fields.Form;
 import com.enterlib.fields.SpinnerField;
 import com.enterlib.fields.TextViewField;
-import com.enterlib.app.DefaultEditView;
+import com.enterlib.mvvm.DefaultEditView;
 import com.enterlib.validations.ErrorInfo;
 import com.enterlib.validations.validators.DoubleValidator;
 import com.enterlib.validations.validators.IntegerValidator;

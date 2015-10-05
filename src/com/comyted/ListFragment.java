@@ -10,8 +10,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
-import com.enterlib.app.DataViewModel;
+
 import com.enterlib.app.IFilterableAdapter;
+import com.enterlib.mvvm.DataViewModel;
 import com.enterlib.widgets.FilterDialog;
 
 public abstract class ListFragment extends RefreshableFragment
@@ -59,15 +60,22 @@ public abstract class ListFragment extends RefreshableFragment
 		listView.setAdapter(adapter);
 		int elements = adapter.getCount();
 		
-		//check that the previus selected position is valid
-		int selectedPosition = getSelectedPosition();
+		//check that the previus selected position is valid	
 		if(selectedPosition >= elements)
 			selectedPosition = 0;
 		
 		//set the previus selected position
 		listView.setSelection(selectedPosition);
 		
-		listView.setOnItemClickListener(this);
+		listView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				selectedPosition = position;
+				ListFragment.this.onItemClick(parent, view, position, id);				
+			}
+		});
 		listView.refreshDrawableState();
 		
 		if(menu!=null){

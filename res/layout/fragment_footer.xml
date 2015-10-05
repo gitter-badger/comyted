@@ -24,15 +24,26 @@
 	        android:textColor="#606060" />
 	</LinearLayout>
 
+	<ImageButton
+	    android:id="@+id/im_home"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBaseline="@+id/layout1"
+	    android:adjustViewBounds="false"
+        android:background="@null"
+	    android:layout_toLeftOf="@+id/imsettings"
+	    android:src="@drawable/btn_home"
+	    android:layout_marginRight="10dp" />
+
     <ImageButton
         android:id="@+id/imsettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/layout1"
         android:layout_alignParentRight="true"
-        android:adjustViewBounds="false"
-        android:background="@color/gray"
+        android:adjustViewBounds="false"        
         android:contentDescription="@string/action_configuracion"
-        android:src="@drawable/ic_settings" />
+        android:background="@null"
+        android:src="@drawable/bt_settings" />
 
 </RelativeLayout>

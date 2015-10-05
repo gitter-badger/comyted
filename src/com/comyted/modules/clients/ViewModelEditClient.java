@@ -3,8 +3,8 @@ package com.comyted.modules.clients;
 import java.util.ArrayList;
 
 import com.comyted.models.Client;
-import com.enterlib.app.EditViewModel;
-import com.enterlib.app.IEditView;
+import com.enterlib.mvvm.EditViewModel;
+import com.enterlib.mvvm.IEditView;
 
 public class ViewModelEditClient extends EditViewModel {
 

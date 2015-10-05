@@ -9,8 +9,8 @@ import com.comyted.ListFragment;
 import com.comyted.R;
 import com.comyted.models.ContactSummary;
 import com.comyted.repository.ContactsRepository;
-import com.enterlib.app.CollectionViewModel;
-import com.enterlib.app.DataViewModel;
+import com.enterlib.mvvm.CollectionViewModel;
+import com.enterlib.mvvm.DataViewModel;
 
 import android.content.Intent;
 import android.view.Menu;
@@ -76,8 +76,7 @@ public class FragmentListContacts extends ListFragment {
 			long id) {
 		ContactSummary c = (ContactSummary) parent.getItemAtPosition(position);
 		Intent intent = new Intent(getActivity(), ActivityContact.class)
-		.putExtra(Constants.ID, c.id);
-		
+		.putExtra(Constants.ID, c.id);		
 		startActivityForResult(intent, Constants.EDIT);
 	}
 		

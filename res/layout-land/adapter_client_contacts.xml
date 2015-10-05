@@ -4,14 +4,15 @@
     android:layout_height="match_parent" >
 
     <!-- Icono -->
- 	<ImageView
+
+    <ImageView
         android:id="@+id/imageContacts"
         android:layout_width="@dimen/logo_image_size"
         android:layout_height="@dimen/logo_image_size"
         android:layout_alignParentLeft="true"
-         android:layout_alignParentTop="true"
+        android:layout_alignParentTop="true"
         android:src="@drawable/contactos" />
- 
+
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
@@ -23,15 +24,15 @@
         <!-- Nombre Contacto -->
 
         <TextView
-            android:layout_gravity="center_vertical"
             android:id="@+id/contact_nombrecontacto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:text="Ingenieros AG"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <!-- Puesto -->
-        
+
         <TextView
             android:id="@+id/contact_puesto"
             android:layout_width="wrap_content"
@@ -39,50 +40,47 @@
             android:text="Director Comercial" />
 
         <!-- Departamento -->
+
         <TextView
             android:id="@+id/contact_departamento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Comercial" />
-        
-        <LinearLayout android:orientation="horizontal"
+
+        <GridLayout
+            android:id="@+id/GridLayout1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"           
+            android:orientation="horizontal"
+            android:rowCount="2"
+            android:columnCount="3"
+            android:layoutDirection="ltr">
 
             <!-- Telefono -->
             <TextView
-                android:id="@+id/contact_telefono"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"             
-                android:gravity="center_vertical"
+                android:id="@+id/contact_telefono"                
                 android:drawableLeft="@drawable/ic_action_phone_little"
+                android:gravity="center_vertical"
                 android:text="931234567" />
 
             <!-- FAX -->
             <TextView
-                android:id="@+id/contact_fax"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"              
+                android:id="@+id/contact_fax"                
                 android:layout_marginLeft="5dp"
-                android:gravity="center_vertical"              
                 android:drawableLeft="@drawable/ic_action_news_little"
+                android:gravity="center_vertical"
                 android:text="9312345689" />
 
             <!-- Email -->
             <TextView
-                android:id="@+id/contact_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"              
-                android:layout_marginLeft="5dp"            
-                android:drawableLeft="@drawable/ic_action_mail_little"               
+                android:id="@+id/contact_email"                
+                android:layout_marginLeft="5dp"
+                android:drawableLeft="@drawable/ic_action_mail_little"
+                android:gravity="center_vertical"
                 android:text="info@ingenierosag.com" />
-
-        </LinearLayout>
+        </GridLayout>
 
         <!-- Email -->
     </LinearLayout>
-
-   
 
 </RelativeLayout>

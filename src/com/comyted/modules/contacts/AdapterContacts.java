@@ -9,7 +9,7 @@ import com.comyted.R;
 import com.comyted.models.ClientContactSummary;
 import com.comyted.models.ContactSummary;
 import com.enterlib.app.CollectionAdapter;
-import com.enterlib.app.PresentUtils;
+import com.enterlib.app.UIUtils;
 
 public class AdapterContacts extends CollectionAdapter<ContactSummary> {
 
@@ -30,12 +30,12 @@ public class AdapterContacts extends CollectionAdapter<ContactSummary> {
 			view = _inflater.inflate(R.layout.adapter_contacts, null);		
 		
 		ContactSummary c = getItem(position);
-		PresentUtils.setTextViewText(view, R.id.contact_nombrecontacto, c.nombrecontacto);
-		PresentUtils.setTextViewText(view, R.id.contact_nombreempresa, c.nombreempresa);
-		PresentUtils.setTextViewText(view, R.id.contact_puesto, c.puesto);
-		PresentUtils.setTextViewText(view, R.id.contact_telefono, c.telefono);
-		PresentUtils.setTextViewText(view, R.id.contact_fax, c.fax);
-		PresentUtils.setTextViewText(view, R.id.contact_email, c.email);
+		UIUtils.setTextViewTextOrCollapse(view, R.id.contact_nombrecontacto, c.nombrecontacto);
+		UIUtils.setTextViewTextOrCollapse(view, R.id.contact_nombreempresa, c.nombreempresa);
+		UIUtils.setTextViewTextOrCollapse(view, R.id.contact_puesto, c.puesto);
+		UIUtils.setTextViewTextOrCollapse(view, R.id.contact_telefono, c.telefono);
+		UIUtils.setTextViewTextOrCollapse(view, R.id.contact_fax, c.fax);
+		UIUtils.setTextViewTextOrCollapse(view, R.id.contact_email, c.email);
 		
 		return view;
 	}

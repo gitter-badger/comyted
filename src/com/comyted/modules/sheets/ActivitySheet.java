@@ -35,6 +35,7 @@ public class ActivitySheet extends FragmentActivity
                 
         final ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		actionBar.setDisplayHomeAsUpEnabled(true);
 		
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the activity.
@@ -70,6 +71,12 @@ public class ActivitySheet extends FragmentActivity
 		vm = new ViewModelSheet(getIntent().getIntExtra(Constants.SHEET_ID, -1), null);
 		
 
+    }
+    
+    @Override
+    public boolean onNavigateUp() {
+    	finish();    	
+    	return true;
     }
         
     @Override

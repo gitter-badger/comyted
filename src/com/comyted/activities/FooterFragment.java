@@ -1,7 +1,9 @@
 package com.comyted.activities;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +21,7 @@ import com.comyted.modules.admin.UsersManager;
 import com.enterlib.exceptions.InvalidOperationException;
 import com.enterlib.generics.IObserver;
 import com.enterlib.threading.IAsyncInvocator;
+import com.google.android.gms.internal.ho;
 
 
 public class FooterFragment extends Fragment 
@@ -27,6 +30,7 @@ public class FooterFragment extends Fragment
 		View view;
 		AppUser user;
 		IUserManager usersManager;
+		public static boolean GO_HOME;
 		
 		@Override
 		public void onCreate(Bundle savedInstanceState) {			
@@ -45,12 +49,20 @@ public class FooterFragment extends Fragment
 		public void onActivityCreated(Bundle savedInstanceState) {			
 			super.onActivityCreated(savedInstanceState);
 						
-			user = MainApp.getCurrentUser();																				
+			user = MainApp.getCurrentUser();
+			Activity activity = getActivity();
 			if(user == null){
-				getActivity().finish();			
+				GO_HOME = false;
+				activity.finish();			
 			}
-			else{	
-				
+			else if(GO_HOME){
+				if(activity instanceof DashboardActivity){
+					GO_HOME= false;
+				}else{
+					activity.finish();
+				}
+			}
+			else{									
 				MainApp.addCurrentUserObserver(this);
 				usersManager = new UsersManager(null);
 				
@@ -69,6 +81,19 @@ public class FooterFragment extends Fragment
 				bt.setOnClickListener(this);
 				
 				dialog.findViewById(R.id.about).setOnClickListener(this);*/
+				
+				ImageButton home = (ImageButton) view.findViewById(R.id.im_home);
+				if(activity instanceof DashboardActivity){
+					home.setVisibility(View.GONE);
+				}else{
+					home.setOnClickListener(new View.OnClickListener() {						
+						@Override
+						public void onClick(View v) {
+							GO_HOME = true;
+							getActivity().finish();							
+						}
+					});
+				}
 			}	
 		}
 		
@@ -79,6 +104,14 @@ public class FooterFragment extends Fragment
 			user = MainApp.getCurrentUser(); 
 			if(user == null){
 				getActivity().finish();			
+			}			
+			else if(GO_HOME){
+ 				Activity activity = getActivity();
+				if(activity instanceof DashboardActivity){
+					GO_HOME= false;
+				}else{
+					activity.finish();
+				}
 			}
 		}
 		

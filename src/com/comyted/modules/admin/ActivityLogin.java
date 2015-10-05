@@ -16,11 +16,12 @@ import com.comyted.R;
 import com.comyted.Utils;
 import com.comyted.activities.AboutActivity;
 import com.comyted.activities.DashboardActivity;
+import com.comyted.activities.FooterFragment;
 import com.comyted.models.UserLogin;
 import com.enterlib.exceptions.ConversionFailException;
 import com.enterlib.fields.Form;
 import com.enterlib.fields.TextViewField;
-import com.enterlib.app.DefaultDataView;
+import com.enterlib.mvvm.DefaultDataView;
 
 
 public class ActivityLogin extends Activity
@@ -53,7 +54,8 @@ public class ActivityLogin extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
-				
+		
+		FooterFragment.GO_HOME = false;		
 		
 		// Title & SubTitle options
         getActionBar().setTitle("");					

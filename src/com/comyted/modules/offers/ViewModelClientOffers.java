@@ -2,8 +2,8 @@ package com.comyted.modules.offers;
 
 import com.comyted.models.ClientOffert;
 import com.comyted.repository.IOffertRepository;
-import com.enterlib.app.DataViewModel;
-import com.enterlib.app.IDataView;
+import com.enterlib.mvvm.DataViewModel;
+import com.enterlib.mvvm.IDataView;
 
 public class ViewModelClientOffers extends DataViewModel {
 	IOffertRepository repository;

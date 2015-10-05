@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import com.comyted.R;
 import com.comyted.models.ClientVisit;
 import com.enterlib.app.CollectionAdapter;
-import com.enterlib.app.PresentUtils;
+import com.enterlib.app.UIUtils;
 import com.enterlib.converters.Converters;
 
 public class AdapterClientVisits extends CollectionAdapter<ClientVisit>{
@@ -30,12 +30,12 @@ public class AdapterClientVisits extends CollectionAdapter<ClientVisit>{
 			view = _inflater.inflate(R.layout.adapter_client_visits, null);		
 		
 		ClientVisit c = getItem(position);
-		PresentUtils.setTextViewText(view, "Fecha: ", R.id.visit_fecha, Converters.DateToStringConverter.getString(c.fechavisita));
-		PresentUtils.setTextViewText(view, "Contacto: ",R.id.visit_contacto, c.contacto);
-		PresentUtils.setTextViewText(view, "Estado: ", R.id.visit_estado, c.estado);
-		PresentUtils.setTextViewText(view, R.id.contact_telefono, c.telefono);
-		PresentUtils.setTextViewText(view, R.id.contact_fax, c.fax);
-		PresentUtils.setTextViewText(view, R.id.contact_email, c.email);
+		UIUtils.setTextViewText(view, "Fecha: ", R.id.visit_fecha, Converters.DateToStringConverter.getString(c.fechavisita));
+		UIUtils.setTextViewText(view, "Contacto: ",R.id.visit_contacto, c.contacto);
+		UIUtils.setTextViewText(view, "Estado: ", R.id.visit_estado, c.estado);
+		UIUtils.setTextViewText(view, R.id.contact_telefono, c.telefono);
+		UIUtils.setTextViewText(view, R.id.contact_fax, c.fax);
+		UIUtils.setTextViewText(view, R.id.contact_email, c.email);
 		
 		return view;
 	}

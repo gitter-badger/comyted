@@ -408,5 +408,15 @@
     <string name="espere_mientras_se_cargan_los_datos">Espere mientras se cargan los datos</string>
     <string name="no_se_ha_cargado_ningun_cliente">No se ha cargado ningun cliente</string>
     <string name="el_cliente_no_posee_direcci_n">El cliente no posee dirección</string>
+    <string name="editar_cliente">Editar Cliente</string>
+    <string name="contactos">Contactos</string>
+    <string name="sample_1">1</string>
+    <string name="sample_offert_description">Proyecto de Mantenimiento</string>
+    <string name="contacto_">Contacto:</string>
+    <string name="fecha_">Fecha:</string>
+    <string name="responsable_">Responsable:</string>
+    <string name="tipo_">Tipo:</string>
+    <string name="estado_">Estado:</string>
+    <string name="icono_ofertas">Icono Ofertas</string>
 
 </resources>

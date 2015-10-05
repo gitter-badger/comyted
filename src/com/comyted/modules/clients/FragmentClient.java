@@ -12,8 +12,8 @@ import com.comyted.models.Client;
 import com.comyted.models.Contact;
 import com.comyted.models.MailMessage;
 import com.enterlib.StringUtils;
-import com.enterlib.app.DefaultDataView;
-import com.enterlib.app.PresentUtils;
+import com.enterlib.app.UIUtils;
+import com.enterlib.mvvm.DefaultDataView;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -75,12 +75,12 @@ public class FragmentClient extends Fragment {
 			public void onClick(View v) {
 				Client client = vm.getClient();
 				if(client == null){
-					PresentUtils.showMessage(getActivity(), getActivity().getString(
+					UIUtils.showMessage(getActivity(), getActivity().getString(
 							R.string.no_se_ha_cargado_ningun_cliente));
 					return;
 				}
 				if(StringUtils.isNullOrWhitespace(client.direccion)){
-					PresentUtils.showMessage(getActivity(), getActivity().getString(
+					UIUtils.showMessage(getActivity(), getActivity().getString(
 							R.string.el_cliente_no_posee_direcci_n));
 					return;
 				}
@@ -192,7 +192,7 @@ public class FragmentClient extends Fragment {
 	}
 	
 	private void setText(int id, String text){
-		PresentUtils.setTextViewText(rootView, id, text);
+		UIUtils.setTextViewText(rootView, id, text);
 	}
 	
 	private void callContact(){
@@ -200,7 +200,7 @@ public class FragmentClient extends Fragment {
 		Client client = vm.getClient();
 		String phoneNumber = client.telefono;
 		if(StringUtils.isNullOrWhitespace(phoneNumber)){
-			PresentUtils.showMessage(getActivity(), "El cliente no tiene teléfono");
+			UIUtils.showMessage(getActivity(), "El cliente no tiene teléfono");
 			return;
 		}
 		
@@ -213,7 +213,7 @@ public class FragmentClient extends Fragment {
 	private void sendMail() {
 		Client client = vm.getClient();
 		if(client == null){
-			PresentUtils.showMessage(getActivity(), getActivity().getString(
+			UIUtils.showMessage(getActivity(), getActivity().getString(
 					R.string.espere_mientras_se_cargan_los_datos));
 			return;
 		}
@@ -237,7 +237,7 @@ public class FragmentClient extends Fragment {
 		public void onDataLoaded() {
 			Client c = vm.getClient();	
 			if(c == null){
-				PresentUtils.showMessage(getActivity(), "no hay cliente");
+				UIUtils.showMessage(getActivity(), "no hay cliente");
 				return;
 			}
 				

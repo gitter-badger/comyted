@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.AdapterView;
 
 import com.comyted.Constants;
-import com.enterlib.app.CollectionViewModel;
-import com.enterlib.app.DataViewModel;
 import com.enterlib.data.ICollectionRepository;
+import com.enterlib.mvvm.CollectionViewModel;
+import com.enterlib.mvvm.DataViewModel;
 
 public abstract class ListFragment<T> extends com.comyted.ListFragment {
 

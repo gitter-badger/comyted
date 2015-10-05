@@ -1,5 +1,6 @@
 package com.comyted.modules.contacts;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -20,15 +21,15 @@ import com.comyted.models.BaseModelComparer;
 import com.comyted.models.BaseModelConverter;
 import com.comyted.models.ContactEdit;
 import com.comyted.models.IdNameValue;
-import com.enterlib.app.DataViewModel;
-import com.enterlib.app.EditableRepositoryViewModel;
-import com.enterlib.app.IEditView;
 import com.enterlib.data.IRepository;
 import com.enterlib.exceptions.InvalidOperationException;
 import com.enterlib.fields.FilterableSpinnerField;
 import com.enterlib.fields.Form;
 import com.enterlib.fields.SpinnerField;
 import com.enterlib.fields.TextViewField;
+import com.enterlib.mvvm.DataViewModel;
+import com.enterlib.mvvm.EditableRepositoryViewModel;
+import com.enterlib.mvvm.IEditView;
 import com.enterlib.validations.validators.IntegerValidator;
 import com.enterlib.validations.validators.RegExValueValidator;
 import com.enterlib.widgets.FilterableSpinner;
@@ -39,7 +40,10 @@ public class ActivityEditContact extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list_clients);
-
+		
+		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new FragmentEditContact()).commit();
@@ -47,11 +51,17 @@ public class ActivityEditContact extends Activity {
 		
 		int id = getIntent().getIntExtra(Constants.ID, 0);			
 		if(id > 0){
-			getActionBar().setTitle(R.string.editar_contacto);
+			actionBar.setTitle(R.string.editar_contacto);
 		}
 		else{
-			getActionBar().setTitle(R.string.nuevo_contacto);
+			actionBar.setTitle(R.string.nuevo_contacto);
 		}        
+	}
+	
+	@Override
+	public boolean onNavigateUp() {
+		finish();
+		return true;
 	}
 	
 	public static class FragmentEditContact extends EditFragment {

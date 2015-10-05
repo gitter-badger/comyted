@@ -22,7 +22,7 @@ import com.comyted.models.SheetDetails;
 import com.comyted.models.TaskDetails;
 import com.comyted.modules.sheets.ActivitySheet;
 import com.comyted.modules.sheets.ViewModelSheet;
-import com.enterlib.app.DefaultDataView;
+import com.enterlib.mvvm.DefaultDataView;
 
 public class FragmentTasks extends Fragment 
 							implements OnCheckedChangeListener{
@@ -67,6 +67,7 @@ public class FragmentTasks extends Fragment
 		public void showTaskEditView(TaskDetails task, SheetDetails sheet) {
 			Intent i = new Intent(activity.getApplicationContext(), ActivityEditTask.class )
 			.putExtra(Constants.TASK, task)
+			.putExtra(Constants.TASK_ID, task.codtarea)
 			.putExtra(Constants.SHEET, sheet)
 			.putExtra(Constants.SHEET_ID, sheet.id)
 			.putExtra(Constants.ORDER_ID, vm.getOrderId());																

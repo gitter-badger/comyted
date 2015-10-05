@@ -3,9 +3,9 @@ package com.comyted.modules.sheets;
 import java.security.InvalidParameterException;
 
 import com.comyted.models.SheetSignatureState;
-import com.enterlib.app.DataViewModel;
 import com.enterlib.exceptions.InvalidOperationException;
-import com.enterlib.app.IDataView;
+import com.enterlib.mvvm.DataViewModel;
+import com.enterlib.mvvm.IDataView;
 import com.enterlib.threading.AsyncManager;
 import com.enterlib.threading.IWorkPost;
 

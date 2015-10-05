@@ -6,8 +6,8 @@ import com.comyted.models.AppUser;
 import com.comyted.models.OrderSumary;
 import com.comyted.repository.IOrderRepository;
 import com.comyted.repository.OrderRepository;
-import com.enterlib.app.DataViewModel;
-import com.enterlib.app.IReporterDataView;
+import com.enterlib.mvvm.DataViewModel;
+import com.enterlib.mvvm.IReporterDataView;
 
 public class ViewModelListOrders extends DataViewModel {
 	

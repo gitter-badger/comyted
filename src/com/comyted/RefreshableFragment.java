@@ -5,9 +5,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.enterlib.app.DataViewModel;
-import com.enterlib.app.FragmentView;
-import com.enterlib.app.PresentUtils;
+import com.enterlib.app.UIUtils;
+import com.enterlib.mvvm.DataViewModel;
+import com.enterlib.mvvm.FragmentView;
 
 public abstract class RefreshableFragment extends FragmentView {
 	@Override
@@ -48,7 +48,7 @@ public abstract class RefreshableFragment extends FragmentView {
 	}
 	public void setText(int id, String text){
 		View rootView = getView();
-		PresentUtils.setTextViewText(rootView, id, text);
+		UIUtils.setTextViewText(rootView, id, text);
 	}
 	
 	public int getModelId(){

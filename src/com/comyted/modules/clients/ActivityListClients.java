@@ -1,6 +1,8 @@
 package com.comyted.modules.clients;
 
 import com.comyted.R;
+
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.MenuItem;
@@ -18,9 +20,11 @@ public class ActivityListClients extends FragmentActivity {
 		}
 		
 		 // Title & SubTitle options,
-        getActionBar().setTitle(R.string.title_activity_activity_list_clients);
-        //getActionBar().setDisplayHomeAsUpEnabled(true);
-	}
+		ActionBar actionBar = getActionBar();
+        actionBar.setTitle(R.string.title_activity_activity_list_clients);
+        actionBar.setDisplayHomeAsUpEnabled(true);       
+
+	}	
 
 //	@Override
 //	public boolean onCreateOptionsMenu(Menu menu) {

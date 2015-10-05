@@ -32,8 +32,19 @@ public class ActivityEditTask extends FragmentActivity {
 			
 		
 	   int taskId= getIntent().getIntExtra(Constants.TASK_ID, 0);
-	   getActionBar().setTitle(taskId > 0? R.string.editar_tarea: R.string.nueva_tarea);	   	  
+	   getActionBar().setTitle(taskId > 0? 
+			   R.string.editar_tarea: 
+			   R.string.nueva_tarea);	
+	   
+	   getActionBar().setDisplayHomeAsUpEnabled(true);
+	   
 	   setResult(RESULT_CANCELED);
+	}
+	
+	@Override
+	public boolean onNavigateUp() {
+		finish();
+		return true;
 	}
 	
 	@Override

@@ -17,12 +17,13 @@ import com.comyted.models.Client;
 import com.comyted.repository.ClientRepository;
 import com.comyted.testing.repository.LocalJSONClientRepository;
 import com.enterlib.DialogUtil;
-import com.enterlib.app.DefaultEditView;
 import com.enterlib.exceptions.InvalidOperationException;
 import com.enterlib.fields.Form;
 import com.enterlib.fields.TextViewField;
+import com.enterlib.mvvm.DefaultEditView;
 import com.enterlib.validations.ErrorInfo;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
@@ -47,6 +48,9 @@ public class ActivityEditClient extends Activity {
 		
 		setContentView(R.layout.activity_edit_client);		
 		setResult(RESULT_CANCELED);
+		
+		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);      		
 		
 		Client client = (Client) getIntent().getSerializableExtra(Constants.CLIENT);
 		Assert.assertNotNull(client);
@@ -87,6 +91,12 @@ public class ActivityEditClient extends Activity {
 			FromSavedInstance = true;
 		}
 		
+	}
+	
+	@Override
+	public boolean onNavigateUp() {
+		finish();
+		return true;
 	}
 	
 	 @Override

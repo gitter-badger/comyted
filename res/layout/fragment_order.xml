@@ -3,8 +3,7 @@
     <ScrollView android:orientation="horizontal" 
         android:clipChildren="true" 
         android:layout_width="fill_parent" 
-        android:layout_height="fill_parent" 
-        android:layout_marginBottom="30.0dip" 
+        android:layout_height="fill_parent"        
         android:fillViewport="true" >        
         <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"  android:orientation="vertical" >
              <TextView

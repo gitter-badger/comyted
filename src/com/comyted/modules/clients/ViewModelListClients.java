@@ -4,8 +4,8 @@ import com.comyted.conectivity.GetClientesClient;
 import com.comyted.models.ClientSummary;
 import com.comyted.repository.ClientRepository;
 import com.comyted.repository.IClientRepository;
-import com.enterlib.app.DataViewModel;
-import com.enterlib.app.IDataView;
+import com.enterlib.mvvm.DataViewModel;
+import com.enterlib.mvvm.IDataView;
 
 public class ViewModelListClients extends DataViewModel {
 	

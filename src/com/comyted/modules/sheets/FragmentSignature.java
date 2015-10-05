@@ -35,7 +35,7 @@ import com.comyted.activities.PaintActivity;
 import com.comyted.models.SheetSignatureState;
 import com.comyted.modules.sheets.ViewModelSignature.ISavedNotifyCallback;
 import com.comyted.modules.sheets.ViewModelSignature.ISavingNotifyCallback;
-import com.enterlib.app.DefaultDataView;
+import com.enterlib.mvvm.DefaultDataView;
 
 
 public class FragmentSignature extends Fragment 								

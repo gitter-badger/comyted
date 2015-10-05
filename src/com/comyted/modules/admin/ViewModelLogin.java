@@ -7,8 +7,8 @@ import com.comyted.MainApp;
 import com.comyted.models.AppUser;
 import com.comyted.models.UserLogin;
 import com.comyted.persistence.LocalDatabase;
-import com.enterlib.app.DataViewModel;
-import com.enterlib.app.IDataView;
+import com.enterlib.mvvm.DataViewModel;
+import com.enterlib.mvvm.IDataView;
 import com.enterlib.serialization.JSonSerializer;
 
 public class ViewModelLogin extends DataViewModel {

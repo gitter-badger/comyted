@@ -49,19 +49,17 @@
 <!-- 	            android:layout_toRightOf="@+id/visit_fecha_alta" />       -->
 <!--         </RelativeLayout> -->
         
-        <!-- Contacto -->        
-        <TextView
-            android:id="@+id/visit_contacto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Contacto: Jesus Lopez Perez" />
+        <!-- Contacto -->
+        <LinearLayout style="@style/HorizontalLinearLayout">
+	        <TextView style="@style/labelAdapter" android:text="Contacto:"  />
+	        <TextView android:id="@+id/visit_contacto" style="@style/ContentText" android:text="Jesus Lopez Perez" />
+        </LinearLayout>
 
         <!-- Estado -->
-        <TextView
-            android:id="@+id/visit_estado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Estado: Primera Fase" />
+         <LinearLayout style="@style/HorizontalLinearLayout">
+	        <TextView style="@style/labelAdapter" android:text="Estado:"  />
+	        <TextView android:id="@+id/visit_estado" style="@style/ContentText"/>
+        </LinearLayout>    
         
         <RelativeLayout
             android:layout_width="match_parent"

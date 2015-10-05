@@ -66,7 +66,8 @@ public class ActivityClient extends Activity implements
 		// Set up the action bar.
 		final ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the activity.
 		mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
@@ -98,9 +99,11 @@ public class ActivityClient extends Activity implements
 		}
 		
 		clientId = getIntent().getIntExtra(Constants.CLIENT_ID, 0);
-		ClientSummary clientSummary = (ClientSummary) getIntent().getSerializableExtra(Constants.CLIENT);
+		Assert.assertTrue(clientId > 0);
 		
+		ClientSummary clientSummary = (ClientSummary) getIntent().getSerializableExtra(Constants.CLIENT);		
 		Assert.assertNotNull(clientSummary);
+		
 		setTitle(clientSummary.nombreempresa);
 		
 		IClientRepository repo;

@@ -3,8 +3,8 @@ package com.comyted.modules.orders;
 import com.comyted.models.Order;
 import com.comyted.repository.IOrderRepository;
 import com.comyted.repository.OrderRepository;
-import com.enterlib.app.DataViewModel;
-import com.enterlib.app.IDataView;
+import com.enterlib.mvvm.DataViewModel;
+import com.enterlib.mvvm.IDataView;
 
 public class ViewModelOrder extends DataViewModel {
 	

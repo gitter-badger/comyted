@@ -88,11 +88,19 @@
         <!-- Activities para las Ordenes de Trabajo -->
         <activity
             android:name="com.comyted.modules.orders.ActivityListOrders"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:parentActivityName="com.comyted.activities.DashboardActivity" >
+             <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.comyted.activities.DashboardActivity" />
         </activity>
         <activity
             android:name="com.comyted.modules.orders.ActivityOrder"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:parentActivityName="com.comyted.modules.orders.ActivityListOrders" >
+                <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.comyted.modules.orders.ActivityListOrders" />
         </activity>
         <!-- Fin de las Activity para Ordenes de trabajo -->
 
@@ -100,7 +108,11 @@
         <!-- Activities para las Hojas de Trabajo -->
         <activity
             android:name="com.comyted.modules.sheets.ActivityListSheets"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"  
+            android:parentActivityName="com.comyted.activities.DashboardActivity" >
+             <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.comyted.activities.DashboardActivity" />
         </activity>
         <activity
             android:name="com.comyted.modules.sheets.ActivitySheet"
@@ -136,7 +148,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.comyted.activities.DashboardActivity" />
-        </activity>
+        </activity>  		
         <activity
             android:name="com.comyted.modules.clients.ActivityClient"
             android:label="@string/title_activity_activity_client"
@@ -146,20 +158,23 @@
                 android:value="com.comyted.modules.clients.ActivityListClients" />
         </activity>
         <activity
-            android:name="com.comyted.modules.clients.ActivityEditClient"
-            android:label="EditarCliente" >
+            android:name="com.comyted.modules.clients.ActivityEditClient"         
+            android:label="@string/editar_cliente">            
         </activity>
+        <!-- Actividad de Mapa -->
         <activity
             android:name="com.comyted.activities.ActivityMap"
             android:label="@string/title_activity_activity_map" >
         </activity>
+        
+        <!-- Actividad de los contactos -->
         <activity
             android:name="com.comyted.modules.contacts.ActivityContact"
-            android:label="@string/title_activity_activity_contact" >
+            android:label="@string/title_activity_activity_contact">            
         </activity>
         <activity
             android:name="com.comyted.modules.contacts.ActivityListContacts"
-            android:label="Contactos"
+            android:label="@string/contactos"
             android:parentActivityName="com.comyted.activities.DashboardActivity" >
               <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -167,11 +182,7 @@
         </activity>
          <activity
             android:name="com.comyted.modules.contacts.ActivityEditContact"
-            android:label="Editar Contacto"
-            android:parentActivityName="com.comyted.modules.contacts.ActivityContact" >
-              <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.comyted.modules.contacts.ActivityContact" />
+            android:label="Editar Contacto">              
         </activity>
     </application>
 

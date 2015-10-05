@@ -34,9 +34,9 @@ import com.comyted.repository.SheetsRepository;
 import com.comyted.repository.StateRepository;
 import com.comyted.repository.UserRepository;
 import com.comyted.repository.WorkTypeRepository;
-import com.enterlib.app.EditViewModel;
 import com.enterlib.StringUtils;
 import com.enterlib.exceptions.InvalidOperationException;
+import com.enterlib.mvvm.EditViewModel;
 import com.enterlib.threading.AsyncManager;
 import com.enterlib.threading.IWorkPost;
 

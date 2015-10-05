@@ -17,12 +17,12 @@ import com.comyted.repository.ISheetTaskRepository;
 import com.comyted.repository.IStateRepository;
 import com.comyted.repository.SheetTaskRepository;
 import com.comyted.repository.StateRepository;
-import com.enterlib.app.EditViewModel;
 import com.enterlib.DateUtils;
 import com.enterlib.TimeValue;
 import com.enterlib.exceptions.InvalidOperationException;
 import com.enterlib.exceptions.ValidationException;
-import com.enterlib.app.IEditView;
+import com.enterlib.mvvm.EditViewModel;
+import com.enterlib.mvvm.IEditView;
 import com.enterlib.validations.ErrorInfo;
 
 public class ViewModelEditTask extends EditViewModel {

@@ -6,10 +6,10 @@ import com.comyted.models.SheetDetails;
 import com.comyted.repository.ISheetsRepository;
 import com.comyted.repository.Messages;
 import com.comyted.repository.SheetsRepository;
-import com.enterlib.app.DataViewModel;
 import com.enterlib.generics.SimpleEvent;
 import com.enterlib.generics.ObservableValue;
-import com.enterlib.app.IDataView;
+import com.enterlib.mvvm.DataViewModel;
+import com.enterlib.mvvm.IDataView;
 
 public class ViewModelSheet extends DataViewModel {
 	

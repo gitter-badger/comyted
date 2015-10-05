@@ -23,6 +23,7 @@ public class ActivityEditSheet extends FragmentActivity
 		getActionBar().setTitle(sheetId== 0?R.string.nueva_hoja_de_tarea:
 											R.string.editar_hoja);		
 						
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		if(savedInstanceState == null){
 			//Initialize the UI fragment
 			fr =  new FragmentEditSheet();			
@@ -33,6 +34,12 @@ public class ActivityEditSheet extends FragmentActivity
 		
 		 this.setResult(RESULT_CANCELED);
 	}	
+	
+	@Override
+	public boolean onNavigateUp() {
+		finish();
+		return true;
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
