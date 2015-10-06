@@ -1,4 +1,6 @@
 # ComyTed
+
+[![Join the chat at https://gitter.im/ansel86castro/comyted](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ansel86castro/comyted?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Android 4.2.1 Aplication for Tecnical Assistance Maintenance
 ComyTed  is an Android application for Tecnical Assistance Maintenance to use in android devices with 4.2.1 system operating or highest that connect with WCF webservices to obtain the data across firewall configuration and SQL Server Database in backend.
 
